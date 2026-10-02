@@ -19,6 +19,7 @@
 | `plaza-1988.jpg` | [5 Av Apr 2024 107.jpg](https://commons.wikimedia.org/wiki/File:5_Av_Apr_2024_107.jpg) | Epicgenius | CC BY-SA 4.0 | 广场酒店（第五大道现貌），empire.html 卷·02 用；须署名、同方式共享 |
 | `taj-1990.jpg` | [Boardwalk at Trump Taj Mahal, Atlantic City, 2007.jpg](https://commons.wikimedia.org/wiki/File:Boardwalk_at_Trump_Taj_Mahal,_Atlantic_City,_2007.jpg) | DimiTalen | CC0 | 泰姬陵赌场（木栈道视角），empire.html 卷·02 用 |
 | `mugshot-2023.jpg` | [Donald Trump mugshot.jpg](https://commons.wikimedia.org/wiki/File:Donald_Trump_mugshot.jpg) | 富尔顿县治安官办公室（佐治亚州政府作品） | Public domain（美国政府作品） | 2023-08 富尔顿县在案照，downfall.html 卷·05 用 |
+| `rnc-2024.jpg` | [Former President Donald Trump's Speech at the Republican National Convention (53887722108).jpg](https://commons.wikimedia.org/wiki/File:Former_President_Donald_Trump's_Speech_at_the_Republican_National_Convention_(53887722108).jpg) | Tim Kennedy | CC BY 2.0 | 2024 RNC 提名演讲（耳部缠绷带），comeback.html 卷·06 用；须署名 |
 
 ## 使用规则（后续轮次遵守）
 
