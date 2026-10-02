@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 1b / completed`
-- 下一轮：**R02**（timeline.html 上卷）
-- 当前版本：`v0.2.0-R01b`
+- 当前状态：**施工中** `current_round = 2 / completed`
+- 下一轮：**R03**（timeline.html 下卷 1988-2026 + 时间轴交互）
+- 当前版本：`v0.3.0-R02`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -16,7 +16,7 @@
 |---|---|---|
 | R01 | 骨架+漫画设计系统+首页封面（已被 R01b 替换） | ✅ completed（主会话 2026-10-03） |
 | R01b | **改版**：金黑奢华设计系统+真人照片 10 张+首页照片化重制 | ✅ completed（主会话 2026-10-03） |
-| R02 | timeline 上卷 1946-1987 + index 目录卡解锁 | ⬜ not_started |
+| R02 | timeline 上卷 1946-1987 + index 目录卡解锁 | ✅ completed（自动化 R02，2026-10-03） |
 | R03 | timeline 下卷 1988-2026 + 时间轴交互 | ⬜ not_started |
 | R04 | empire 商业帝国 | ⬜ not_started |
 | R05 | stage 舞台 | ⬜ not_started |
@@ -62,8 +62,17 @@
   4. Unicode 文件名（DPRK–USA 带 en-dash）在 API 精确标题查询没问题，encodeURIComponent 走 Special:FilePath 也稳。
   5. 截图缩略图上衬线大标题会"看起来发暗金"，是缩放观感；判定颜色必须 CDP getComputedStyle 实测（`tools/probe-colors.mjs` 可复用）。
 
+### R02（自动化轮 automation-79a585bc，2026-10-03 02:46-02:56）✅
+- **产出**：新建 `timeline.html`（卷·01 上卷，1946-1987）：刊头（卷号+标题+logline）+ 七个小节（1946 出生/1959 军校/1968 沃顿/1971 接管/1976-1980 君悦改造/1983 大厦/1987 交易的艺术+白宫）+ 金框引语卡（《交易的艺术》p.46 已核原文）+ TBC 下卷预告；3 张照片（Commodore 老照 CC0 新增 `commodore-hotel.jpg`、trump-tower CC BY 复用、reagan-1987 PD 复用），CREDITS.md 已登记 Commodore 行。
+- **扩写事实复核**：出生地=牙买加医院（Jamaica Hospital Medical Center）、13 岁约 1959 入纽约军校、福特汉姆两年转沃顿 1968 年 5 月经济学学士——WebSearch 与 Wikipedia/白宫历史协会/Miller Center 一致；底座既有事实（1971 接管/42 年租约/1980 开业/1983 大厦/1987 出版）未动。
+- **解锁**：index.html 卷·01 目录卡去 data-locked+真链接、刊头导航加"卷·01 生平全录"、TBC 下期预告更新为下卷；版本双页同步 v0.3.0-R02（meta+页脚）。
+- **自测**：smoke timeline.html + index.html 双 PASS（console 零 error、3/10 照片全载、版本一致、零断链、lockedCards 9→8）；1280/375 截图目检通过（tools/shots/R02/）。
+- **坑**：①node fetch 连 thumb.wikimedia.org 偶发 ConnectTimeout——Special:FilePath 下载换 `curl -sL` 一次成功，后续抓图优先 curl；②出生地老宅 Commons 无自由许可图，不硬凑，该节保持纯文字；③Commodore 选的是荷兰国立博物馆 CC0 藏的改建前历史明信片照——比"改建后酒店"照片更贴 1976 年叙事，CC0 还省署名。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 ### 遗留问题
 - 无

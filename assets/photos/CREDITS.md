@@ -15,6 +15,7 @@
 | `farewell-2021.jpg` | [President Trump and the First Lady Depart for Florida (50800212937).jpg](https://commons.wikimedia.org/wiki/File:President_Trump_and_the_First_Lady_Depart_for_Florida_(50800212937).jpg) | 白宫（The White House） | Public domain（美国政府作品） | 2021-01-20 离任出发 |
 | `rally-2024.jpg` | [Butler Farm Show Airport Trump Rally 2024 07.jpg](https://commons.wikimedia.org/wiki/File:Butler_Farm_Show_Airport_Trump_Rally_2024_07.jpg) | Designism | CC0 | 2024-07-13 巴特勒集会场照 |
 | `inaug-2025.jpg` | [Donald Trump takes the oath of office (2025).jpg](https://commons.wikimedia.org/wiki/File:Donald_Trump_takes_the_oath_of_office_(2025).jpg) | 就职典礼联合国会委员会（JCCIC） | Public domain（美国政府作品） | 2025-01-20 宣誓就任第 47 任 |
+| `commodore-hotel.jpg` | [Hotel Commodore, New York City, RP-F-2007-140-46-4.jpg](https://commons.wikimedia.org/wiki/File:Hotel_Commodore,_New_York_City,_RP-F-2007-140-46-4.jpg) | 荷兰国立博物馆（Rijksmuseum） | CC0 | 改建君悦前的 Commodore 酒店历史照，timeline.html 卷·01 用 |
 
 ## 使用规则（后续轮次遵守）
 
