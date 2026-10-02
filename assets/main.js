@@ -1,4 +1,4 @@
-/* 川流不息 · THE TRUMP LEGEND — main.js (v0.1.0-R01) */
+/* 川流不息 · THE TRUMP LEGEND — main.js (v0.2.0-R01b) */
 (function () {
   "use strict";
 
