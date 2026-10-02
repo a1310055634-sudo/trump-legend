@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 10 / completed`
-- 下一轮：**R11**（视觉卷一：各卷刊头照片横幅 .cover-art 组件）
-- 当前版本：`v0.11.0-R10`
+- 当前状态：**施工中** `current_round = 11 / completed`
+- 下一轮：**R12**（视觉卷二：金黑纹理系统化）
+- 当前版本：`v0.12.0-R11`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -25,7 +25,7 @@
 | R08 | comeback 翻盘 | ✅ completed（自动化 R08，2026-10-03） |
 | R09 | act47 第二任期（须联网复核） | ✅ completed（自动化 R09，2026-10-03） |
 | R10 | quotes 台词馆 | ✅ completed（自动化 R10，2026-10-03） |
-| R11 | 视觉卷一：各卷 SVG 刊头 | ⬜ not_started |
+| R11 | 视觉卷一：各卷刊头照片横幅 .cover-art | ✅ completed（自动化 R11，2026-10-03） |
 | R12 | 视觉卷二：纹理系统化 | ⬜ not_started |
 | R13 | 交互卷 | ⬜ not_started |
 | R14 | about 编辑部 + 页脚收口 | ⬜ not_started |
@@ -117,8 +117,15 @@
 - **自测**：smoke 九页全 PASS（console 零 error、照片全载、版本一致、零断链、lockedCards 9→1 仅剩编辑部）；1280 截图目检通过（tools/shots/R10/）。
 - **坑**：①meta description 属性里嵌半角双引号会截断属性——含引号的描述改用「」；②争议引语（Access Hollywood/fine people）的写法=核心句+语境+双方说法，不回避也不渲染；③顺带发现 R01 时 speech-2016 在 R09 页脚图注曾写"PD"是错的（实为 CC BY-SA 2.0）——R05 已按正确署名执行，此处的教训是：图注署名要与 CREDITS.md 对表核验。
 
+### R11（自动化轮 automation-79a585bc，2026-10-03 05:22-05:30）✅
+- **产出**：设计系统新增 `.cover-art` 刊头照片横幅组件（双色调做旧 grayscale(0.5)+sepia(0.22)+金斜晖遮罩+压暗渐变、clamp 高度 170-300px、object-position 上偏、金色角标 .cover-art__tag）；八张内容页刊头上方各插入一张签名照横幅——卷01 reagan-1987 / 卷02 trump-tower / 卷03 walk-star / 卷04 portrait-2017 / 卷05 farewell-2021 / 卷06 rally-2024 / 卷07 sharm-2025 / 卷08 speech-2016（全部复用库存，零新增下载，首页封面已有 hero 不加）。顺带修正账本 R11 行的 R01 旧文案（"SVG 刊头"→照片横幅）。版本九页同步 v0.12.0-R11（批量脚本带计数）。
+- **自测**：smoke 八张内容页全 PASS（console 零 error、照片全载、版本一致、零断链）；1280 截图目检通过（timeline 卷横幅做旧效果+角标可读性确认，tools/shots/R11/）。
+- **坑（复犯警示）**：①上轮批量版本脚本改过的文件，本轮 Edit 前必须先 Read 刷新追踪——本轮 8 个 Edit 有 7 个因追踪过期被拒（quotes.html 意外存活），grep 定位+小窗 Read 后全部补齐；这个坑已在 R09 记过，仍是复犯率最高的一号坑。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 

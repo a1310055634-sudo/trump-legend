@@ -329,6 +329,31 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
 .tl-rail a:hover, .tl-rail a:focus-visible { color: var(--gold-bright); border-color: var(--gold); text-decoration: none; }
 .panel[id], .figure[id] { scroll-margin-top: 24px; }
 
+/* ---------------- 刊头照片横幅（R11 新增 .cover-art：双色调+金遮罩） ---------------- */
+.cover-art {
+  position: relative; overflow: hidden;
+  border: 1px solid var(--gold-line); border-radius: 3px;
+  margin: var(--sp-5) 0 0;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.42);
+}
+.cover-art img {
+  display: block; width: 100%;
+  height: clamp(170px, 30vw, 300px);
+  object-fit: cover; object-position: center 28%;
+  filter: grayscale(0.5) sepia(0.22) brightness(0.92) contrast(1.03);
+}
+.cover-art::after { /* 压暗 + 金色斜晖，保证角标可读 */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(11, 11, 15, 0.05), rgba(11, 11, 15, 0.55) 88%),
+    linear-gradient(100deg, rgba(212, 175, 55, 0.16), transparent 45%);
+}
+.cover-art .cover-art__tag {
+  position: absolute; left: 16px; bottom: 12px; z-index: 2;
+  color: var(--gold-bright); font-size: 12px; letter-spacing: 0.3em;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85);
+}
+
 /* ---------------- 动效降级 ---------------- */
 @media (prefers-reduced-motion: reduce) {
   .panel-reveal { opacity: 1; transform: none; transition: none; }
