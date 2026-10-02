@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 3 / completed`
-- 下一轮：**R04**（empire.html 商业帝国）
-- 当前版本：`v0.4.0-R03`
+- 当前状态：**施工中** `current_round = 4 / completed`
+- 下一轮：**R05**（stage.html 舞台）
+- 当前版本：`v0.5.0-R04`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -18,7 +18,7 @@
 | R01b | **改版**：金黑奢华设计系统+真人照片 10 张+首页照片化重制 | ✅ completed（主会话 2026-10-03） |
 | R02 | timeline 上卷 1946-1987 + index 目录卡解锁 | ✅ completed（自动化 R02，2026-10-03） |
 | R03 | timeline 下卷 1988-2026 + 时间轴交互 | ✅ completed（自动化 R03，2026-10-03） |
-| R04 | empire 商业帝国 | ⬜ not_started |
+| R04 | empire 商业帝国 | ✅ completed（自动化 R04，2026-10-03） |
 | R05 | stage 舞台 | ⬜ not_started |
 | R06 | whitehouse 第一任期 | ⬜ not_started |
 | R07 | downfall 至暗时刻 | ⬜ not_started |
@@ -75,8 +75,16 @@
 - **自测**：smoke timeline.html + index.html 双 PASS（console 零 error、8/10 照片全载、版本一致、零断链）；1280/375 截图目检通过（时代导航换行正常、全页无溢出）。
 - **坑**：①2024-2025 名场面归属要逐条核（普利策差一点写错）；②下卷刻意止笔于 2025-01-20 就任，2025-2026 执政细节全部留给卷·07 专项轮核实后再写——避免时间线页与 act47 页的事实重复维护；③转场锚点跳转靠 html scroll-behavior:smooth + scroll-margin-top，reduced-motion 已有全局降级，无需额外脚本。
 
+### R04（自动化轮 automation-79a585bc，2026-10-03 03:02-03:10）✅
+- **产出**：新建 `empire.html`（卷·02 商业帝国）：刊头+6 格金色台账条（42 年租约/68 层/4.075 亿广场/12 亿泰姬陵/4 次重组/9 亿个人担保）+ 导读 + 五笔大交易各一节配照（君悦 Commodore CC0、大厦 CC BY 复用、广场 CC BY-SA 新增 `plaza-1988.jpg`、泰姬陵 CC0 新增 `taj-1990.jpg`）+ 快船节纯文字（3.65 亿接手→1990 断息→1992-04-12 转手 USAir）+ Chapter 11 专账（1991/1992/2004/2009 四行+公司重组≠个人破产双写）+「名字变成生意」转折节。解锁 index 卷·02 卡+导航；版本三页同步 v0.5.0-R04。CREDITS.md 增两行。
+- **扩写事实复核**（WebSearch）：泰姬陵造价 12 亿美元/新泽西最高建筑/1990 年底未付 5000 万美元债券利息；快船 1989 约 3.65 亿接手东方航空东北穿梭线、损失超 1.28 亿、1992-04-12 转 USAir Shuttle——与 Wikipedia/WSJ/Palm Beach Post 等一致；底座既有数字（广场 4.075 亿、个人担保 9 亿、企业债 35 亿、四次重组年份）未动。
+- **自测**：smoke empire/index/timeline 三页 PASS（console 零 error、4/10/8 照片全载、版本一致、零断链、lockedCards 9→7）；1280 截图目检通过（tools/shots/R04/，移动端沿用同构布局未复检——组件均为已验证复用）。
+- **坑**：①Trump Shuttle 飞机照 Commons 全是 GFDL 1.2 许可——不在本站四类白名单（PD/CC0/CC BY/CC BY-SA），弃图保政策，快船节纯文字；②"5000 万美元利息未付"与"1.28 亿亏损"等新数字逐条带来源核过后才落笔。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 
