@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 17 / completed`
-- 下一轮：**R18**（QA 卷二：多视口截图全页审查、溢出/遮挡排查）
-- 当前版本：`v0.18.0-R17`
+- 当前状态：**施工中** `current_round = 18 / completed`
+- 下一轮：**R19**（终验：内容字数统计、事实抽查 20 条、版本戳 v1.0.0-rc）
+- 当前版本：`v0.19.0-R18`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -32,7 +32,7 @@
 | R15 | 移动端与可达性 | ✅ completed（自动化 R15，2026-10-03） |
 | R16 | 内容增厚卷 | ✅ completed（自动化 R16，2026-10-03） |
 | R17 | QA 一（console/断链/typo/对比度/file://） | ✅ completed（自动化 R17，2026-10-03） |
-| R18 | QA 二（多视口截图审查） | ⬜ not_started |
+| R18 | QA 二（多视口截图审查） | ✅ completed（自动化 R18，2026-10-03） |
 | R19 | 终验 + 事实抽查 20 条 | ⬜ not_started |
 | R20 | 收官 v1.0.0 + RELEASE.md | ⬜ not_started |
 
@@ -154,8 +154,15 @@
 - **自测**：qa-links PASS、typo-scan PASS、audit-a11y 51/51 PASS、十页 smoke PASS；版本十页同步 v0.18.0-R17（about 仅 meta+页脚 2 处正确位）。
 - **坑**：①typo 扫描器首跑连吃两个 ReferenceError（import 不全）——新工具写完先跑再入库；②正则扫描的正文提取必须先做空白归一化，否则标记换行会制造海量假阳性；③引语页里的原话标点（？？？）和引语原文（英文全句）都是合法"异常"，扫描器要有豁免清单并注明理由。
 
+### R18（自动化轮 automation-79a585bc，2026-10-03 07:41-07:55）✅
+- **产出**：新写 `tools/multiview-shots.mjs`（10 页 × 1280/375 全页截图 + 三项审计：横向溢出/非封面图失真（natural 与渲染比例差 >6%）/隐藏容器裁字）→ **20 张全页截图**入 `tools/shots/R18/`。审计抓出 **2 处真实失真**：index hero 肖像（HTML height="1080" 属性 × CSS width:100% 组合把 4:5 肖像纵向拉伸成 0.38 细长条）——修复 `.figure img { height: auto }` 后复跑 20 张 0 问题、console 异常 0。页面本体零改动（纯 CSS 一行修复）。版本十页同步 v0.19.0-R18——**about.html 版本史永久修复首次经受批量替换检验：十页全部恰好替换 2 处（meta+页脚），历史段落零误伤**。
+- **自测**：multiview 审计 PASS（20 截图/0 溢出/0 失真/0 裁切/0 console 异常）；十页 smoke 全 PASS；目检 index-1280（hero 肖像比例已正常）与 act47-375（最长页无溢出）；三处标题"发暗"经 CDP 实测为缩略图观感非缺陷（R01b 记录的坑第二次应验——象牙白 rgb(242,236,220)、opacity 1 实证）。
+- **坑**：①HTML 的 width/height 属性与 CSS width:100% 组合会静默拉伸图片（CSS 只覆盖宽度不覆盖高度）——图注类图片必须 `height: auto`；②失真检测的正确姿势是比较 naturalWidth/Height 比例与 clientWidth/Height 比例（object-fit:cover 的封面类图片按设计裁切需排除）。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 
