@@ -12,7 +12,7 @@
   --black-3: #1b1b22;      /* 悬浮/抬升 */
   --ink: #e9e4d8;          /* 正文暖白 */
   --ink-dim: #a49d8d;      /* 次级文字 */
-  --ink-faint: #6f6a5e;    /* 图注来源 */
+  --ink-faint: #8a8578;    /* 图注来源（R15 提亮：#6f6a5e 仅 3.65:1 不达 AA，现 ≥4.9:1） */
   --line: #2b2a24;         /* 分隔线 */
 
   /* ---- 鎏金 ---- */
@@ -98,7 +98,7 @@ img { max-width: 100%; display: block; }
   max-width: var(--w-container); margin: 0 auto; padding: 14px var(--sp-5);
   display: flex; align-items: center; gap: var(--sp-4);
 }
-.brand { display: flex; flex-direction: column; line-height: 1.25; }
+.brand { display: flex; flex-direction: column; line-height: 1.25; padding: 2px 0; }
 .brand__zh { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold); }
 .brand:hover { text-decoration: none; }
 .brand__en { font-size: 10px; letter-spacing: 0.42em; text-transform: uppercase; color: var(--ink-dim); }
@@ -107,12 +107,12 @@ img { max-width: 100%; display: block; }
   font-size: 11px; letter-spacing: 0.22em; color: var(--gold); white-space: nowrap;
 }
 .nav { margin-left: auto; }
-.nav__list { display: flex; gap: var(--sp-5); list-style: none; }
-.nav__list a { color: var(--ink); font-size: 14px; letter-spacing: 0.08em; }
+.nav__list { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); list-style: none; }
+.nav__list a { display: inline-block; color: var(--ink); font-size: 14px; letter-spacing: 0.08em; padding: 11px 8px; }
 .nav__list a:hover, .nav__list a[aria-current="page"] { color: var(--gold-bright); text-decoration: none; }
 .nav-toggle {
   display: none; margin-left: auto; background: none; border: 1px solid var(--gold-line); color: var(--gold);
-  font: 600 13px var(--font-body); padding: 6px 12px; cursor: pointer; border-radius: 2px;
+  font: 600 13px var(--font-body); padding: 11px 16px; min-height: 44px; cursor: pointer; border-radius: 2px;
 }
 
 /* ---------------- 封面 Hero ---------------- */
@@ -326,7 +326,8 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
 /* ---------------- 时间轴时代导航（R03 新增，键盘可达） ---------------- */
 .tl-rail { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 var(--sp-5); }
 .tl-rail a {
-  display: inline-block; padding: 5px 12px; border: 1px solid var(--gold-line); border-radius: 2px;
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: 5px 14px; border: 1px solid var(--gold-line); border-radius: 2px;
   font-size: 12.5px; letter-spacing: 0.12em; color: var(--ink-dim);
   transition: color 0.3s ease, border-color 0.3s ease;
 }
@@ -366,7 +367,7 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   box-shadow: 0 0 8px rgba(212, 175, 55, 0.55);
   pointer-events: none;
 }
-.back-top {
+#back-top {
   position: fixed; right: 18px; bottom: 18px; z-index: 90;
   width: 44px; height: 44px; border-radius: 3px;
   background: rgba(19, 19, 24, 0.92); color: var(--gold);
@@ -376,8 +377,8 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   transition: opacity 0.35s ease, transform 0.35s ease, border-color 0.3s ease, color 0.3s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-.back-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
-.back-top:hover, .back-top:focus-visible { color: var(--gold-bright); border-color: var(--gold); }
+#back-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+#back-top:hover, #back-top:focus-visible { color: var(--gold-bright); border-color: var(--gold); }
 .tl-rail a.is-active { color: #141414; background: var(--gold); border-color: var(--gold); }
 /* 目录卡同时挂 panel-reveal 与 chapter-card 两个过渡定义，合并为一条（hover 不再瞬变） */
 .chapter-card.panel-reveal {

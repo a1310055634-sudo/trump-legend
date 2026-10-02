@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 14 / completed`
-- 下一轮：**R15**（移动端与可达性：375/768/1280 三档体检、对比度 AA 复测、reduced-motion、触控目标 ≥44px）
-- 当前版本：`v0.15.0-R14`
+- 当前状态：**施工中** `current_round = 15 / completed`
+- 下一轮：**R16**（内容增厚卷：各卷扩写至 2500 字+，新照片按政策抓取登记）
+- 当前版本：`v0.16.0-R15`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -29,7 +29,7 @@
 | R12 | 视觉卷二：纹理系统化 | ✅ completed（自动化 R12，2026-10-03） |
 | R13 | 交互卷 | ✅ completed（自动化 R13，2026-10-03） |
 | R14 | about 编辑部 + 页脚收口 | ✅ completed（自动化 R14，2026-10-03） |
-| R15 | 移动端与可达性 | ⬜ not_started |
+| R15 | 移动端与可达性 | ✅ completed（自动化 R15，2026-10-03） |
 | R16 | 内容增厚卷 | ⬜ not_started |
 | R17 | QA 一（console/断链/typo/对比度/file://） | ⬜ not_started |
 | R18 | QA 二（多视口截图审查） | ⬜ not_started |
@@ -137,8 +137,15 @@
 - **自测**：smoke 十页全 PASS（console 零 error、照片全载、版本一致、零断链）；1280 截图目检通过（tools/shots/R14/）。**R14 轮内自查修正两处**：①照片总数初写 14 实为 17（数 CREDITS 行修正）；②横幅初用 hero-2025 竖幅肖像被 cover 裁成脸部特写——换 trump-tower 横幅照并重截图。
 - **坑**：①竖幅人像照片禁入 .cover-art 横幅（object-position 上偏 28% 会裁成额头）——横幅只选横构图；②桌面端导航 10 项在 1280 宽下换行为两行，可读未破版——留给 R15 移动端轮统一决策（缩短标签或调整断点）；③"17 张照片"这类全站统计数字写前必须数一遍实物（CREDITS.md 行数）。
 
+### R15（自动化轮 automation-79a585bc，2026-10-03 06:42-06:55）✅
+- **产出**：新写 `tools/audit-a11y.mjs`（可持续复跑的审计器：10 页×375/768/1280 溢出 + AA 对比度全文走查 + 触控目标 + reduced-motion 直出，51 项检查）。首轮实测抓出 145 个问题、收敛为 4 个系统性根因，全部修复：①`--ink-faint` #6f6a5e→**#8a8578**（3.65:1→≥4.9:1 达 AA；影响 credit/quote__who/footer__meta/hero__meta 全站图注类）；②**back-top 真 bug**——JS 注入 id="back-top" 而 CSS 写成类选择器 `.back-top`，44px 样式从未生效（11×19 裸按钮），改 `#back-top`；③触控高度：nav__list a 加 padding 11px 8px、.tl-rail a 改 inline-flex+min-height 44px、.brand 加 padding、.nav-toggle min-height 44px（375 档实测）；④reduced-motion 直出 ✓（无需改动）。审计器内置两类已论证豁免：.gold-text 渐变裁字（计算色透明系误报，实测最暗金阶 4.26:1>大字 3:1）、footer/段落内联链接（WCAG 2.5.8 inline 例外）。**复跑 51 项检查 0 问题 PASS**。版本十页同步 v0.16.0-R15。
+- **自测**：审计器 PASS（51/51）+ 十页 smoke 全 PASS + 375/1280 截图目检（导航触控区放大后桌面双行排版可读、375 目录按钮达标）。
+- **坑**：①批量脚本后 Edit 失效的坑本轮又踩一次（style.css 先脚本后 Edit 顺序错误）——铁律升级：**同轮内一切批量脚本必须放在所有 Edit 之后**；②back-top 类选择器/注入 id 不一致这类"样式静默不生效"只有实测才暴露，R13 的行为探针当时只测了行为没测尺寸；③about 版本史段落里写死版本号，被批量替换误更新——历史段落里的版本号要用"轮次+描述"而非可被替换的字面量，或替换脚本排除该段。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 
