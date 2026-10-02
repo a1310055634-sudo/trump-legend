@@ -319,6 +319,16 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   .panel { padding: var(--sp-5); }
 }
 
+/* ---------------- 时间轴时代导航（R03 新增，键盘可达） ---------------- */
+.tl-rail { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 var(--sp-5); }
+.tl-rail a {
+  display: inline-block; padding: 5px 12px; border: 1px solid var(--gold-line); border-radius: 2px;
+  font-size: 12.5px; letter-spacing: 0.12em; color: var(--ink-dim);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.tl-rail a:hover, .tl-rail a:focus-visible { color: var(--gold-bright); border-color: var(--gold); text-decoration: none; }
+.panel[id], .figure[id] { scroll-margin-top: 24px; }
+
 /* ---------------- 动效降级 ---------------- */
 @media (prefers-reduced-motion: reduce) {
   .panel-reveal { opacity: 1; transform: none; transition: none; }

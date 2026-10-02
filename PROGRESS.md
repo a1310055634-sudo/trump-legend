@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 2 / completed`
-- 下一轮：**R03**（timeline.html 下卷 1988-2026 + 时间轴交互）
-- 当前版本：`v0.3.0-R02`
+- 当前状态：**施工中** `current_round = 3 / completed`
+- 下一轮：**R04**（empire.html 商业帝国）
+- 当前版本：`v0.4.0-R03`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -17,7 +17,7 @@
 | R01 | 骨架+漫画设计系统+首页封面（已被 R01b 替换） | ✅ completed（主会话 2026-10-03） |
 | R01b | **改版**：金黑奢华设计系统+真人照片 10 张+首页照片化重制 | ✅ completed（主会话 2026-10-03） |
 | R02 | timeline 上卷 1946-1987 + index 目录卡解锁 | ✅ completed（自动化 R02，2026-10-03） |
-| R03 | timeline 下卷 1988-2026 + 时间轴交互 | ⬜ not_started |
+| R03 | timeline 下卷 1988-2026 + 时间轴交互 | ✅ completed（自动化 R03，2026-10-03） |
 | R04 | empire 商业帝国 | ⬜ not_started |
 | R05 | stage 舞台 | ⬜ not_started |
 | R06 | whitehouse 第一任期 | ⬜ not_started |
@@ -69,8 +69,16 @@
 - **自测**：smoke timeline.html + index.html 双 PASS（console 零 error、3/10 照片全载、版本一致、零断链、lockedCards 9→8）；1280/375 截图目检通过（tools/shots/R02/）。
 - **坑**：①node fetch 连 thumb.wikimedia.org 偶发 ConnectTimeout——Special:FilePath 下载换 `curl -sL` 一次成功，后续抓图优先 curl；②出生地老宅 Commons 无自由许可图，不硬凑，该节保持纯文字；③Commodore 选的是荷兰国立博物馆 CC0 藏的改建前历史明信片照——比"改建后酒店"照片更贴 1976 年叙事，CC0 还省署名。
 
+### R03（自动化轮 automation-79a585bc，2026-10-03 02:55-03:05）✅
+- **产出**：timeline.html 升全卷版——上卷内容原样保留（各节加锚点 id），追加下卷五幕（1988-1990 全押 / 1990s 坠落与喘息〔四次 Chapter 11 双写〕/ 2004-2015 学徒 / 2015 扶梯 / 2016-2020 素人总统 / 2020-2021 至暗 / 2022-2024 法庭与子弹 / 2024-2025 翻盘第 47 任），页首新增时代导航 `.tl-rail`（15 个锚点链接，原生键盘可达，:focus-visible 金框）；新增 style.css 组件 `.tl-rail`（纯扩展）；刊头改全卷口径；照片复用库存 8 张（新增曝光：walk-star/speech-2016/farewell-2021/rally-2024/inaug-2025），零新增下载；版本全站 v0.4.0-R03（index+timeline meta/页脚四处同步）。
+- **事实复核**：下卷全部事实取自 R01 已核底座；写作中发现初稿把普利策奖错记在"振臂照"上——WebSearch 核实 2025 普利策突发新闻摄影奖实为《纽约时报》Doug Mills（子弹掠过头部照），已改写为准确表述（美联社振臂照传遍全球+Mills 拿奖，两句分开写）。
+- **自测**：smoke timeline.html + index.html 双 PASS（console 零 error、8/10 照片全载、版本一致、零断链）；1280/375 截图目检通过（时代导航换行正常、全页无溢出）。
+- **坑**：①2024-2025 名场面归属要逐条核（普利策差一点写错）；②下卷刻意止笔于 2025-01-20 就任，2025-2026 执政细节全部留给卷·07 专项轮核实后再写——避免时间线页与 act47 页的事实重复维护；③转场锚点跳转靠 html scroll-behavior:smooth + scroll-margin-top，reduced-motion 已有全局降级，无需额外脚本。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 
