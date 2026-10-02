@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 16 / completed`
-- 下一轮：**R17**（QA 卷一：console 零错、站内零断链、typo 扫描、对比度实测、file:// 直开验证）
-- 当前版本：`v0.17.0-R16`
+- 当前状态：**施工中** `current_round = 17 / completed`
+- 下一轮：**R18**（QA 卷二：多视口截图全页审查、溢出/遮挡排查）
+- 当前版本：`v0.18.0-R17`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -31,7 +31,7 @@
 | R14 | about 编辑部 + 页脚收口 | ✅ completed（自动化 R14，2026-10-03） |
 | R15 | 移动端与可达性 | ✅ completed（自动化 R15，2026-10-03） |
 | R16 | 内容增厚卷 | ✅ completed（自动化 R16，2026-10-03） |
-| R17 | QA 一（console/断链/typo/对比度/file://） | ⬜ not_started |
+| R17 | QA 一（console/断链/typo/对比度/file://） | ✅ completed（自动化 R17，2026-10-03） |
 | R18 | QA 二（多视口截图审查） | ⬜ not_started |
 | R19 | 终验 + 事实抽查 20 条 | ⬜ not_started |
 | R20 | 收官 v1.0.0 + RELEASE.md | ⬜ not_started |
@@ -147,8 +147,17 @@
 - **自测**：八卷 CJK 计数脚本全过 2500 线（多波微调至全绿）；英文残留扫描仅剩专名；十页 smoke 全 PASS；版本十页同步 v0.17.0-R16。
 - **坑**：①版本史段落里的字面版本号被批量替换第三次吃掉（R15 记过仍复犯）——已手工修正为"轮次+描述"式写法并把本条升级为铁律：**about.html 版本史段落永远不写可被全局替换的字面版本号，或批量脚本必须排除 about.html 的该段落**；②扩写新事实（91→88 演变、坦伯利价格、量刑日视频出席）全部先 WebSearch 再落笔，底座外数字零容忍；③写作时英文残留（real/freedom/major party/Entertainment）两轮 grep 自查清零——中文写作纪律的 grep 检查应紧随每波扩写。
 
+### R17（自动化轮 automation-79a585bc，2026-10-03 07:24-07:38）✅
+- **产出**：QA 工具两件——`tools/qa-links.mjs`（10 页 href/src 全量解析→本地存在性+外链图片清点）与 `tools/typo-scan.mjs`（术语一致性+错字模式+英文残留白名单复核，可持续复跑）。**QA 结果全绿**：①断链 PASS（零断链、零外链图片）；②typo PASS（修掉 5 处中英混排真实残留：act47"暂时 setback"→受挫、stage"competing 商业任务"→比拼真实商业任务、"signature 系列"→同名系列、"lifetime 累计"→累计、timeline"housing 热潮"→住房热潮；术语"哈里斯/万斯/里根/弹劾/账单"全站一致，"川普"仅存于刊名释义）；③对比度复测 51/51 PASS（R15 审计器复跑）；④console 零 error：十页 smoke 全 PASS（file:// 直开验证内含于 smoke 的 file:// 加载方式）；⑤英文残留人工复核清单全部为引语原文/官方专名/人名（Vucci/Mills/Crooks/Comperatore/Wharton 等）。
+- **扫描器自身修正**：①缺 import join/ROOT（两连 ReferenceError）；②正文提取加空白归一化（品牌换行产生双空格误报）；③"？？？"豁免（covfefe 补刀原话标点）。
+- **永久修复**：about.html 版本史段落**不再含任何字面版本号**（末条改"当前版本以页脚标注为准"）——三度被批量替换误吃的坑就此根除（R15 记录的坑第三次复犯后升级处理）。
+- **自测**：qa-links PASS、typo-scan PASS、audit-a11y 51/51 PASS、十页 smoke PASS；版本十页同步 v0.18.0-R17（about 仅 meta+页脚 2 处正确位）。
+- **坑**：①typo 扫描器首跑连吃两个 ReferenceError（import 不全）——新工具写完先跑再入库；②正则扫描的正文提取必须先做空白归一化，否则标记换行会制造海量假阳性；③引语页里的原话标点（？？？）和引语原文（英文全句）都是合法"异常"，扫描器要有豁免清单并注明理由。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 
