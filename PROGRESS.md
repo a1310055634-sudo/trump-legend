@@ -1,10 +1,10 @@
 # 川流不息 · 特朗普传奇站 — 建设账本
 
 - 项目根：`D:\vibe coding\trump-legend`
-- 任务书：`PROMPT.md`（每轮开工前必读）
-- 当前状态：**施工中** `current_round = 1 / completed`
+- 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
+- 当前状态：**施工中** `current_round = 1b / completed`
 - 下一轮：**R02**（timeline.html 上卷）
-- 当前版本：`v0.1.0-R01`
+- 当前版本：`v0.2.0-R01b`
 - 驱动方式：定时任务每 25 分钟一轮；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -14,7 +14,8 @@
 
 | 轮 | 内容 | 状态 |
 |---|---|---|
-| R01 | 骨架+设计系统+首页封面 | ✅ completed（主会话 2026-10-03） |
+| R01 | 骨架+漫画设计系统+首页封面（已被 R01b 替换） | ✅ completed（主会话 2026-10-03） |
+| R01b | **改版**：金黑奢华设计系统+真人照片 10 张+首页照片化重制 | ✅ completed（主会话 2026-10-03） |
 | R02 | timeline 上卷 1946-1987 + index 目录卡解锁 | ⬜ not_started |
 | R03 | timeline 下卷 1988-2026 + 时间轴交互 | ⬜ not_started |
 | R04 | empire 商业帝国 | ⬜ not_started |
@@ -47,6 +48,19 @@
 - 坑与约定：目录卡解锁规则=轮次建好页面后把 `<a class="chapter-card" data-locked>` 换成真 href（R02 起随建随解锁）；页脚版本从 meta 读取，升版时两处一起改。
 - 自测：无头 Chrome 9341 冒烟通过（console 零 error，截图留档 `tools/shots/R01/`）；视觉验收两视口（1280/375）双 PASS。
 - **坑（后续轮必读）**：带 `.panel-reveal` 入场动效的元素初始 opacity:0，`Page.captureScreenshot(captureBeyondViewport)` 不会触发视口外元素的 IntersectionObserver——截图会拍成空白。`tools/smoke.mjs` 已内置修复：截图前强制全部 `.panel-reveal` 加 `.is-in` 并等 700ms 过渡。后续轮改版 smoke 脚本时不得删掉这一步。
+
+### R01b（主会话 2026-10-03）✅ —— 改版轮：真人照片 + 金黑奢华
+- **改版原因**：用户不认可漫画风，拍板「必须有特朗普真人照片」+「金黑奢华/国旗色点缀：特朗普大厦大理石鎏金质感、深色底、金色衬线大标题」。R01 漫画版全部替换。
+- **照片落地**：新建 `assets/photos/`，从 Wikimedia Commons 抓 10 张自由许可真人照片（7 张公有领域含 4 张美国政府作品、1 张 CC0、2 张 CC 署名），全本地引用零外链；逐张登记 `assets/photos/CREDITS.md`（含使用规则 5 条）。抓取脚本 `tools/fetch-photos.mjs`、元数据 `tools/photos-meta.json`、署名采集 `tools/collect-credits.mjs`。
+- **设计系统 v2**：`style.css` 全量重写——黑金令牌（--black 三级/--gold 三级/--flag-red/blue 点缀）、金渐变衬线大标题 `.gold-text`（Georgia+宋体栈）、金色画框 `.figure--frame`（双层线框+对角角饰）、国旗彩条 `.flagbar`、大理石颗粒与云纹（SVG feTurbulence data URI 自绘）、`.chapter-card` 照片卡（锁定态灰度+红章）、`.quote` 引语卡、`.stat-strip` 金衬线数字条。
+- **首页重制**：hero 左文右图（2025 官方肖像金框+credit）、新加坡峰会宽幅照、英文引语卡、九卷目录卡每卡配真实历史照片（编辑部卡用鎏金「川」字 monogram）、金色数字速览、双 flagbar 收边。全部 9 卡仍 data-locked（页面未建）。
+- **自测**：smoke.mjs 升级（+照片 naturalWidth 全加载断言、总数 10、版本 v0.2.0-R01b）→ PASS：console 零 error、10 照片全载、9 卡/6 数字/TBC/页脚齐；CDP 探针核查三个 h1 计算色=象牙白 rgb(242,236,220)、金渐变 background-clip 生效、无横向溢出；双视口截图留档 `tools/shots/R01b/` 并逐项目检通过。
+- **坑（后续轮必读）**：
+  1. Commons 批量抓图会被**限流静默失败**（API 错误被 catch 吞掉变"无候选"）——重跑即可；**精确文件名优先于搜索**（搜索曾抓到"特朗普模仿者"合照和就职门票图）。
+  2. Commons API `iiurlwidth: 0` 会报错——传了就整查询失败，勿传 0。
+  3. 本地静态站**禁用 `loading="lazy"`**：首屏外懒加载图不真实加载，冒烟 naturalWidth 断言和 captureBeyondViewport 全页截图都会挂；图片总量才 ~2MB，直接 eager。
+  4. Unicode 文件名（DPRK–USA 带 en-dash）在 API 精确标题查询没问题，encodeURIComponent 走 Special:FilePath 也稳。
+  5. 截图缩略图上衬线大标题会"看起来发暗金"，是缩放观感；判定颜色必须 CDP getComputedStyle 实测（`tools/probe-colors.mjs` 可复用）。
 
 ### 待办池（不占轮次，随手可清）
 - 无

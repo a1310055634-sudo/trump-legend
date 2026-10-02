@@ -65,12 +65,15 @@ try {
 
   const checks = await send("Runtime.evaluate", { returnByValue: true, expression: `(() => {
     const q = s => document.querySelector(s);
+    const imgs = [...document.querySelectorAll('img')];
     return {
       title: document.title,
-      coverTitle: !!q(".cover__title"),
+      coverTitle: !!q(".hero__title"),
       issueTag: q(".issue-tag")?.textContent || "",
       chapterCards: document.querySelectorAll(".chapter-card").length,
       lockedCards: document.querySelectorAll(".chapter-card[data-locked]").length,
+      photosTotal: imgs.length,
+      photosBroken: imgs.filter(i => !i.complete || i.naturalWidth === 0).length,
       brokenLinks: [...document.querySelectorAll('a[href]')].filter(a => !a.href.startsWith("http") && !a.href.startsWith("file")).length,
       stats: document.querySelectorAll(".stat").length,
       tbc: !!q(".tbc"),
@@ -98,11 +101,13 @@ try {
   writeFileSync(join(ROOT, "tools", "shots", round, page.replace(/\.html$/, "") + "-375.png"), Buffer.from(shot2.data, "base64"));
 
   const hard = [];
-  if (!r.coverTitle) hard.push("缺少 .cover__title");
+  if (!r.coverTitle) hard.push("缺少 .hero__title");
   if (r.chapterCards !== 9) hard.push(`目录卡应为 9，实为 ${r.chapterCards}`);
   if (r.stats !== 6) hard.push(`数字速览应为 6，实为 ${r.stats}`);
   if (!r.tbc || !r.footer) hard.push("缺 TBC 或页脚");
-  if (r.version !== "v0.1.0-R01") hard.push(`版本戳异常: ${r.version}`);
+  if (r.version !== "v0.2.0-R01b") hard.push(`版本戳异常: ${r.version}`);
+  if (r.photosTotal !== 10) hard.push(`照片应为 10，实为 ${r.photosTotal}`);
+  if (r.photosBroken > 0) hard.push(`有 ${r.photosBroken} 张照片未加载成功`);
   if (errors.length) hard.push(`console ${errors.length} 条: ` + errors.slice(0, 3).join(" | "));
 
   console.log(errors.length ? "== console 记录 ==\n" + errors.join("\n") : "== console 零 error ==");

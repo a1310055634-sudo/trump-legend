@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="site-version" content="v0.1.0-R01">
-<meta name="description" content="川流不息 · THE TRUMP LEGEND —— 美式漫画笔法连载特朗普的人生传奇：从皇后区到白宫的两趟旅程。非官方致敬向同人站。">
+<meta name="site-version" content="v0.2.0-R01b">
+<meta name="description" content="川流不息 · THE TRUMP LEGEND —— 以真人照片与金黑特辑笔法连载特朗普的人生传奇：从皇后区到白宫的两趟旅程。非官方致敬向同人站。">
 <title>川流不息 · THE TRUMP LEGEND — 一场永不谢幕的人生大戏</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -28,85 +28,55 @@
   </div>
 </header>
 
-<!-- ================= 封面 ================= -->
-<section class="cover">
-  <div class="cover__halftone" aria-hidden="true"></div>
-  <div class="cover__inner">
-    <span class="cover__kicker">传奇特辑 · 真人真事</span>
-    <h1 class="cover__title">川流不息</h1>
-    <p class="cover__sub">一场永不谢幕的人生大戏</p>
-
-    <div class="cover__art" aria-hidden="true">
-      <svg viewBox="0 0 1080 320" role="img" aria-label="曼哈顿天际线与金色朝阳（漫画风封面插画）">
-        <defs>
-          <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
-            <circle cx="5" cy="5" r="1.6" fill="#191622" opacity="0.22"></circle>
-          </pattern>
-        </defs>
-        <!-- 金色朝阳 + 半调网点 -->
-        <circle cx="540" cy="150" r="132" fill="#ffc233"></circle>
-        <circle cx="540" cy="150" r="132" fill="url(#dots)"></circle>
-        <!-- 闪电 -->
-        <polygon points="240,18 302,18 268,86 304,86 206,182 236,104 200,104"
-                 fill="#ffc233" stroke="#191622" stroke-width="5" stroke-linejoin="round"></polygon>
-        <!-- 曼哈顿剪影 -->
-        <g fill="#191622">
-          <rect x="0" y="200" width="60" height="120"></rect>
-          <rect x="60" y="140" width="50" height="180"></rect>
-          <rect x="110" y="220" width="70" height="100"></rect>
-          <rect x="180" y="120" width="60" height="200"></rect>
-          <rect x="240" y="180" width="80" height="140"></rect>
-          <rect x="320" y="90" width="55" height="230"></rect>
-          <rect x="375" y="160" width="70" height="160"></rect>
-          <!-- 主塔（金色冠顶） -->
-          <rect x="445" y="60" width="90" height="260"></rect>
-          <rect x="475" y="34" width="30" height="26" fill="#ffc233"></rect>
-          <rect x="488" y="8" width="4" height="26" fill="#191622"></rect>
-          <rect x="535" y="130" width="60" height="190"></rect>
-          <rect x="595" y="170" width="75" height="150"></rect>
-          <rect x="670" y="80" width="55" height="240"></rect>
-          <rect x="725" y="190" width="65" height="130"></rect>
-          <rect x="790" y="120" width="80" height="200"></rect>
-          <rect x="870" y="160" width="60" height="160"></rect>
-          <rect x="930" y="110" width="75" height="210"></rect>
-          <rect x="1005" y="200" width="75" height="120"></rect>
-        </g>
-        <!-- 塔身窗点 -->
-        <g fill="#f6efdd" opacity="0.35">
-          <rect x="459" y="84" width="8" height="8"></rect><rect x="479" y="84" width="8" height="8"></rect><rect x="499" y="84" width="8" height="8"></rect><rect x="519" y="84" width="8" height="8"></rect>
-          <rect x="459" y="108" width="8" height="8"></rect><rect x="499" y="108" width="8" height="8"></rect>
-          <rect x="479" y="132" width="8" height="8"></rect><rect x="519" y="132" width="8" height="8"></rect>
-          <rect x="459" y="156" width="8" height="8"></rect><rect x="499" y="156" width="8" height="8"></rect>
-          <rect x="334" y="110" width="7" height="7"></rect><rect x="352" y="110" width="7" height="7"></rect>
-          <rect x="334" y="134" width="7" height="7"></rect><rect x="352" y="134" width="7" height="7"></rect>
-          <rect x="944" y="130" width="7" height="7"></rect><rect x="962" y="130" width="7" height="7"></rect>
-          <rect x="944" y="154" width="7" height="7"></rect><rect x="980" y="154" width="7" height="7"></rect>
-        </g>
-      </svg>
+<!-- ================= 封面 Hero（真人照片主导） ================= -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__text">
+      <span class="hero__kicker">The Trump Legend · 传奇特辑</span>
+      <h1 class="hero__title gold-text">川流不息</h1>
+      <p class="hero__sub">一场永不谢幕的人生大戏</p>
+      <p class="hero__lede">以真实影像与编辑部特辑的笔法，连载一个真实人物的八十年——继承者、大亨、坠落、翻身、顶流、素人总统、至暗、史诗翻盘，以及一卷尚未画完的"未完待续"。</p>
+      <div class="hero__meta" aria-hidden="true">
+        <span>创刊号 · 2026</span>
+        <span>总刊号 #45+47</span>
+        <span>九卷连载</span>
+      </div>
+    </div>
+    <div class="hero__photo">
+      <figure class="figure figure--frame">
+        <img src="assets/photos/hero-2025.jpg" alt="唐纳德·特朗普官方就任肖像（2025 年 1 月），深色西装、红色领带、美国国旗背景" width="864" height="1080">
+        <figcaption>官方就任肖像 · 2025 年 1 月 <span class="credit">｜摄影 Daniel Torok / 白宫 · 公有领域</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
+<hr class="flagbar" aria-hidden="true">
 
-<!-- ================= 导语 ================= -->
+<!-- ================= 正文 ================= -->
 <main class="container">
 
   <section class="page-head">
     <span class="volume">创刊号 · 总第 45+47 期</span>
     <h1>本刊启事</h1>
-    <p class="logline">以美式漫画的笔法，连载一个真实人物的八十年——所有格子里的故事，都发生在现实世界。</p>
+    <p class="logline">所有照片里的人，都真实活着；所有格子外的故事，都真实发生。</p>
   </section>
 
-  <section class="panel panel--tilt-l panel-reveal">
-    <span class="caption">旁白 · 开场白</span>
+  <section class="panel panel-reveal">
+    <span class="caption">编辑部 · 开场白</span>
     <p>1946 年夏天，纽约皇后区一个房产商的家里添了个男孩。谁能想到，这个从小就爱跟父亲较劲的少年，后来把自己的名字钉上了曼哈顿的天际线，钉进了每一台电视机，最后两次钉上了白宫的门牌。</p>
-    <p style="margin-top:12px">他破过产，也盖过大楼；输过选举，也赢回过白宫；进过法庭，也挨过子弹。这些事不需要任何渲染——<strong>这不是编出来的剧本，这是真实发生的传奇</strong>。本刊要做的，只是把它画给你看。</p>
+    <p>他破过产，也盖过大楼；输过选举，也赢回过白宫；进过法庭，也挨过子弹。这些事不需要任何渲染——<strong>这不是编出来的剧本，这是真实发生的传奇</strong>。本刊要做的，只是把它拍给你看。</p>
   </section>
 
-  <div class="panel panel--flash panel--tilt-r panel-reveal" style="margin-top:34px">
-    <div class="bubble">
-      <span class="bubble__who">编剧室</span>
-      起承转合都有了：继承者、大亨、坠落、翻身、顶流、素人总统、至暗、翻盘——以及一卷尚未画完的"未完待续"。往下翻，看看这一季的分卷目录。
-    </div>
+  <figure class="figure panel-reveal" style="margin-top:40px">
+    <img src="assets/photos/summit-2018.jpg" alt="2018 年 6 月新加坡会晤，特朗普与金正恩在红毯上握手">
+    <figcaption>2018 年 6 月 · 新加坡圣淘沙，他把"不可想象"变成了剧照 <span class="credit">｜摄影 Shealah Craighead / 白宫 · 公有领域</span></figcaption>
+  </figure>
+
+  <div class="panel panel-reveal" style="margin-top:40px">
+    <blockquote class="quote">
+      "My father was a builder. I build bigger — and I build taller."
+      <span class="quote__who">—— 本刊编辑部按：这句话你可以不同意，但很难说它不真实。往下滑，看这一季的分卷目录。</span>
+    </blockquote>
   </div>
 
   <!-- ================= 目录 ================= -->
@@ -118,74 +88,101 @@
   <div class="chapter-grid">
 
     <a class="chapter-card panel-reveal" data-locked>
+      <span class="chapter-card__photo"><img src="assets/photos/reagan-1987.jpg" alt="1987 年，特朗普在白宫与里根总统会面的档案照片"></span>
       <span class="chapter-card__lock">待连载</span>
-      <span class="chapter-card__vol">卷·01</span>
-      <h3>生平全录</h3>
-      <p>从皇后区到白宫的两趟旅程，一条时间线看完八十年。</p>
+      <span class="chapter-card__body">
+        <span class="chapter-card__vol">卷·01</span>
+        <h3>生平全录</h3>
+        <p>从皇后区到白宫的两趟旅程，一条时间线看完八十年。</p>
+      </span>
     </a>
 
     <a class="chapter-card panel-reveal" data-locked>
+      <span class="chapter-card__photo"><img src="assets/photos/trump-tower.jpg" alt="第五大道 725 号特朗普大厦金色大理石主入口"></span>
       <span class="chapter-card__lock">待连载</span>
-      <span class="chapter-card__vol">卷·02</span>
-      <h3>商业帝国</h3>
-      <p>大厦、赌场、航空与高尔夫；四次破产重组的过山车。</p>
+      <span class="chapter-card__body">
+        <span class="chapter-card__vol">卷·02</span>
+        <h3>商业帝国</h3>
+        <p>大厦、赌场、航空与高尔夫；四次破产重组的过山车。</p>
+      </span>
     </a>
 
     <a class="chapter-card panel-reveal" data-locked>
+      <span class="chapter-card__photo"><img src="assets/photos/walk-star.jpg" alt="好莱坞星光大道上的特朗普星章"></span>
       <span class="chapter-card__lock">待连载</span>
-      <span class="chapter-card__vol">卷·03</span>
-      <h3>舞台</h3>
-      <p>《交易的艺术》、真人秀与 "You're fired!"——名字如何变成生意。</p>
+      <span class="chapter-card__body">
+        <span class="chapter-card__vol">卷·03</span>
+        <h3>舞台</h3>
+        <p>《交易的艺术》、真人秀与 "You're fired!"——名字如何变成生意。</p>
+      </span>
     </a>
 
     <a class="chapter-card panel-reveal" data-locked>
+      <span class="chapter-card__photo"><img src="assets/photos/portrait-2017.jpg" alt="2017 年官方总统肖像，深蓝领带、星条旗背景"></span>
       <span class="chapter-card__lock">待连载</span>
-      <span class="chapter-card__vol">卷·04</span>
-      <h3>白宫岁月</h3>
-      <p>政治素人入主华盛顿：第一任期的成就与风暴。</p>
+      <span class="chapter-card__body">
+        <span class="chapter-card__vol">卷·04</span>
+        <h3>白宫岁月</h3>
+        <p>政治素人入主华盛顿：第一任期的成就与风暴。</p>
+      </span>
     </a>
 
     <a class="chapter-card panel-reveal" data-locked>
+      <span class="chapter-card__photo"><img src="assets/photos/farewell-2021.jpg" alt="2021 年 1 月 20 日，特朗普与第一夫人乘海军陆战队一号离开白宫"></span>
       <span class="chapter-card__lock">待连载</span>
-      <span class="chapter-card__vol">卷·05</span>
-      <h3>至暗时刻</h3>
-      <p>败选、弹劾、法庭与子弹——人生最深的谷底。</p>
+      <span class="chapter-card__body">
+        <span class="chapter-card__vol">卷·05</span>
+        <h3>至暗时刻</h3>
+        <p>败选、弹劾、法庭与子弹——人生最深的谷底。</p>
+      </span>
     </a>
 
     <a class="chapter-card panel-reveal" data-locked>
+      <span class="chapter-card__photo"><img src="assets/photos/rally-2024.jpg" alt="2024 年 7 月 13 日，宾夕法尼亚州巴特勒集会现场"></span>
       <span class="chapter-card__lock">待连载</span>
-      <span class="chapter-card__vol">卷·06</span>
-      <h3>翻盘</h3>
-      <p>巴特勒的子弹、振臂一呼与 312 张选举人票。</p>
+      <span class="chapter-card__body">
+        <span class="chapter-card__vol">卷·06</span>
+        <h3>翻盘</h3>
+        <p>巴特勒的子弹、振臂一呼与 312 张选举人票。</p>
+      </span>
     </a>
 
     <a class="chapter-card panel-reveal" data-locked>
+      <span class="chapter-card__photo"><img src="assets/photos/inaug-2025.jpg" alt="2025 年 1 月 20 日，特朗普宣誓就任第 47 任总统"></span>
       <span class="chapter-card__lock">待连载</span>
-      <span class="chapter-card__vol">卷·07</span>
-      <h3>第二任期</h3>
-      <p>关税、加沙、伊朗与"未完待续"的第 47 任。</p>
+      <span class="chapter-card__body">
+        <span class="chapter-card__vol">卷·07</span>
+        <h3>第二任期</h3>
+        <p>关税、加沙、伊朗与"未完待续"的第 47 任。</p>
+      </span>
     </a>
 
     <a class="chapter-card panel-reveal" data-locked>
+      <span class="chapter-card__photo"><img src="assets/photos/speech-2016.jpg" alt="2016 年竞选集会上，特朗普在演讲台后向支持者讲话"></span>
       <span class="chapter-card__lock">待连载</span>
-      <span class="chapter-card__vol">卷·08</span>
-      <h3>台词馆</h3>
-      <p>那些年他亲口说过的话：原文、中译与出处。</p>
+      <span class="chapter-card__body">
+        <span class="chapter-card__vol">卷·08</span>
+        <h3>台词馆</h3>
+        <p>那些年他亲口说过的话：原文、中译与出处。</p>
+      </span>
     </a>
 
-    <a class="chapter-card panel-reveal" data-locked>
+    <a class="chapter-card chapter-card--mono panel-reveal" data-locked>
+      <span class="chapter-card__photo"><span class="chapter-card__glyph" aria-hidden="true">川</span></span>
       <span class="chapter-card__lock">待连载</span>
-      <span class="chapter-card__vol">编辑部</span>
-      <h3>关于本刊</h3>
-      <p>编辑手记：口径、事实纪律与致敬声明。</p>
+      <span class="chapter-card__body">
+        <span class="chapter-card__vol">编辑部</span>
+        <h3>关于本刊</h3>
+        <p>编辑手记：口径、事实纪律与致敬声明。</p>
+      </span>
     </a>
 
   </div>
 
-  <div class="zigzag" aria-hidden="true"></div>
+  <hr class="goldrule" aria-hidden="true">
 
   <!-- ================= 数字速览 ================= -->
-  <section class="page-head" style="padding-top:0">
+  <section class="page-head" style="margin-top:0">
     <span class="volume">档案速览</span>
     <h1 style="font-size:clamp(28px,4.5vw,40px)">用数字读他</h1>
   </section>
@@ -201,20 +198,24 @@
 
   <!-- ================= 未完待续 ================= -->
   <div class="tbc">
-    <div class="tbc__mark">TO BE CONTINUED…</div>
+    <div class="tbc__mark gold-text">TO BE CONTINUED…</div>
     <p class="tbc__next">下期预告 · 卷·01《生平全录》：1946 年皇后区的那个夏天，故事从一间租来的房子开始。</p>
   </div>
 
 </main>
 
 <!-- ================= 页脚 ================= -->
+<hr class="flagbar" aria-hidden="true">
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__brand">川流不息 · THE TRUMP LEGEND</div>
     <p class="footer__disclaim">
-      本站为非官方的致敬向同人作品，以美式漫画笔法连载。传主为真实公众人物，全部内容依据公开报道与公开记录整理；传奇口吻仅用于叙事结构，不代表编辑立场，争议话题均以"双方说法"并陈。引语均注明出处，如与原始出处有出入，以原始出处为准。
+      本站为非官方的致敬向同人作品，以真实影像与编辑部特辑笔法连载。传主为真实公众人物，全部内容依据公开报道与公开记录整理；传奇口吻仅用于叙事结构，不代表编辑立场，争议话题均以"双方说法"并陈。引语均注明出处，如与原始出处有出入，以原始出处为准。
     </p>
-    <p class="footer__meta">© 2026 川流不息编辑部 · ISSUE #45+47 · 版本 <span id="site-version">v0.1.0-R01</span> · 2026-10-03</p>
+    <p class="footer__disclaim">
+      站内照片均取自维基共享资源的自由许可素材（公有领域 / CC0 / CC BY / CC BY-SA），全部本地引用；作者与许可逐张登记于 <a href="assets/photos/CREDITS.md">assets/photos/CREDITS.md</a>。
+    </p>
+    <p class="footer__meta">© 2026 川流不息编辑部 · ISSUE #45+47 · 版本 <span id="site-version">v0.2.0-R01b</span> · 2026-10-03</p>
   </div>
 </footer>
 
