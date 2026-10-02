@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 12 / completed`
-- 下一轮：**R13**（交互卷：滚动入场编排、章节进度条、时间线导航增强、back-to-top）
-- 当前版本：`v0.13.0-R12`
+- 当前状态：**施工中** `current_round = 13 / completed`
+- 下一轮：**R14**（about.html 编辑部页 + 全站页脚收口）
+- 当前版本：`v0.14.0-R13`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -27,7 +27,7 @@
 | R10 | quotes 台词馆 | ✅ completed（自动化 R10，2026-10-03） |
 | R11 | 视觉卷一：各卷刊头照片横幅 .cover-art | ✅ completed（自动化 R11，2026-10-03） |
 | R12 | 视觉卷二：纹理系统化 | ✅ completed（自动化 R12，2026-10-03） |
-| R13 | 交互卷 | ⬜ not_started |
+| R13 | 交互卷 | ✅ completed（自动化 R13，2026-10-03） |
 | R14 | about 编辑部 + 页脚收口 | ⬜ not_started |
 | R15 | 移动端与可达性 | ⬜ not_started |
 | R16 | 内容增厚卷 | ⬜ not_started |
@@ -127,8 +127,15 @@
 - **自测**：先跑 CSS 冒烟（timeline/index 双 PASS）再升版本，版本后复验 act47/quotes/downfall 三页 PASS——共五页冒烟零 error、照片全载、版本一致；1280 截图目检（首页数字条云纹效果确认，tools/shots/R12/）。
 - **坑**：①本轮流程顺序修正了 R11 的坑——脚本批量改版本放最后、纯 CSS 阶段先冒烟，全程零 Edit 追踪冲突；②纹理透明度已经焊死在 SVG 的 alpha 通道里，页面层不要再用 opacity 叠加（双层衰减会几乎不可见）。
 
+### R13（自动化轮 automation-79a585bc，2026-10-03 06:03-06:15）✅
+- **产出**（main.js+style.css 双文件轮，零 HTML 内容改动）：①阅读进度条——顶部 3px 金线 #progress-bar，rAF 节流随滚动，JS 注入九页通用；②back-to-top——44px 触控目标（预铺 R15），滚过 600px 浮现，reduced-motion 时 scroll behavior=auto，键盘可达（button+aria-label）；③时代导航滚动高亮——timeline 的 .tl-rail 随滚动把当前小节年份点亮（.is-active 金底反白，IntersectionObserver -25%/-60% 视窗带）；④入场错峰编排——同批进入视口的 .panel-reveal 按 70ms 级联（封顶 280ms），transitionend 后清除内联延迟（不污染 hover 过渡）；⑤顺手修 R02 起潜伏的过渡覆盖 bug——.chapter-card.panel-reveal 合并 transition（hover 的 border/box-shadow 不再瞬变）。CSS 新增 #progress-bar/.back-top/.tl-rail a.is-active/合并过渡+reduced-motion 补丁；smoke.mjs 等待窗 700→1600ms（适配错峰）。
+- **自测**：新写 tools/probe-interactions.mjs（CDP 交互探针）——timeline：进度条 40% 滚动位=35%宽、back-top 浮现/点击归零并隐藏、时代导航高亮"1987 出版"；quotes（无 rail 页）：进度条 38.8%、back-top 正常、no-rail 正确 no-op——双页 PASS；smoke 九页全 PASS（console 零 error）。版本九页批量 v0.14.0-R13。
+- **坑**：①全页截图不显示进度条/back-top（截在 scrollY=0，本就该隐藏）——JS 交互行为必须用行为探针断言而非截图；②错峰延迟封顶必须 < smoke 等待窗，否则强制入场后截图会拍到半透明元素；③transition 属性不合并——两个类各自定义 transition 时后者整体覆盖前者，多类组件要显式写合并清单。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 

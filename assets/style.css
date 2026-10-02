@@ -358,10 +358,36 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85);
 }
 
+/* ---------------- 交互卷（R13：进度条/返回顶部/时代导航高亮/卡片过渡合并） ---------------- */
+#progress-bar {
+  position: fixed; top: 0; left: 0; z-index: 100;
+  height: 3px; width: 0;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-bright));
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.55);
+  pointer-events: none;
+}
+.back-top {
+  position: fixed; right: 18px; bottom: 18px; z-index: 90;
+  width: 44px; height: 44px; border-radius: 3px;
+  background: rgba(19, 19, 24, 0.92); color: var(--gold);
+  border: 1px solid var(--gold-line); cursor: pointer;
+  font: 400 18px/1 var(--font-body);
+  opacity: 0; transform: translateY(8px); pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease, border-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.back-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.back-top:hover, .back-top:focus-visible { color: var(--gold-bright); border-color: var(--gold); }
+.tl-rail a.is-active { color: #141414; background: var(--gold); border-color: var(--gold); }
+/* 目录卡同时挂 panel-reveal 与 chapter-card 两个过渡定义，合并为一条（hover 不再瞬变） */
+.chapter-card.panel-reveal {
+  transition: opacity 0.7s ease, transform 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
+}
+
 /* ---------------- 动效降级 ---------------- */
 @media (prefers-reduced-motion: reduce) {
   .panel-reveal { opacity: 1; transform: none; transition: none; }
-  .chapter-card, .chapter-card__photo img { transition: none; }
+  .chapter-card, .chapter-card__photo img, .chapter-card.panel-reveal { transition: none; }
   a.chapter-card:hover { transform: none; }
   a.chapter-card:hover .chapter-card__photo img { transform: none; }
 }

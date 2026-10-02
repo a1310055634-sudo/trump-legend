@@ -92,8 +92,9 @@ try {
 
   mkdirSync(join(ROOT, "tools", "shots", round), { recursive: true });
   // 截图前强制全部入场元素就位并等过渡结束（captureBeyondViewport 不触发下方 IO）
+  // R13 起入场带同批错峰（≤280ms 延迟），等待窗口相应放宽到 1600ms
   await send("Runtime.evaluate", { expression: `document.querySelectorAll('.panel-reveal').forEach(n => n.classList.add('is-in'))` });
-  await sleep(700);
+  await sleep(1600);
   const shot1 = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: true });
   writeFileSync(join(ROOT, "tools", "shots", round, page.replace(/\.html$/, "") + "-1280.png"), Buffer.from(shot1.data, "base64"));
 
