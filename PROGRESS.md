@@ -67,3 +67,7 @@
 
 ### 遗留问题
 - 无
+
+### 审计记录（2026-10-03 02:35 主会话）
+- 旧定时任务 automation-d9dd6bef 已由用户从 Automations 页删除（它此前每次触发都被服务商内容过滤 1301 拦死，从未真正施工）；新任务 automation-79a585bc 已注册（精简提示词，一切以 PROMPT.md 现文为准），02:59 起每 25 分钟一轮。
+- **事故**：02:28–02:35 之间 PROMPT.md 与 PROGRESS.md 曾被不明来源删除（非本会话所为；日志显示该时段另一会话 sess_1244ffed 在执行工具调用）。两文件已从 git HEAD 原样恢复（git status 干净）。后续轮若发现任务书/账本缺失：先 `git restore PROMPT.md PROGRESS.md` 再动手，勿自行重建。
