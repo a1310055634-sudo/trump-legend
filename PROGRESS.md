@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 11 / completed`
-- 下一轮：**R12**（视觉卷二：金黑纹理系统化）
-- 当前版本：`v0.12.0-R11`
+- 当前状态：**施工中** `current_round = 12 / completed`
+- 下一轮：**R13**（交互卷：滚动入场编排、章节进度条、时间线导航增强、back-to-top）
+- 当前版本：`v0.13.0-R12`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -26,7 +26,7 @@
 | R09 | act47 第二任期（须联网复核） | ✅ completed（自动化 R09，2026-10-03） |
 | R10 | quotes 台词馆 | ✅ completed（自动化 R10，2026-10-03） |
 | R11 | 视觉卷一：各卷刊头照片横幅 .cover-art | ✅ completed（自动化 R11，2026-10-03） |
-| R12 | 视觉卷二：纹理系统化 | ⬜ not_started |
+| R12 | 视觉卷二：纹理系统化 | ✅ completed（自动化 R12，2026-10-03） |
 | R13 | 交互卷 | ⬜ not_started |
 | R14 | about 编辑部 + 页脚收口 | ⬜ not_started |
 | R15 | 移动端与可达性 | ⬜ not_started |
@@ -122,8 +122,15 @@
 - **自测**：smoke 八张内容页全 PASS（console 零 error、照片全载、版本一致、零断链）；1280 截图目检通过（timeline 卷横幅做旧效果+角标可读性确认，tools/shots/R11/）。
 - **坑（复犯警示）**：①上轮批量版本脚本改过的文件，本轮 Edit 前必须先 Read 刷新追踪——本轮 8 个 Edit 有 7 个因追踪过期被拒（quotes.html 意外存活），grep 定位+小窗 Read 后全部补齐；这个坑已在 R09 记过，仍是复犯率最高的一号坑。
 
+### R12（自动化轮 automation-79a585bc，2026-10-03 05:42-05:50）✅
+- **产出**（纯 CSS 轮，HTML 零内容改动）：①纹理单源化——`--tex-grain`（金噪点）与 `--tex-veins`（大理石云纹）收敛为 :root 令牌，全站唯一定义处；②body 的颗粒从固定伪元素改为背景层（视觉等效、少一层合成）；③.hero 云纹改令牌引用；④云纹延展到 .stat-strip 与 .tbc（多层 background：纹理层 cover no-repeat 压在渐变上，透明度焊死在 SVG 内无需额外控制）。装饰一致性审计：九页 flagbar+goldrule 齐备 ✓。版本九页同步 v0.13.0-R12（批量脚本带计数）。
+- **自测**：先跑 CSS 冒烟（timeline/index 双 PASS）再升版本，版本后复验 act47/quotes/downfall 三页 PASS——共五页冒烟零 error、照片全载、版本一致；1280 截图目检（首页数字条云纹效果确认，tools/shots/R12/）。
+- **坑**：①本轮流程顺序修正了 R11 的坑——脚本批量改版本放最后、纯 CSS 阶段先冒烟，全程零 Edit 追踪冲突；②纹理透明度已经焊死在 SVG 的 alpha 通道里，页面层不要再用 opacity 叠加（双层衰减会几乎不可见）。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 

@@ -32,6 +32,10 @@
   /* ---- 版式 ---- */
   --w-container: 1080px;
   --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px; --sp-6: 32px; --sp-8: 48px; --sp-10: 72px;
+
+  /* ---- 纹理令牌（R12 系统化：全站唯一定义处，改纹理只改这里） ---- */
+  --tex-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.83 0 0 0 0 0.69 0 0 0 0 0.28 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E");
+  --tex-veins: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='500'%3E%3Cfilter id='v'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.02' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.72 0 0 0 0 0.4 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='900' height='500' filter='url(%23v)'/%3E%3C/svg%3E");
 }
 
 /* ---------------- 基础 ---------------- */
@@ -46,18 +50,14 @@ body {
   background:
     radial-gradient(1100px 760px at 88% -8%, rgba(212, 175, 55, 0.07), transparent 62%),
     radial-gradient(900px 680px at -8% 34%, rgba(61, 107, 179, 0.05), transparent 56%),
+    var(--tex-grain),
     linear-gradient(168deg, #101016 0%, #0b0b0f 46%, #0d0c11 100%);
   background-attachment: fixed;
   color: var(--ink);
   font: 400 16px/1.85 var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
-/* 大理石颗粒（极淡金噪点，自绘 SVG data URI，非外链位图） */
-body::before {
-  content: "";
-  position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.83 0 0 0 0 0.69 0 0 0 0 0.28 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+/* 大理石颗粒改为令牌层，不再是独立伪元素（R12） */
 
 a { color: var(--gold-bright); text-decoration: none; }
 a:hover { color: #f6d87f; text-decoration: underline; text-underline-offset: 4px; }
@@ -117,9 +117,9 @@ img { max-width: 100%; display: block; }
 
 /* ---------------- 封面 Hero ---------------- */
 .hero { position: relative; overflow: hidden; }
-.hero::before { /* 大理石云纹（自绘） */
+.hero::before { /* 大理石云纹（令牌引用，R12 系统化） */
   content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.55;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='500'%3E%3Cfilter id='v'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.02' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.72 0 0 0 0 0.4 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='900' height='500' filter='url(%23v)'/%3E%3C/svg%3E");
+  background-image: var(--tex-veins);
   background-size: cover;
 }
 .hero::after { /* 肖像后方金色辉光 */
@@ -259,7 +259,9 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
 /* ---------------- 数字速览 ---------------- */
 .stat-strip {
   display: grid; grid-template-columns: repeat(6, 1fr);
-  background: linear-gradient(180deg, var(--black-2), #0f0f13);
+  background:
+    var(--tex-veins) center / cover no-repeat,
+    linear-gradient(180deg, var(--black-2), #0f0f13);
   border: 1px solid var(--line); border-radius: 3px; overflow: hidden;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.42);
 }
@@ -275,7 +277,9 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
 .tbc {
   margin-top: var(--sp-10); padding: var(--sp-8) var(--sp-5); text-align: center;
   border: 1px solid var(--gold-line); border-radius: 3px; outline: 1px solid var(--line); outline-offset: 6px;
-  background: linear-gradient(180deg, #121117, #0d0d11);
+  background:
+    var(--tex-veins) center / cover no-repeat,
+    linear-gradient(180deg, #121117, #0d0d11);
 }
 .tbc__mark {
   font-family: var(--font-display); font-style: italic; font-weight: 700;
