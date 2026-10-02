@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 9 / completed`
-- 下一轮：**R10**（quotes.html 卷·08 台词馆，≥14 条已核语录）
-- 当前版本：`v0.10.0-R09`
+- 当前状态：**施工中** `current_round = 10 / completed`
+- 下一轮：**R11**（视觉卷一：各卷刊头照片横幅 .cover-art 组件）
+- 当前版本：`v0.11.0-R10`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -24,7 +24,7 @@
 | R07 | downfall 至暗时刻 | ✅ completed（自动化 R07，2026-10-03） |
 | R08 | comeback 翻盘 | ✅ completed（自动化 R08，2026-10-03） |
 | R09 | act47 第二任期（须联网复核） | ✅ completed（自动化 R09，2026-10-03） |
-| R10 | quotes 台词馆 | ⬜ not_started |
+| R10 | quotes 台词馆 | ✅ completed（自动化 R10，2026-10-03） |
 | R11 | 视觉卷一：各卷 SVG 刊头 | ⬜ not_started |
 | R12 | 视觉卷二：纹理系统化 | ⬜ not_started |
 | R13 | 交互卷 | ⬜ not_started |
@@ -111,8 +111,16 @@
 - **自测**：smoke 八页全 PASS（console 零 error、照片全载、版本一致、零断链、lockedCards 9→2）；1280 截图目检通过（tools/shots/R09/）。
 - **坑**：①初稿混入四处中英混杂词（rolled/flattop/overnight/disarmament/only once）——Write 完必须 grep 自查英文残留；②批量版本替换用脚本时 Edit 工具的文件追踪会失效，先跑脚本再做 Edit（本轮先脚本后 Edit，撞了一次重读恢复）；③"未完待续"卷的核验基准日要写在页面上（2026-10-03），让时效边界对读者诚实。
 
+### R10（自动化轮 automation-79a585bc，2026-10-03 05:02-05:12）✅
+- **产出**：新建 `quotes.html`（卷·08 台词馆）：收录标准声明（可核验+日期场合+编辑部译+争议附语境）+ **四个展室 17 条已核语录**——上台之前（修墙宣言 2015-06-16/第五大道开枪 2016-01-23 康瑟尔布拉夫斯/Access Hollywood 2005 录音 2016-10-07 公开【克制引用核心句】/I alone can fix it 2016-07-21 RNC）、白宫一期（American carnage 就职演说/covfefe 2017-05-31 推文含补刀/假新闻敌人 2017-02-17/没人知道医保这么复杂 2017-02-27/两边都有好人 2017-08-15【附语境双写】/非常稳定的天才 2018-01-06 回应《烈焰与怒火》/我完全不担责 2020-03-13/It is what it is 2020-08-03 Axios）、法庭与子弹（eating the dogs 2024-09-10 ABC 辩论含主持人当场核查/Fight×3 2024-07-13）、第二任期（黄金时代 2025-01-20 就职开篇/Liberation Day 2025-04-02）+ 馆后记（TO BE CONTINUED 梗回扣）。照片复用 speech-2016（PD 标注订正：Gage Skidmore CC BY-SA 2.0）。解锁 index 卷·08 卡（最后一张内容卡）+导航；版本九页同步 v0.11.0-R10（批量脚本）。
+- **事实核实**：两条 WebSearch 批次逐条核到原文与日期（covfefe 推文文本/稳定天才推文全文背景/第五大道原话与地点/RNC 句/American carnage 官方档案文本/Axios 上下文/国情咨询句/金句辩论原句含主持人核查/fine people 原话与争议双方），全部多源一致；"假新闻敌人""没人知道医保复杂""修墙宣言"为极广泛公开记录的成名句（日期均为标准记载）。
+- **自测**：smoke 九页全 PASS（console 零 error、照片全载、版本一致、零断链、lockedCards 9→1 仅剩编辑部）；1280 截图目检通过（tools/shots/R10/）。
+- **坑**：①meta description 属性里嵌半角双引号会截断属性——含引号的描述改用「」；②争议引语（Access Hollywood/fine people）的写法=核心句+语境+双方说法，不回避也不渲染；③顺带发现 R01 时 speech-2016 在 R09 页脚图注曾写"PD"是错的（实为 CC BY-SA 2.0）——R05 已按正确署名执行，此处的教训是：图注署名要与 CREDITS.md 对表核验。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 
