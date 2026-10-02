@@ -18,6 +18,7 @@
 | `commodore-hotel.jpg` | [Hotel Commodore, New York City, RP-F-2007-140-46-4.jpg](https://commons.wikimedia.org/wiki/File:Hotel_Commodore,_New_York_City,_RP-F-2007-140-46-4.jpg) | 荷兰国立博物馆（Rijksmuseum） | CC0 | 改建君悦前的 Commodore 酒店历史照，timeline.html 卷·01 用 |
 | `plaza-1988.jpg` | [5 Av Apr 2024 107.jpg](https://commons.wikimedia.org/wiki/File:5_Av_Apr_2024_107.jpg) | Epicgenius | CC BY-SA 4.0 | 广场酒店（第五大道现貌），empire.html 卷·02 用；须署名、同方式共享 |
 | `taj-1990.jpg` | [Boardwalk at Trump Taj Mahal, Atlantic City, 2007.jpg](https://commons.wikimedia.org/wiki/File:Boardwalk_at_Trump_Taj_Mahal,_Atlantic_City,_2007.jpg) | DimiTalen | CC0 | 泰姬陵赌场（木栈道视角），empire.html 卷·02 用 |
+| `mugshot-2023.jpg` | [Donald Trump mugshot.jpg](https://commons.wikimedia.org/wiki/File:Donald_Trump_mugshot.jpg) | 富尔顿县治安官办公室（佐治亚州政府作品） | Public domain（美国政府作品） | 2023-08 富尔顿县在案照，downfall.html 卷·05 用 |
 
 ## 使用规则（后续轮次遵守）
 
