@@ -2,9 +2,9 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v2 金黑特辑版**，2026-10-03 用户拍板改版）
-- 当前状态：**施工中** `current_round = 4 / completed`
-- 下一轮：**R05**（stage.html 舞台）
-- 当前版本：`v0.5.0-R04`
+- 当前状态：**施工中** `current_round = 5 / completed`
+- 下一轮：**R06**（whitehouse.html 白宫岁月）
+- 当前版本：`v0.6.0-R05`
 - 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
@@ -19,7 +19,7 @@
 | R02 | timeline 上卷 1946-1987 + index 目录卡解锁 | ✅ completed（自动化 R02，2026-10-03） |
 | R03 | timeline 下卷 1988-2026 + 时间轴交互 | ✅ completed（自动化 R03，2026-10-03） |
 | R04 | empire 商业帝国 | ✅ completed（自动化 R04，2026-10-03） |
-| R05 | stage 舞台 | ⬜ not_started |
+| R05 | stage 舞台 | ✅ completed（自动化 R05，2026-10-03） |
 | R06 | whitehouse 第一任期 | ⬜ not_started |
 | R07 | downfall 至暗时刻 | ⬜ not_started |
 | R08 | comeback 翻盘 | ⬜ not_started |
@@ -81,8 +81,16 @@
 - **自测**：smoke empire/index/timeline 三页 PASS（console 零 error、4/10/8 照片全载、版本一致、零断链、lockedCards 9→7）；1280 截图目检通过（tools/shots/R04/，移动端沿用同构布局未复检——组件均为已验证复用）。
 - **坑**：①Trump Shuttle 飞机照 Commons 全是 GFDL 1.2 许可——不在本站四类白名单（PD/CC0/CC BY/CC BY-SA），弃图保政策，快船节纯文字；②"5000 万美元利息未付"与"1.28 亿亏损"等新数字逐条带来源核过后才落笔。
 
+### R05（自动化轮 automation-79a585bc，2026-10-03 03:22-03:30）✅
+- **产出**：新建 `stage.html`（卷·03 舞台）：导读（舞台三级台阶）+ 1987 书节（《交易的艺术》人设底稿，施瓦茨 2016 年《纽约客》后悔代笔公案）+ 2004 电视节（The Apprentice 首播约 1850 万观众）+ **"You're fired." 金框引语卡**（标注 NBC 2004-2015 出处）+ 名人堂时代（2007 星光大道/2013 WWE）+ 品牌两本账双写节（授权帝国 vs Trump University 2010 停办、2016-11 大选后十日 2500 万美元和解三案）+ 2015 舞台尽头收束。照片复用 walk-star（PD，本卷主图）+ trump-tower（CC BY）；解锁 index 卷·03 卡+导航；版本四页同步 v0.6.0-R05。
+- **扩写事实复核**（WebSearch）：Apprentice 2004-01 NBC 首播约 1850 万观众；Trump University 2010 停办、三案 2016 年 11 月以 2500 万美元和解（BBC/时代等一致）；施瓦茨后悔代笔为《纽约客》2016 年报道内容（公开记录）。
+- **自测**：smoke stage/index/empire/timeline 四页 PASS（console 零 error、照片全载、版本一致、零断链、lockedCards 9→6）；1280 截图目检通过（tools/shots/R05/）。
+- **坑**：①"You're fired!" 用节目台词口径入引语卡（NBC+年份出处），避免被当成个人语录无出处；②Trump University 和解是品牌章最重的一笔，按"两本账都是真的"框架写，不替读者下结论；③品牌冠名楼照片 Commons 探测无合适自由许可图，本卷 2 张照片达标（政策下限）。
+
 ### 待办池（不占轮次，随手可清）
 - 无
+
+
 
 
 
