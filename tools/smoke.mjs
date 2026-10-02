@@ -69,6 +69,7 @@ try {
     return {
       title: document.title,
       coverTitle: !!q(".hero__title"),
+      pageHead: !!q(".page-head"),
       issueTag: q(".issue-tag")?.textContent || "",
       chapterCards: document.querySelectorAll(".chapter-card").length,
       lockedCards: document.querySelectorAll(".chapter-card[data-locked]").length,
@@ -79,6 +80,7 @@ try {
       tbc: !!q(".tbc"),
       footer: !!q(".footer"),
       version: q("#site-version")?.textContent || "",
+      metaVersion: q('meta[name="site-version"]')?.getAttribute("content") || "",
       revealsIn: document.querySelectorAll(".panel-reveal.is-in").length,
       revealsAll: document.querySelectorAll(".panel-reveal").length
     };
@@ -100,13 +102,20 @@ try {
   const shot2 = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: true });
   writeFileSync(join(ROOT, "tools", "shots", round, page.replace(/\.html$/, "") + "-375.png"), Buffer.from(shot2.data, "base64"));
 
+  // 首页专属断言只在 index.html 生效；其他内容页走通用验收线
+  const isIndex = page === "index.html";
   const hard = [];
-  if (!r.coverTitle) hard.push("缺少 .hero__title");
-  if (r.chapterCards !== 9) hard.push(`目录卡应为 9，实为 ${r.chapterCards}`);
-  if (r.stats !== 6) hard.push(`数字速览应为 6，实为 ${r.stats}`);
+  if (isIndex) {
+    if (!r.coverTitle) hard.push("缺少 .hero__title");
+    if (r.chapterCards !== 9) hard.push(`目录卡应为 9，实为 ${r.chapterCards}`);
+    if (r.stats !== 6) hard.push(`数字速览应为 6，实为 ${r.stats}`);
+    if (r.photosTotal !== 10) hard.push(`照片应为 10，实为 ${r.photosTotal}`);
+  } else if (!r.pageHead) {
+    hard.push("缺少 .page-head（内容页刊头）");
+  }
   if (!r.tbc || !r.footer) hard.push("缺 TBC 或页脚");
-  if (r.version !== "v0.2.0-R01b") hard.push(`版本戳异常: ${r.version}`);
-  if (r.photosTotal !== 10) hard.push(`照片应为 10，实为 ${r.photosTotal}`);
+  if (!r.version || !r.metaVersion || r.version !== r.metaVersion)
+    hard.push(`版本戳不一致: 页脚=${r.version} meta=${r.metaVersion}（升版时两处必须一起改）`);
   if (r.photosBroken > 0) hard.push(`有 ${r.photosBroken} 张照片未加载成功`);
   if (errors.length) hard.push(`console ${errors.length} 条: ` + errors.slice(0, 3).join(" | "));
 

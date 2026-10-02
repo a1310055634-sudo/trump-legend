@@ -5,7 +5,7 @@
 - 当前状态：**施工中** `current_round = 1b / completed`
 - 下一轮：**R02**（timeline.html 上卷）
 - 当前版本：`v0.2.0-R01b`
-- 驱动方式：定时任务每 25 分钟一轮；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
+- 驱动方式：定时任务每 20 分钟一轮（automation-79a585bc，2026-10-03 由 25 分钟改 20 分钟）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、完结后只读空转
 
 ---
@@ -69,5 +69,5 @@
 - 无
 
 ### 审计记录（2026-10-03 02:35 主会话）
-- 旧定时任务 automation-d9dd6bef 已由用户从 Automations 页删除（它此前每次触发都被服务商内容过滤 1301 拦死，从未真正施工）；新任务 automation-79a585bc 已注册（精简提示词，一切以 PROMPT.md 现文为准），02:59 起每 25 分钟一轮。
-- **事故**：02:28–02:35 之间 PROMPT.md 与 PROGRESS.md 曾被不明来源删除（非本会话所为；日志显示该时段另一会话 sess_1244ffed 在执行工具调用）。两文件已从 git HEAD 原样恢复（git status 干净）。后续轮若发现任务书/账本缺失：先 `git restore PROMPT.md PROGRESS.md` 再动手，勿自行重建。
+- 旧定时任务 automation-d9dd6bef 已由用户从 Automations 页删除（它此前每次触发都被服务商内容过滤 1301 拦死，从未真正施工）；新任务 automation-79a585bc 已注册（精简提示词，一切以 PROMPT.md 现文为准），02:59 起每 25 分钟一轮；**后应用户要求改为每 20 分钟一轮，同轮 smoke.mjs 升级：版本断言改"页脚=meta 一致性校验"（不再硬编码版本号）、首页专属断言仅对 index.html 生效（其余页走通用验收线），R02 起升版不再炸冒烟**。
+- **事故**：02:28–02:35 之间 PROMPT.md 与 PROGRESS.md 被用户误删（用户已确认；git 中完好），已原样恢复。后续轮若发现任务书/账本缺失：先 `git restore PROMPT.md PROGRESS.md` 再动手，勿自行重建。
