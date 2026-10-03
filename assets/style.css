@@ -505,3 +505,66 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
 @media (max-width: 640px) {
   .eo-list li { grid-template-columns: 4em 1fr; }
 }
+/* 卷·12 白纸黑字：文书卡——抬头条（案号/法院/日期）+ 原文区 */
+.doc-card {
+  background: var(--black);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold-deep);
+  border-radius: 6px;
+  max-width: 860px;
+  margin: var(--sp-5) auto 0;
+  overflow: hidden;
+}
+.doc-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--sp-2) var(--sp-4);
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--black-2);
+  border-bottom: 1px solid var(--gold-line);
+}
+.doc-card__title {
+  font-family: var(--font-body);
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+.doc-card__meta {
+  font-family: var(--font-body);
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+.doc-card__body { padding: var(--sp-5) var(--sp-6); }
+.doc-card__text {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+  overflow-wrap: break-word;
+}
+.doc-card__zh {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--ink-dim);
+  margin: 0 0 var(--sp-3);
+}
+.doc-card__note {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: var(--ink-faint);
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+}
+.doc-card__note a { color: var(--gold-bright); }
+.doc-card__note a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .doc-card__body { padding: var(--sp-4); }
+  .doc-card__text { font-size: 0.95rem; }
+}

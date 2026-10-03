@@ -17,7 +17,7 @@
 | R21 | 卷·09 社媒馆 posts.html（Truth Social 原帖+推特名帖）+ 顺修 quotes 重复段 | ✅ completed（自动化 R21，2026-10-04） |
 | R22 | 卷·10 讲台馆 speeches.html（两篇就职演说精读+RNC） | ✅ completed（自动化 R22，2026-10-04） |
 | R23 | 卷·11 令旨馆 orders.html（Federal Register API，首日 26 项 EO） | ✅ completed（自动化 R23，2026-10-04） |
-| R24 | 卷·12 白纸黑字 documents.html（法庭文书/财报/健康信） | ⬜ |
+| R24 | 卷·12 白纸黑字 documents.html（法庭文书/财报/健康信） | ✅ completed（自动化 R24，2026-10-04） |
 | R25 | 卷·13 书页间 books.html（《交易的艺术》逐章精读） | ⬜ |
 | R26 | 语录馆扩容 17→40 条（quotes.html 增厚） | ⬜ |
 | R27 | 卷·14 家族谱 family.html | ⬜ |
@@ -70,6 +70,14 @@
 ---
 
 ## 交接记录
+
+### R24（自动化轮 automation-49a8738f，2026-10-04 01:16-01:28）✅
+- **产出**：新建 `documents.html`（卷·12 白纸黑字，2,053 中文字）——四案台账 panel（封口费 34 项定罪+2025-01-10 无条件释放 / 机密文件案 2024-07-15 驳回 / 联邦国会山案撤诉+终局报告 2025-01-07 / 富尔顿案搁置）+ **3 段判词文书卡**（Kaplan 2023-07-19「raped as many people commonly understand the word」/ Engoron 2024-02-16「lack of contrition and remorse borders on pathological」+4.54 亿 / Merchan 2025-01-10「unconditional discharge」）+ 在案照节（mugshot-2023 复用，与社媒馆档案照帖交叉）+ 财务文书节（2015 自报逾百亿 vs 2024 法院认定虚增，一个数字对照）+ **两封健康信对照**（2015 Bornstein「healthiest individual ever elected」+ 2018 年医生自曝系传主本人口述 / 2025-04-13 Barbabella 白宫备忘录「remains in excellent health」+MoCA 30/30）；判赔合计口径约 5.4 亿美元；样式新增 `.doc-card` 文书卡组件（抬头条案号/法院/日期+衬线原文区）；index 卷·12 卡解锁（档案馆 4/10）+版本 v2.0.0-dev-R24（documents+index）。
+- **事实核验**：Kaplan 判词（PBS/WaPo/FindLaw）、Engoron 判词+金额（Mediaite/HuffPost 等）、Bornstein 原句+口述反转（BBC/CNN 2018-05）、Barbabella 备忘录原句+30/30（UCSB APP 存档官方备忘录/NPR/NBC）全实源确认；Merchan 量刑程序、Cannon 驳回理由、Smith 终局报告结论为搜索限流期降级核验（多源一致的标准记载，页内口径已注记）；2015 披露书「逾 100 亿」自称同样标注为标准口径。
+- **自测**：smoke documents/index 双 PASS（console 零 error、版本一致、2 照片全载、零断链、5 doc-card 计数）；截图 tools/shots/R24/。
+- **坑**：①判词摘句与原句必有出入——凡不能全句核验的只取已核片段并以省略号+「片段照录」式标注，禁止凭印象补全判词；②纽约州"最高法院"实为初审法院——页内已加括号注记，避免中文读者被名号误导。
+- **遗留**：①Merchan 量刑陈述原文、Smith 报告原句待 R41 抽查时对原文页复核；②四案后续（封口费上诉进展等）归 R32 卷·07 增补轮随时事复核。
+- 下一轮：R25 书页间（《交易的艺术》逐章精读，引文走 Google Books/权威书评转引）。
 
 ### R23（自动化轮 automation-49a8738f，2026-10-04 01:03-01:16）✅
 - **产出**：新建 `orders.html`（卷·11 令旨馆，1,776 中文字 + 26 项官方英文标题名录）——第一节**首日 26 项行政令逐条点名**（EO 14147–14172 连号无缺位，官方标题原文+编辑部译，联邦公报 API 实取）+ 第二节两任期年度台账（stat 三数字：211/289/225；明细 2017:55/2018:35/2019:47/2020:68/2021 至 1-20:6/2025:225/2026 至 10-03:64，**2025 日历年 225 与卷·07 已核口径互证**，"平均 1.15 天一项"换算+双写）+ 第三节代表性 EO 原文节选两件（EO 14160 出生公民权令 Sec.1 / EO 14172 地名令 Sec.4(b)「Gulf of America」，公报 raw text 逐句取回并标注文号 2025-02007/2025-02096，14172 与卷·10 讲台馆交叉引用）；样式扩展 `.eo-list` 名录组件（grid 编号列+tabular-nums）；index 卷·11 卡解锁（档案馆 3/10）+版本 v2.0.0-dev-R23（orders+index）。
