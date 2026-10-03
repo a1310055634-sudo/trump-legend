@@ -465,6 +465,30 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   .post-card { padding: var(--sp-4); }
   .post-card__text { font-size: 0.88rem; }
 }
+/* 卷·18 数字卷：SVG 图表容器 */
+.chart-figure {
+  max-width: 720px;
+  margin: var(--sp-5) auto 0;
+  background: var(--black);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold-deep);
+  border-radius: 6px;
+  padding: var(--sp-5);
+}
+.chart-figure svg { width: 100%; height: auto; display: block; }
+.chart-caption {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--ink-faint);
+  margin: var(--sp-4) 0 0;
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+}
+@media (max-width: 640px) {
+  .chart-figure { padding: var(--sp-4); }
+}
+
 /* 卷·10 讲台馆：演说段落卡——衬线体原文（区别于社媒馆的等宽字） */
 .post-card--serif .post-card__text {
   font-family: var(--font-display);

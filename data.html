@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="site-version" content="v2.0.0-dev-R31">
+<meta name="description" content="川流不息 · 卷·18 数字卷——零库自绘 SVG 图表：两任期支持率节点、三届选举人票对比、行政令逐年柱状与幕僚更替率，每图附数据源与数据表。非官方致敬向同人站。">
+<title>卷·18 数字卷 · 用图表读他 — 川流不息 · THE TRUMP LEGEND</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ================= 刊头 ================= -->
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__zh">川流不息</span>
+      <span class="brand__en">The Trump Legend</span>
+    </a>
+    <span class="issue-tag">ISSUE #45+47</span>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav">目录 ▾</button>
+    <nav class="nav" id="mainnav" aria-label="站点目录">
+      <ul class="nav__list">
+        <li><a href="index.html">封面</a></li>
+        <li><a href="timeline.html">卷·01 生平全录</a></li>
+        <li><a href="empire.html">卷·02 商业帝国</a></li>
+        <li><a href="stage.html">卷·03 舞台</a></li>
+        <li><a href="whitehouse.html">卷·04 白宫岁月</a></li>
+        <li><a href="downfall.html">卷·05 至暗时刻</a></li>
+        <li><a href="comeback.html">卷·06 翻盘</a></li>
+        <li><a href="act47.html">卷·07 第二任期</a></li>
+        <li><a href="quotes.html">卷·08 台词馆</a></li>
+        <li><a href="about.html">编辑部</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= 卷首 ================= -->
+<main class="container">
+
+  <figure class="cover-art panel-reveal">
+    <img src="assets/photos/summit-2018.jpg" alt="2018 年 6 月新加坡会晤握手瞬间的照片横幅">
+    <span class="cover-art__tag">卷·18 · 数字卷 · 第一手档案馆</span>
+  </figure>
+
+  <section class="page-head">
+    <span class="volume">卷·18 数字卷 · 第一手档案馆</span>
+    <h1>用图表读他</h1>
+    <p class="logline">十四卷散落的数字，收进一页图表：支持率、选举人票、行政令与人事更替——零外部库自绘 SVG，每图附数据源与数据表，键盘可达。</p>
+  </section>
+
+  <section class="panel panel-reveal">
+    <span class="caption">编辑部 · 本馆口径</span>
+    <p>本页四组图表全部为<strong>手写 SVG</strong>（零外部图表库，符合全站无依赖红线）。数据来源三档：①本馆已核底座（选举人票、普选票、行政令逐年数[卷·11 台账]、92% 更替率[卷·15]）；②Gallup/皮尤公开节点值——支持率曲线为<strong>关键节点示意</strong>而非逐周采样，取值处标"约"，逐点复核归终验轮；③其余均为上述两档的换算。图表以 role="img" 提供文字化趋势描述，读屏可达。</p>
+  </section>
+
+  <div class="stat-strip panel-reveal">
+    <div class="stat"><b>92%</b><span>第一任期幕僚更替率</span></div>
+    <div class="stat"><b>500</b><span>两任期行政令合计</span></div>
+    <div class="stat"><b>40</b><span>台词馆已核语录</span></div>
+    <div class="stat"><b>18</b><span>社媒馆已录原帖</span></div>
+  </div>
+
+  <!-- ================= 第一节 · 支持率 ================= -->
+  <section class="page-head" style="margin:var(--sp-8) 0 var(--sp-5)">
+    <span class="volume">第一节 · 支持率 · 关键节点示意（2017-2026）</span>
+  </section>
+
+  <figure class="chart-figure panel-reveal">
+    <svg viewBox="0 0 640 300" role="img" aria-label="两任期支持率关键节点折线：2017 年就职初值约百分之四十五，2020 年 3 月升到约百分之四十九，2021 年 1 月卸任时降到约百分之三十四；第二任期 2025 年 9 月为百分之三十六，2026 年 8 月百分之三十四——总体从高位一路走低" xmlns="http://www.w3.org/2000/svg">
+      <line x1="70" y1="260" x2="610" y2="260" style="stroke:var(--line);stroke-width:1"/>
+      <line x1="340" y1="40" x2="340" y2="260" style="stroke:var(--line);stroke-width:1;stroke-dasharray:4 4"/>
+      <polyline points="70,128 205,92.8 340,224.8" style="fill:none;stroke:var(--gold);stroke-width:2.5"/>
+      <polyline points="475,207.2 610,224.8" style="fill:none;stroke:var(--gold);stroke-width:2.5"/>
+      <line x1="340" y1="224.8" x2="475" y2="207.2" style="stroke:var(--gold-deep);stroke-width:1.5;stroke-dasharray:3 5"/>
+      <circle cx="70" cy="128" r="4" style="fill:var(--gold)"/>
+      <circle cx="205" cy="92.8" r="4" style="fill:var(--gold)"/>
+      <circle cx="340" cy="224.8" r="4" style="fill:var(--gold)"/>
+      <circle cx="475" cy="207.2" r="4" style="fill:var(--gold-bright)"/>
+      <circle cx="610" cy="224.8" r="4" style="fill:var(--gold-bright)"/>
+      <text x="70" y="112" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">约45%</text>
+      <text x="205" y="77" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">约49%</text>
+      <text x="340" y="209" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">约34%</text>
+      <text x="475" y="191" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">36%</text>
+      <text x="610" y="209" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">34%</text>
+      <text x="70" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2017就任</text>
+      <text x="205" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2020-03</text>
+      <text x="340" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2021-01卸任</text>
+      <text x="475" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2025</text>
+      <text x="610" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2026-08</text>
+      <text x="340" y="30" text-anchor="middle" style="fill:var(--ink-faint);font:11px var(--font-body)">虚线＝两任期之间的四年空窗</text>
+    </svg>
+    <figcaption class="chart-caption">数据表：约45%（2017-02，Gallup 就任初值，约值）· 约49%（2020-03，Gallup 疫情高点，约值）· 约34%（2021-01，Gallup 卸任，约值）· 36%（2025，Gallup 首年低点，1977 年以来最低——卷·07 已核）· 34%（2026-08，皮尤——卷·07 已核）。三处"约"值节点归终验轮逐点复核。</figcaption>
+  </figure>
+
+  <!-- ================= 第二节 · 行政令 ================= -->
+  <section class="page-head" style="margin:var(--sp-8) 0 var(--sp-5)">
+    <span class="volume">第二节 · 行政令逐年（联邦公报刊出数）</span>
+  </section>
+
+  <figure class="chart-figure panel-reveal">
+    <svg viewBox="0 0 640 300" role="img" aria-label="行政令逐年柱状图：2017 年 55 项，2018 年 35 项，2019 年 47 项，2020 年 68 项，2021 年至一月二十日仅 6 项；第二任期 2025 年 225 项为现代单年最高，2026 年至十月已 64 项——第二任期节奏明显加快" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="260" x2="620" y2="260" style="stroke:var(--line);stroke-width:1"/>
+      <rect x="65" y="206.2" width="50" height="53.8" style="fill:var(--gold)"/>
+      <rect x="145" y="225.8" width="50" height="34.2" style="fill:var(--gold)"/>
+      <rect x="225" y="214" width="50" height="46" style="fill:var(--gold)"/>
+      <rect x="305" y="193.5" width="50" height="66.5" style="fill:var(--gold)"/>
+      <rect x="385" y="254.1" width="50" height="5.9" style="fill:var(--gold)"/>
+      <rect x="465" y="40" width="50" height="220" style="fill:var(--gold-bright)"/>
+      <rect x="545" y="197.4" width="50" height="62.6" style="fill:var(--gold-bright)"/>
+      <text x="90" y="198" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">55</text>
+      <text x="170" y="218" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">35</text>
+      <text x="250" y="206" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">47</text>
+      <text x="330" y="185" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">68</text>
+      <text x="410" y="246" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">6</text>
+      <text x="490" y="32" text-anchor="middle" style="fill:var(--gold-bright);font:bold 13px var(--font-body)">225</text>
+      <text x="570" y="189" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">64</text>
+      <text x="90" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2017</text>
+      <text x="170" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2018</text>
+      <text x="250" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2019</text>
+      <text x="330" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2020</text>
+      <text x="410" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2021*</text>
+      <text x="490" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2025</text>
+      <text x="570" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2026*</text>
+    </svg>
+    <figcaption class="chart-caption">数据表（与卷·11 台账同源）：2017:55 · 2018:35 · 2019:47 · 2020:68 · 2021 至 1-20:6 · 2025:225 · 2026 至 10-03:64。带 * 为不满整年。口径：按联邦公报刊出日计。数据源：Federal Register 官方 API（卷·11 取数）。</figcaption>
+  </figure>
+
+  <!-- ================= 第三节 · 选举人票 ================= -->
+  <section class="page-head" style="margin:var(--sp-8) 0 var(--sp-5)">
+    <span class="volume">第三节 · 三届选举人票对比（2016-2024）</span>
+  </section>
+
+  <figure class="chart-figure panel-reveal">
+    <svg viewBox="0 0 640 300" role="img" aria-label="三届大选选举人票对比柱状图：2016 年特朗普 304 对希拉里 227；2020 年特朗普 232 对拜登 306；2024 年特朗普 312 对哈里斯 226——特朗普三届全部超过 270 当选线，两胜一负" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="260" x2="620" y2="260" style="stroke:var(--line);stroke-width:1"/>
+      <rect x="86" y="51" width="60" height="209" style="fill:var(--gold)"/>
+      <rect x="154" y="103.9" width="60" height="156.1" style="fill:var(--flag-blue)"/>
+      <rect x="256" y="100.5" width="60" height="159.5" style="fill:var(--gold)"/>
+      <rect x="324" y="49.6" width="60" height="210.4" style="fill:var(--flag-blue)"/>
+      <rect x="426" y="45.5" width="60" height="214.5" style="fill:var(--gold)"/>
+      <rect x="494" y="104.6" width="60" height="155.4" style="fill:var(--flag-blue)"/>
+      <line x1="60" y1="73" x2="620" y2="73" style="stroke:var(--gold-line);stroke-width:1;stroke-dasharray:5 5"/>
+      <text x="60" y="68" style="fill:var(--ink-faint);font:10px var(--font-body)">270 当选线</text>
+      <text x="116" y="43" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">304</text>
+      <text x="184" y="96" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">227</text>
+      <text x="286" y="92" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">232</text>
+      <text x="354" y="42" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">306</text>
+      <text x="456" y="38" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">312</text>
+      <text x="524" y="97" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">226</text>
+      <text x="150" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2016（希拉里）</text>
+      <text x="320" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2020（拜登）</text>
+      <text x="490" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2024（哈里斯）</text>
+    </svg>
+    <figcaption class="chart-caption">数据表（卷·04/卷·06 已核底座）：2016 · 304:227（普选落后约 287 万）· 2020 · 232:306 · 2024 · 312:226（普选 49.8:48.3）。金色＝特朗普，蓝色＝对手——蓝金仅作图表填充，正文文字不使用。三届普选与选举人的"制度双写"见卷·04。</figcaption>
+  </figure>
+
+  <!-- ================= 第四节 · 更替率 ================= -->
+  <section class="page-head" style="margin:var(--sp-8) 0 var(--sp-5)">
+    <span class="volume">第四节 · 幕僚更替率 · 一个数字的说明</span>
+  </section>
+
+  <section class="panel panel-reveal">
+    <p><strong>92%</strong>——布鲁金斯学会对第一任期"A 队"（核心幕僚）四年更替率的统计，1980 年有追踪以来的最高值（完整台账与 14 任人次名单见<a href="circle.html">卷·15</a>）。该机构 2026 年 1 月的续评认为：第二任期人事更稳，主因是幕僚长怀尔斯的集权管理，但相较历届总统仍属高位。更替率的年度逐项展开归本馆增补计划——一个数字先钉在墙上，曲线后补。</p>
+  </section>
+
+  <!-- ================= 馆后记 ================= -->
+  <section class="panel panel-reveal">
+    <span class="caption">馆后记 · 数字也有修辞</span>
+    <p>把四组图并排放着：支持率一路下行，行政令一路上行，选举人票两胜一负，幕僚来了又走——四条线讲的是同一个故事的不同侧面：他用更快的行政节奏，弥补更低的民意水位。本馆不做加总，只做陈列——就像卷·07 说的，这是同一份任期报表。</p>
+    <p>本页 <strong>3 幅 SVG 图表 + 4 张速览卡</strong>，全部零库手绘；每个数字都可回查到对应卷的原始台账。图表不是真相，是真相的坐标——坐标在此，解读随君。</p>
+  </section>
+
+  <!-- ================= 未完待续 ================= -->
+  <div class="tbc">
+    <div class="tbc__mark gold-text">TO BE CONTINUED…</div>
+    <p class="tbc__next">下期预告 · 卷·07《第二任期》增补轮：每一幕补上第一手原帖与官方声明——活卷继续连载，核验基准日随轮滚动。</p>
+  </div>
+
+</main>
+
+<!-- ================= 页脚 ================= -->
+<hr class="flagbar" aria-hidden="true">
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">川流不息 · THE TRUMP LEGEND</div>
+    <p class="footer__disclaim">
+      本站为非官方的致敬向同人作品，以真实影像与编辑部特辑笔法连载。传主为真实公众人物，全部内容依据公开报道与公开记录整理；传奇口吻仅用于叙事结构，不代表编辑立场，争议话题均以"双方说法"并陈。引语均注明出处，如与原始出处有出入，以原始出处为准。
+    </p>
+    <p class="footer__disclaim">
+      站内照片均取自维基共享资源的自由许可素材（公有领域 / CC0 / CC BY / CC BY-SA），全部本地引用；作者与许可逐张登记于 <a href="assets/photos/CREDITS.md">assets/photos/CREDITS.md</a>。
+    </p>
+    <p class="footer__meta">© 2026 川流不息编辑部 · ISSUE #45+47 · 版本 <span id="site-version">v2.0.0-dev-R31</span> · 2026-10-04</p>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
