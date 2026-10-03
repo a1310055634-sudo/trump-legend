@@ -592,3 +592,30 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   .doc-card__body { padding: var(--sp-4); }
   .doc-card__text { font-size: 0.95rem; }
 }
+
+/* R33 导航重构：分组标签 + 参见行 */
+.nav__head {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  padding: 11px 6px 11px 12px;
+}
+.nav__head::before { content: "▸"; color: var(--gold-deep); margin-right: 6px; }
+@media (max-width: 940px) {
+  .nav__head { display: block; width: 100%; padding: 12px 0 2px; border-bottom: 0; }
+}
+.see-also {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.9;
+  color: var(--ink-faint);
+  max-width: 860px;
+  margin: var(--sp-5) auto 0;
+  border-left: 3px solid var(--gold-deep);
+  padding-left: var(--sp-4);
+}
+.see-also a { color: var(--gold-bright); }
+.see-also a:hover { text-decoration: underline; }
