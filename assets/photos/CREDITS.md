@@ -22,6 +22,9 @@
 | `rnc-2024.jpg` | [Former President Donald Trump's Speech at the Republican National Convention (53887722108).jpg](https://commons.wikimedia.org/wiki/File:Former_President_Donald_Trump's_Speech_at_the_Republican_National_Convention_(53887722108).jpg) | Tim Kennedy | CC BY 2.0 | 2024 RNC 提名演讲（耳部缠绷带），comeback.html 卷·06 用；须署名 |
 | `eo-2025.jpg` | [President Donald Trump signs executive orders in the Oval Office (54354615780).jpg](https://commons.wikimedia.org/wiki/File:President_Donald_Trump_signs_executive_orders_in_the_Oval_Office_(54354615780).jpg) | 白宫（The White House） | Public domain（美国政府作品） | 2025 行政令签署，act47.html 卷·07 用 |
 | `sharm-2025.jpg` | [Sharm El Sheikh Summit for Peace, 13 October 2025 (Roman Ismayilov) 05.jpg](https://commons.wikimedia.org/wiki/File:Sharm_El_Sheikh_Summit_for_Peace,_13_October_2025_(Roman_Ismayilov)_05.jpg) | Roman Ismayilov（埃及官方摄影） | CC BY 4.0 | 沙姆沙伊赫和平峰会（2025-10-13），act47.html 卷·07 用；须署名 |
+| `fred-trump.jpg` | [Donald Trump with Fred Trump (cropped 2).jpg](https://commons.wikimedia.org/wiki/File:Donald_Trump_with_Fred_Trump_(cropped_2).jpg) | Bernard Gotfryd（美国国会图书馆藏） | Public domain | 1986-11 沃尔曼溜冰场父子合影，family.html 卷·14 横幅用 |
+| `ivana-trump.jpg` | [Ivana Trump cropped retouched.jpg](https://commons.wikimedia.org/wiki/File:Ivana_Trump_cropped_retouched.jpg) | Christopherpeterson（英文维基） | CC BY-SA 3.0 | 伊万娜像（1980 年代），family.html 卷·14 用；须署名 |
+| `melania-portrait.jpg` | [Melania Trump official portrait.jpg](https://commons.wikimedia.org/wiki/File:Melania_Trump_official_portrait.jpg) | Régine Mahaux（白宫官方照） | CC BY 3.0 US | 2017 第一夫人官方肖像，family.html 卷·14 用；须署名 |
 
 ## 使用规则（后续轮次遵守）
 
