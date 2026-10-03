@@ -26,6 +26,9 @@
 | `ivana-trump.jpg` | [Ivana Trump cropped retouched.jpg](https://commons.wikimedia.org/wiki/File:Ivana_Trump_cropped_retouched.jpg) | Christopherpeterson（英文维基） | CC BY-SA 3.0 | 伊万娜像（1980 年代），family.html 卷·14 用；须署名 |
 | `melania-portrait.jpg` | [Melania Trump official portrait.jpg](https://commons.wikimedia.org/wiki/File:Melania_Trump_official_portrait.jpg) | Régine Mahaux（白宫官方照） | CC BY 3.0 US | 2017 第一夫人官方肖像，family.html 卷·14 用；须署名 |
 | `cabinet-2025.jpg` | [Trump Cabinet 2025 second presidency.jpg](https://commons.wikimedia.org/wiki/File:Trump_Cabinet_2025_second_presidency.jpg) | 白宫（The White House） | Public domain（美国政府作品） | 2025 第二任期内阁会议合影，circle.html 卷·15 横幅用 |
+| `hillary-clinton.jpg` | [Hillary Clinton official Secretary of State portrait crop.jpg](https://commons.wikimedia.org/wiki/File:Hillary_Clinton_official_Secretary_of_State_portrait_crop.jpg) | 美国国务院 | Public domain（美国政府作品） | 希拉里官方肖像（国务卿任内），rivals.html 卷·16 用 |
+| `joe-biden.jpg` | [Joe Biden presidential portrait.jpg](https://commons.wikimedia.org/wiki/File:Joe_Biden_presidential_portrait.jpg) | Adam Schultz（白宫官方照） | Public domain（美国政府作品） | 拜登官方肖像（2021-03-03 白宫书房），rivals.html 卷·16 用 |
+| `kamala-harris.jpg` | [Kamala Harris Vice Presidential Portrait.jpg](https://commons.wikimedia.org/wiki/File:Kamala_Harris_Vice_Presidential_Portrait.jpg) | Lawrence Jackson（白宫官方照） | Public domain（美国政府作品） | 哈里斯官方副总统肖像（2021-03-04），rivals.html 卷·16 用 |
 
 ## 使用规则（后续轮次遵守）
 
