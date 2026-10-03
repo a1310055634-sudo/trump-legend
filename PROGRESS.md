@@ -18,7 +18,7 @@
 | R22 | 卷·10 讲台馆 speeches.html（两篇就职演说精读+RNC） | ✅ completed（自动化 R22，2026-10-04） |
 | R23 | 卷·11 令旨馆 orders.html（Federal Register API，首日 26 项 EO） | ✅ completed（自动化 R23，2026-10-04） |
 | R24 | 卷·12 白纸黑字 documents.html（法庭文书/财报/健康信） | ✅ completed（自动化 R24，2026-10-04） |
-| R25 | 卷·13 书页间 books.html（《交易的艺术》逐章精读） | ⬜ |
+| R25 | 卷·13 书页间 books.html（《交易的艺术》逐章精读） | ✅ completed（自动化 R25，2026-10-04） |
 | R26 | 语录馆扩容 17→40 条（quotes.html 增厚） | ⬜ |
 | R27 | 卷·14 家族谱 family.html | ⬜ |
 | R28 | 卷·15 幕僚与走马灯 circle.html | ⬜ |
@@ -70,6 +70,13 @@
 ---
 
 ## 交接记录
+
+### R25（自动化轮 automation-49a8738f，2026-10-04 01:31-01:43）✅
+- **产出**：新建 `books.html`（卷·13 书页间，2,444 中文字）——《交易的艺术》六章精读（第1章一周实录/第2章 think big p.46 沿用 V1 已核项+「真实的夸张」整段 FactCheck.org 核证/开卷"交易是艺术"名段/第8-9章两座楼[君悦 42 年租约 1980 开业、大厦 1983 与卷·01 互证]/第11章沃尔曼溜冰场+第13章西城构想）+ 代笔公案双方说法 panel（施瓦茨：「给猪涂口红」「浮士德式交易」《纽约客》2016-07-25 实核 +「深感悔恨」「虚构作品」NYT；特朗普方面立场+律师函）+ 《东山再起》1997 两要目（兄长弗雷德与不沾烟酒[要点转引]、政治野心伏笔）+ 《残废的美国》2015 两转引句（美国梦句[书摘集录]、盟友账单句[ABC 书摘]，均明确标"转引"）+ 馆后记"三本书三个自我"；章节目录经 **Archive.org 馆藏全文本**逐项核对（全书 13 章目录全录）；零新增 CSS（复用 .post-card--serif）；index 卷·13 卡解锁（档案馆 5/10）+版本 v2.0.0-dev-R25（books+index）。
+- **自测**：smoke books/index 双 PASS（console 零 error、版本一致、1 照片全载[文字馆豁免]、零断链、英文残留清 1 处[pretends 中英混杂]）；截图 tools/shots/R25/。
+- **坑**：①搜索摘要里章节归属有噪声（某搜索摘要把名段归入不存在的"第一章 The Deal"小节名）——**只认 Archive.org 目录原文，引用不标具体小节号只标章名或全书**；②施瓦茨"每天骗我 18 个月"一句各源措辞不一——弃用未全句核验的版本，改用两句实锤短语（lipstick on a pig/Faustian bargain），宁缺毋滥；③《东山再起》逐字原文尚未核到页码级，本轮只做要点转引并如实标注。
+- **遗留**：①《东山再起》《残废的美国》逐字原文页码级核验归 R41 抽查补深；②13 章目录可作 R34/R35 增厚轮的交叉素材。
+- 下一轮：R26 语录馆扩容 17→40 条（APP 辩论逐字稿源，与社媒馆交叉≤3 条）。
 
 ### R24（自动化轮 automation-49a8738f，2026-10-04 01:16-01:28）✅
 - **产出**：新建 `documents.html`（卷·12 白纸黑字，2,053 中文字）——四案台账 panel（封口费 34 项定罪+2025-01-10 无条件释放 / 机密文件案 2024-07-15 驳回 / 联邦国会山案撤诉+终局报告 2025-01-07 / 富尔顿案搁置）+ **3 段判词文书卡**（Kaplan 2023-07-19「raped as many people commonly understand the word」/ Engoron 2024-02-16「lack of contrition and remorse borders on pathological」+4.54 亿 / Merchan 2025-01-10「unconditional discharge」）+ 在案照节（mugshot-2023 复用，与社媒馆档案照帖交叉）+ 财务文书节（2015 自报逾百亿 vs 2024 法院认定虚增，一个数字对照）+ **两封健康信对照**（2015 Bornstein「healthiest individual ever elected」+ 2018 年医生自曝系传主本人口述 / 2025-04-13 Barbabella 白宫备忘录「remains in excellent health」+MoCA 30/30）；判赔合计口径约 5.4 亿美元；样式新增 `.doc-card` 文书卡组件（抬头条案号/法院/日期+衬线原文区）；index 卷·12 卡解锁（档案馆 4/10）+版本 v2.0.0-dev-R24（documents+index）。
