@@ -9,9 +9,11 @@ const CHROME = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 const ROOT = resolve(import.meta.dirname, "..");
 const PORT = 9355;
 const PAGES = ["index.html", "timeline.html", "empire.html", "stage.html", "whitehouse.html",
-  "downfall.html", "comeback.html", "act47.html", "quotes.html", "about.html"];
+  "downfall.html", "comeback.html", "act47.html", "quotes.html", "about.html", "posts.html",
+  "speeches.html", "orders.html", "documents.html", "books.html", "family.html", "circle.html",
+  "rivals.html", "culture.html", "data.html"];
 const WIDTHS = [1280, 375];
-const OUT = join(ROOT, "tools", "shots", "R18");
+const OUT = join(ROOT, "tools", "shots", process.argv[2] || "R40"); /* R40 起：输出目录可传参，勿再硬编码（R18 曾被覆盖） */
 mkdirSync(OUT, { recursive: true });
 
 const udd = join(tmpdir(), `tl-mv-${Date.now()}`);

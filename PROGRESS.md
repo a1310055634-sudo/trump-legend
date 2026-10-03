@@ -33,7 +33,7 @@
 | R37 | comeback+quotes+about 增厚 | ✅ completed（自动化 R37，2026-10-04） |
 | R38 | QA 一：断链/typo/对比度全站 20 页复跑 | ✅ completed（自动化 R38，2026-10-04） |
 | R39 | QA 二：可达性专项（三档溢出/图表 aria/reduced-motion） | ✅ completed（自动化 R39，2026-10-04） |
-| R40 | QA 三：multiview 20 页 × 2 档截图审查 | ⬜ |
+| R40 | QA 三：multiview 20 页 × 2 档截图审查 | ✅ completed（自动化 R40，2026-10-04） |
 | R41 | 事实大抽查 25 条（一手引用逐条对原文） | ⬜ |
 | R42 | 性能与体积（照片压宽/首屏计时） | ⬜ |
 | R43 | 发布候选 v2.0.0-rc + RELEASE.md V2 章节 | ⬜ |
@@ -70,6 +70,14 @@
 ---
 
 ## 交接记录
+
+### R40（自动化轮 automation-49a8738f，2026-10-04 05:15-05:27）✅
+- **产出**：multiview-shots 扩 20 页跑 **40 张全页截图（1280/375）+ 内置三审计（溢出/失真/裁切）全 0 问题、console 异常 0**；R39 移交的 stat-strip 边框疑点经 data-375 目检关闭——2×2 卡片观感一致、发丝线不显眼，判定免修（结论记入本节备查）。
+- **事故如实记录**：multiview 输出目录硬编码 R18，本轮运行**覆盖了 tools/shots/R18 的 V1 取证截图**（shots 目录整体 gitignore、git 无备份，原 10 页图不可恢复；其中 10 页被本轮新图覆盖、新 10 页为净增）。影响评估：R18 的审计结论（20 张 0 问题）已文字在账，证据图由本轮 40 张新图严格取代（同页更快照）；已修复 multiview 输出目录为**可传参**（默认 R40，永不硬编码）。教训：跑任何带输出目录的存量工具前先 grep 其 OUT 常量。
+- **自测**：multiview 审计 PASS（40 张/0 问题/0 console 异常）+ data-375 人工目检 PASS；40 张留档 tools/shots/R40/。
+- **坑**：①存量工具的输出路径硬编码是"覆盖性事故"高发点——qa/audit/multiview 三件套本轮全部检查/改造完毕（qa-links/typo/audit 只读输出到 stdout 无此风险）；②shots 在 gitignore 里=截图证据单副本，轮次目录互相隔离是唯一防线。
+- **遗留**：①键盘 Tab 全流程走查归 R41；②R18 旧图不可恢复事项如实带档（若需 V1 时点视觉证据，可从 git 提交 b697c7e 的页面源码重建）。
+- 下一轮：R41 事实大抽查——25 条一手引用逐条对原文（含历轮移交的降级核验项）。
 
 ### R39（自动化轮 automation-49a8738f，2026-10-04 05:00-05:11）✅
 - **产出**：新写专项探针 `tools/a11y-r39.mjs`（单实例 CDP：20 页 × 375/768/1280 三档溢出扫描 + data.html 图表 aria 断言 + index/data reduced-motion 直出抽检，自带进程清扫）——**三专项全 PASS：60 个页宽组合零横向溢出；data.html 3 幅 SVG 全部 role=img + aria-label；reduced-motion 下 .panel-reveal 与新组件 transition 全 0s 直出**。R38 的 audit-a11y（101 项，含 20 页三档溢出）与本轮专项双重复验一致。
