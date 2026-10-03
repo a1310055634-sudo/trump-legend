@@ -465,3 +465,9 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   .post-card { padding: var(--sp-4); }
   .post-card__text { font-size: 0.88rem; }
 }
+/* 卷·10 讲台馆：演说段落卡——衬线体原文（区别于社媒馆的等宽字） */
+.post-card--serif .post-card__text {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1.9;
+}

@@ -15,7 +15,7 @@
 | 轮 | 内容 | 状态 |
 |---|---|---|
 | R21 | 卷·09 社媒馆 posts.html（Truth Social 原帖+推特名帖）+ 顺修 quotes 重复段 | ✅ completed（自动化 R21，2026-10-04） |
-| R22 | 卷·10 讲台馆 speeches.html（两篇就职演说精读+RNC） | ⬜ |
+| R22 | 卷·10 讲台馆 speeches.html（两篇就职演说精读+RNC） | ✅ completed（自动化 R22，2026-10-04） |
 | R23 | 卷·11 令旨馆 orders.html（Federal Register API，首日 26 项 EO） | ⬜ |
 | R24 | 卷·12 白纸黑字 documents.html（法庭文书/财报/健康信） | ⬜ |
 | R25 | 卷·13 书页间 books.html（《交易的艺术》逐章精读） | ⬜ |
@@ -70,6 +70,14 @@
 ---
 
 ## 交接记录
+
+### R22（自动化轮 automation-49a8738f，2026-10-04 00:48-01:00）✅
+- **产出**：新建 `speeches.html`（卷·10 讲台馆，3,101 中文字）——四讲台 16 段原文段落级精读：2017 就职 5 段（开场/被遗忘的人们/American carnage/美国优先/fight for you）+ 2025 就职 6 段（golden age/三连被动句/边境紧急状态/drill baby drill/改名清单「片段照录」/peacemaker）+ 2016 RNC 3 段（I am your voice/踏入政坛/Americanism not globalism）+ 2024 RNC 2 段（上帝恩典/全美国的总统）；每讲台配台前按语 panel，争议段（carnage/peacemaker/团结承诺）双写；照片复用 portrait-2017（横幅）+inaug-2025（配图）零新增下载；样式扩展 `.post-card--serif` 修饰类（衬线原文卡，复用社媒馆组件族）；index 卷·10 卡解锁（档案馆 2/10）+版本戳 v2.0.0-dev-R22（speeches+index）。
+- **事实核验**：2025 就职演说经**白宫官网 transcript 逐句抓取核对**（golden age/边境紧急状态/drill baby drill/Gulf of America+麦金莱/sovereignty 三连句全为原文）——**并纠正一处流传讹变：原句是 "a peacemaker and unifier"，无 "great"**（页内按语已注明）；2017 就职三关键句（carnage/rusted-out factories「of our nation」/every breath）经 Politico/CNN/Roll Call 搜索核验；2016 RNC（I am your voice/Americanism not globalism，Politico/WaPo/Guardian/Atlantic）与 2024 RNC（grace of Almighty God/全美国的总统团结段，APP/Roll Call/Democracy in Action）多源一致；2017 其余两段（开场/被遗忘的人们）为官方 transcript 广泛记载表述。
+- **自测**：smoke speeches/index 双 PASS（console 零 error、版本一致、2 照片全载、零断链、英文残留 grep 自查清两处[describing the carnage/credo 中英混杂]）；截图 tools/shots/R22/。
+- **坑与发现**：①**V1 存疑发现——2024 RNC 接受提名日期：APP/Roll Call/C-SPAN 三方一致为 2024-07-18，而 V1 账本 R08 交接记「7-17 正式接受提名」**——归 R37（comeback 增厚轮）核对 comeback.html 实际表述后改，本轮不越界动 V1 页；②NPR 2017 全文页 fetch 60s 超时（白名单站点也有偶发超时，重试或换源即可，本轮以搜索核验关键句替代）；③whitehouse.gov transcript 可直接 WebFetch 抓到逐句原文——第二任期官方一手源升级为可用管线，R24/R32 可复用该路径。
+- **遗留**：①comeback.html 提名日期 7-17 vs 7-18 待 R37 核改；②金色按语里的「评论界指出/卫报称」等媒体转述均为搜索摘要确认的标准评论口径，未逐条开原文页——终验轮 R41 抽查时对 2-3 条开原文复核。
+- 下一轮：R23 令旨馆（Federal Register API，首日 26 项 EO 逐条）。
 
 ### R21（自动化轮 automation-49a8738f，2026-10-04 00:32-00:45）✅
 - **产出**：新建 `posts.html`（卷·09 社媒馆，第一手档案馆首馆，2,907 中文字）——编辑部口径（公开言论三件套+活馆声明）+ 展室一·推特时代 10 帖（2012 warming / 2013 IQ / 2017 tapp·猎巫·covfefe / 2018 核按钮·贸易战 / 2020 STOP THE COUNT / 2021-01-06 18:01 被删帖 / 2021-01-08 封号前末帖，被删帖与末帖挂红章）+ 展室二·Truth Social 8 帖（2023-08-24 档案照帖 / 2024-07-13 巴特勒自述 / 2026-10-03 当日流水五帖：发钱承诺·动员三连发·夏令时点名·背书连发，「片段照录」三帖=存档确认字句+编辑部补述）+ 馆后记（18 帖）+ TBC 预告卷·10。样式扩展 `.post-card` 组件族（等宽原文区+金左线+红章，全令牌复用零新色值）；`index.html` 增「第一手档案馆」分区（卷·09 mono 卡解锁 + 卷·10-18 九张锁定占位卡，未建页无 href，lockedCards 0→9）；`quotes.html` 顺修「收录标准」段落逐字重复（V1 唯一已知缺陷清零）；`tools/smoke.mjs` index 硬编码断言（卡=9/数字=6/照片=10）改造为下限口径（5.2-5 落地）；版本三页同步 v2.0.0-dev-R21（Edit 逐处改，未用批量脚本）。
