@@ -471,3 +471,37 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   font-size: 1.02rem;
   line-height: 1.9;
 }
+/* 卷·11 令旨馆：行政令名录 */
+.eo-list { list-style: none; margin: var(--sp-4) 0 0; padding: 0; }
+.eo-list li {
+  display: grid;
+  grid-template-columns: 4.6em 1fr;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--line);
+}
+.eo-list li:last-child { border-bottom: 0; }
+.eo-num {
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  padding-top: 2px;
+}
+.eo-title {
+  font-family: var(--font-body);
+  color: var(--ink);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+.eo-title em {
+  display: block;
+  font-style: normal;
+  color: var(--ink-dim);
+  font-size: 0.82rem;
+  margin-top: 2px;
+}
+@media (max-width: 640px) {
+  .eo-list li { grid-template-columns: 4em 1fr; }
+}

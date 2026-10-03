@@ -16,7 +16,7 @@
 |---|---|---|
 | R21 | 卷·09 社媒馆 posts.html（Truth Social 原帖+推特名帖）+ 顺修 quotes 重复段 | ✅ completed（自动化 R21，2026-10-04） |
 | R22 | 卷·10 讲台馆 speeches.html（两篇就职演说精读+RNC） | ✅ completed（自动化 R22，2026-10-04） |
-| R23 | 卷·11 令旨馆 orders.html（Federal Register API，首日 26 项 EO） | ⬜ |
+| R23 | 卷·11 令旨馆 orders.html（Federal Register API，首日 26 项 EO） | ✅ completed（自动化 R23，2026-10-04） |
 | R24 | 卷·12 白纸黑字 documents.html（法庭文书/财报/健康信） | ⬜ |
 | R25 | 卷·13 书页间 books.html（《交易的艺术》逐章精读） | ⬜ |
 | R26 | 语录馆扩容 17→40 条（quotes.html 增厚） | ⬜ |
@@ -70,6 +70,14 @@
 ---
 
 ## 交接记录
+
+### R23（自动化轮 automation-49a8738f，2026-10-04 01:03-01:16）✅
+- **产出**：新建 `orders.html`（卷·11 令旨馆，1,776 中文字 + 26 项官方英文标题名录）——第一节**首日 26 项行政令逐条点名**（EO 14147–14172 连号无缺位，官方标题原文+编辑部译，联邦公报 API 实取）+ 第二节两任期年度台账（stat 三数字：211/289/225；明细 2017:55/2018:35/2019:47/2020:68/2021 至 1-20:6/2025:225/2026 至 10-03:64，**2025 日历年 225 与卷·07 已核口径互证**，"平均 1.15 天一项"换算+双写）+ 第三节代表性 EO 原文节选两件（EO 14160 出生公民权令 Sec.1 / EO 14172 地名令 Sec.4(b)「Gulf of America」，公报 raw text 逐句取回并标注文号 2025-02007/2025-02096，14172 与卷·10 讲台馆交叉引用）；样式扩展 `.eo-list` 名录组件（grid 编号列+tabular-nums）；index 卷·11 卡解锁（档案馆 3/10）+版本 v2.0.0-dev-R23（orders+index）。
+- **管线实录**：联邦公报 API 全部经 **WebFetch 外网路径**取数——本机 curl 30 秒超时（exit 28，与 trumptwitterarchive 同款本机出口问题），**后续轮拉 API 一律走 WebFetch，勿再试本地 curl**；API 只返回 per_page 指定字段（fields 不含 executive_order_number 时不显示编号）；meta.count 单值查询稳定可靠，8 次取数零失败。
+- **自测**：smoke orders/index 双 PASS（console 零 error、版本一致、1 照片全载[文字馆豁免政策]、零断链、26 项名录计数断言）；中英混杂自查清 1 处（American citizenship 混排）+stat 长标签防溢出精简；截图 tools/shots/R23/。
+- **坑**：①首日 26 项核验时 API 枚举响应里模型口头计数 25 与实列 26 项不符——**以逐项枚举为准（14147–14172=26），模型速算数不可信**；②WebFetch 取 API 大窗口时 fields 裁剪是关键，per_page=100+fields 指定响应很小不易截断。
+- **遗留**：①年度台账按公报**刊出日**计（页面已注记跨年签署误差）；②211 与坊间常引的"第一任期 220 项"存在口径差（检索窗起点=就职日 vs 全任期含 1 月 20 日后刊出件）——页面口径自洽即可，R41 抽查时如对表须知此差异；③R31 数字卷做图表时直接复用本轮 8 个年度数字（PROGRESS 本条即数据源）。
+- 下一轮：R24 白纸黑字馆（法庭文书/财报披露/健康信，公开 PDF 与多源核验）。
 
 ### R22（自动化轮 automation-49a8738f，2026-10-04 00:48-01:00）✅
 - **产出**：新建 `speeches.html`（卷·10 讲台馆，3,101 中文字）——四讲台 16 段原文段落级精读：2017 就职 5 段（开场/被遗忘的人们/American carnage/美国优先/fight for you）+ 2025 就职 6 段（golden age/三连被动句/边境紧急状态/drill baby drill/改名清单「片段照录」/peacemaker）+ 2016 RNC 3 段（I am your voice/踏入政坛/Americanism not globalism）+ 2024 RNC 2 段（上帝恩典/全美国的总统）；每讲台配台前按语 panel，争议段（carnage/peacemaker/团结承诺）双写；照片复用 portrait-2017（横幅）+inaug-2025（配图）零新增下载；样式扩展 `.post-card--serif` 修饰类（衬线原文卡，复用社媒馆组件族）；index 卷·10 卡解锁（档案馆 2/10）+版本戳 v2.0.0-dev-R22（speeches+index）。
