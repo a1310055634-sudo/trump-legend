@@ -25,6 +25,7 @@
 | `fred-trump.jpg` | [Donald Trump with Fred Trump (cropped 2).jpg](https://commons.wikimedia.org/wiki/File:Donald_Trump_with_Fred_Trump_(cropped_2).jpg) | Bernard Gotfryd（美国国会图书馆藏） | Public domain | 1986-11 沃尔曼溜冰场父子合影，family.html 卷·14 横幅用 |
 | `ivana-trump.jpg` | [Ivana Trump cropped retouched.jpg](https://commons.wikimedia.org/wiki/File:Ivana_Trump_cropped_retouched.jpg) | Christopherpeterson（英文维基） | CC BY-SA 3.0 | 伊万娜像（1980 年代），family.html 卷·14 用；须署名 |
 | `melania-portrait.jpg` | [Melania Trump official portrait.jpg](https://commons.wikimedia.org/wiki/File:Melania_Trump_official_portrait.jpg) | Régine Mahaux（白宫官方照） | CC BY 3.0 US | 2017 第一夫人官方肖像，family.html 卷·14 用；须署名 |
+| `cabinet-2025.jpg` | [Trump Cabinet 2025 second presidency.jpg](https://commons.wikimedia.org/wiki/File:Trump_Cabinet_2025_second_presidency.jpg) | 白宫（The White House） | Public domain（美国政府作品） | 2025 第二任期内阁会议合影，circle.html 卷·15 横幅用 |
 
 ## 使用规则（后续轮次遵守）
 
