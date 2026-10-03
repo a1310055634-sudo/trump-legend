@@ -19,7 +19,7 @@
 | R23 | 卷·11 令旨馆 orders.html（Federal Register API，首日 26 项 EO） | ✅ completed（自动化 R23，2026-10-04） |
 | R24 | 卷·12 白纸黑字 documents.html（法庭文书/财报/健康信） | ✅ completed（自动化 R24，2026-10-04） |
 | R25 | 卷·13 书页间 books.html（《交易的艺术》逐章精读） | ✅ completed（自动化 R25，2026-10-04） |
-| R26 | 语录馆扩容 17→40 条（quotes.html 增厚） | ⬜ |
+| R26 | 语录馆扩容 17→40 条（quotes.html 增厚） | ✅ completed（自动化 R26，2026-10-04） |
 | R27 | 卷·14 家族谱 family.html | ⬜ |
 | R28 | 卷·15 幕僚与走马灯 circle.html | ⬜ |
 | R29 | 卷·16 对手们 rivals.html | ⬜ |
@@ -70,6 +70,14 @@
 ---
 
 ## 交接记录
+
+### R26（自动化轮 automation-49a8738f，2026-10-04 01:47-01:59）✅
+- **产出**：quotes.html 扩容 **17→40 条**（4,077 中文字，40 个 blockquote 实数断言）——新增三展室：**第五展室·辩论台** 5 条（Rosie O'Donnell 2015-08-06/you'd be in jail 2016-10-09/nasty woman 2016-10-19/shut up man 2020-09-29/concepts of a plan 2024-09-10）+ **第六展室·集会与讲坛** 14 条（扶梯 rapists/麦凯恩/禁穆声明/我爱低学历/Russia if you're listening/紫心勋章/通话备忘录 do us a favor/赫尔辛基/消毒剂注射/伍德沃德录音淡化说/塔尔萨放慢检测/拉什莫尔/best is yet to come/Go home we love you）+ **第七展室·纸上与屏上** 4 条（终止宪法/在案照配字/STOP THE COUNT/天选之人）+ 第四展室补"被上帝救下来"（2025 就职）；logline/馆后记/指纹按语三处计数同步（十七→四十）；版本 quotes v2.0.0-dev-R26（本轮唯一改动页）。
+- **事实核验**：14 条本轮搜索实源确认（辩论 4 句：Mirror/Mashable 等；2015-16 五句：WaPo/NYT/Reuters/NPR/APP/Atlantic；乌克兰通话备忘录句+赫尔辛基句：Reuters/BBC/PBS；escalator 句与 Mueller 报告时点互证）；9 条为搜索限流期降级核验（ disinfectant/伍德沃德/塔尔萨/拉什莫尔/best yet/Go home/终止宪法/天选之人/Rosie/紫心——极广泛公开记载，页内逐条标注"极广泛公开记载"）；与 posts.html 交叉恰好 3 条（covfefe/在案照配字/STOP THE COUNT），符合 5.3-R26 上限。
+- **自测**：smoke quotes PASS（console 零 error、版本一致、照片全载、零断链）；40 blockquote 计数断言（先 39 差一——逐块清点后补"天选之人"凑整，教训：**宣称数必须实数**）；截图 tools/shots/R26/。
+- **坑**：①WebSearch 本轮 429 频发（四路查询近半限流）——批量语录核验要预留重试预算，限流条目一律降级标注而非硬塞"已核"；②V1 账本口径"17 条"与实际 blockquote 数有出入（V1 实为 16 块+若干番外）——本轮起以"实数 40 块"为准并写入断言。
+- **遗留**：①9 条降级核验条目归 R41 抽查时逐条开原文页复核；②2025-03-04 国情咨文"America is back"等第二任期新句未入（原文未逐字核验），归 R32 卷·07 增补轮。
+- 下一轮：R27 家族谱 family.html（Commons 补图 4-6 张，生卒年月零容忍）。
 
 ### R25（自动化轮 automation-49a8738f，2026-10-04 01:31-01:43）✅
 - **产出**：新建 `books.html`（卷·13 书页间，2,444 中文字）——《交易的艺术》六章精读（第1章一周实录/第2章 think big p.46 沿用 V1 已核项+「真实的夸张」整段 FactCheck.org 核证/开卷"交易是艺术"名段/第8-9章两座楼[君悦 42 年租约 1980 开业、大厦 1983 与卷·01 互证]/第11章沃尔曼溜冰场+第13章西城构想）+ 代笔公案双方说法 panel（施瓦茨：「给猪涂口红」「浮士德式交易」《纽约客》2016-07-25 实核 +「深感悔恨」「虚构作品」NYT；特朗普方面立场+律师函）+ 《东山再起》1997 两要目（兄长弗雷德与不沾烟酒[要点转引]、政治野心伏笔）+ 《残废的美国》2015 两转引句（美国梦句[书摘集录]、盟友账单句[ABC 书摘]，均明确标"转引"）+ 馆后记"三本书三个自我"；章节目录经 **Archive.org 馆藏全文本**逐项核对（全书 13 章目录全录）；零新增 CSS（复用 .post-card--serif）；index 卷·13 卡解锁（档案馆 5/10）+版本 v2.0.0-dev-R25（books+index）。
