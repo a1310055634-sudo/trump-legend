@@ -32,7 +32,7 @@
 | R36 | whitehouse+downfall 增厚（→2800 字+） | ✅ completed（自动化 R36，2026-10-04） |
 | R37 | comeback+quotes+about 增厚 | ✅ completed（自动化 R37，2026-10-04） |
 | R38 | QA 一：断链/typo/对比度全站 20 页复跑 | ✅ completed（自动化 R38，2026-10-04） |
-| R39 | QA 二：可达性专项（三档溢出/图表 aria/reduced-motion） | ⬜ |
+| R39 | QA 二：可达性专项（三档溢出/图表 aria/reduced-motion） | ✅ completed（自动化 R39，2026-10-04） |
 | R40 | QA 三：multiview 20 页 × 2 档截图审查 | ⬜ |
 | R41 | 事实大抽查 25 条（一手引用逐条对原文） | ⬜ |
 | R42 | 性能与体积（照片压宽/首屏计时） | ⬜ |
@@ -70,6 +70,13 @@
 ---
 
 ## 交接记录
+
+### R39（自动化轮 automation-49a8738f，2026-10-04 05:00-05:11）✅
+- **产出**：新写专项探针 `tools/a11y-r39.mjs`（单实例 CDP：20 页 × 375/768/1280 三档溢出扫描 + data.html 图表 aria 断言 + index/data reduced-motion 直出抽检，自带进程清扫）——**三专项全 PASS：60 个页宽组合零横向溢出；data.html 3 幅 SVG 全部 role=img + aria-label；reduced-motion 下 .panel-reveal 与新组件 transition 全 0s 直出**。R38 的 audit-a11y（101 项，含 20 页三档溢出）与本轮专项双重复验一致。
+- **自测**：a11y-r39 PASS（60 组合 + aria 3/3 + reduced-motion 2/2 断言）；工具入 tools/ 可复跑。
+- **坑**：①stat-strip 是 grid repeat(N,1fr) 结构天然不横向溢出——但 4 卡条带在窄档的边框 nth 选择器按 3 卡节奏写的，第 3 格上边线缺失属发丝级外观瑕疵（非溢出），归 R40 截图目检定夺；②Emulation.setEmulatedMedia 的 features 传参结构是 {features:[{name,value}]}，与旧版布尔开关不同。
+- **遗留**：①stat-strip 4 卡窄档边框发丝瑕疵归 R40 目检（如明显则补一条 nth 规则）；②键盘全流程走查（Tab 顺序遍历 20 页）归 R40/R41。
+- 下一轮：R40 QA 三——multiview 20 页 × 1280/375 截图审查（溢出/失真/裁字+stat-strip 边框目检）。
 
 ### R38（自动化轮 automation-49a8738f，2026-10-04 04:46-04:58）✅
 - **产出**：QA 一全绿——三个 QA 工具的 V1 十页硬编码清单扩到 **20 页**（qa-links/typo-scan/audit-a11y）；**audit-a11y 从 51 项扩到 101 项检查，最终 0 问题 PASS**。抓出并修复两类真实问题：①**对比度系统性缺陷**——.post-card__date 用 --gold-deep 对黑底仅 4.30:1（AA 需 4.5），影响 posts/speeches/orders/documents/books 五页全部日期标签，一处 CSS 升级为 --gold（≈9.8:1）全站修复；②触控豁免清单补齐两处行内散文例外（.eo-list 名录内链接、blockquote 署名 span 内链接——同 V1 论证的 WCAG 2.5.8 inline 例外，卷·14 与 quotes 的正文内链接系合理行内用法）。qa-links PASS（20 页零断链零外链图，日志标签 10 页→20 页）；typo-scan PASS（零错字术语一致；英文词复核清单全部为引语原文与专名——V2 十页的引语体量大，白名单复核项相应增多但全数合法）。
