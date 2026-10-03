@@ -107,10 +107,11 @@ try {
   const isIndex = page === "index.html";
   const hard = [];
   if (isIndex) {
+    // V2 起改下限断言（5.2-5）：站会持续增页，只设回归下限，不锁死总数
     if (!r.coverTitle) hard.push("缺少 .hero__title");
-    if (r.chapterCards !== 9) hard.push(`目录卡应为 9，实为 ${r.chapterCards}`);
-    if (r.stats !== 6) hard.push(`数字速览应为 6，实为 ${r.stats}`);
-    if (r.photosTotal !== 10) hard.push(`照片应为 10，实为 ${r.photosTotal}`);
+    if (r.chapterCards < 9) hard.push(`目录卡应至少 9（特辑九卷），实为 ${r.chapterCards}`);
+    if (r.stats < 6) hard.push(`数字速览应至少 6，实为 ${r.stats}`);
+    if (r.photosTotal < 10) hard.push(`照片应至少 10，实为 ${r.photosTotal}`);
   } else if (!r.pageHead) {
     hard.push("缺少 .page-head（内容页刊头）");
   }

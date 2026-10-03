@@ -393,3 +393,75 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   a.chapter-card:hover { transform: none; }
   a.chapter-card:hover .chapter-card__photo img { transform: none; }
 }
+
+/* ============================================================
+   V2 · 卷·09 社媒馆：.post-card 原帖卡（R21 起，只扩展不推翻）
+   ============================================================ */
+.post-card {
+  background: var(--black);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold-deep);
+  border-radius: 6px;
+  padding: var(--sp-5) var(--sp-6);
+  max-width: 860px;
+  margin: var(--sp-5) auto 0;
+}
+.post-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+.post-card__platform {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.post-card__date {
+  margin-left: auto;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold-deep);
+}
+.post-card__badge {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--flag-red);
+  color: #fff;
+  letter-spacing: 0.08em;
+}
+.post-card__text {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0 0 var(--sp-4);
+  overflow-wrap: break-word;
+}
+.post-card__zh {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--ink-dim);
+  margin: 0 0 var(--sp-3);
+}
+.post-card__note {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: var(--ink-faint);
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+}
+.post-card__note a { color: var(--gold-bright); }
+.post-card__note a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .post-card { padding: var(--sp-4); }
+  .post-card__text { font-size: 0.88rem; }
+}
