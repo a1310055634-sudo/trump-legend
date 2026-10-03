@@ -30,7 +30,7 @@
 | R34 | timeline 增厚（→3000 字+，补一手锚点） | ✅ completed（自动化 R34，2026-10-04） |
 | R35 | empire+stage 增厚（→2800 字+） | ✅ completed（自动化 R35，2026-10-04） |
 | R36 | whitehouse+downfall 增厚（→2800 字+） | ✅ completed（自动化 R36，2026-10-04） |
-| R37 | comeback+quotes+about 增厚 | ⬜ |
+| R37 | comeback+quotes+about 增厚 | ✅ completed（自动化 R37，2026-10-04） |
 | R38 | QA 一：断链/typo/对比度全站 20 页复跑 | ⬜ |
 | R39 | QA 二：可达性专项（三档溢出/图表 aria/reduced-motion） | ⬜ |
 | R40 | QA 三：multiview 20 页 × 2 档截图审查 | ⬜ |
@@ -70,6 +70,13 @@
 ---
 
 ## 交接记录
+
+### R37（自动化轮 automation-49a8738f，2026-10-04 04:31-04:44）✅
+- **产出**：①**comeback.html 增厚 2,572→2,726 字**——**R22 移交项闭环：2024 RNC 接受提名日期补入 7 月 18 日**（三源核验口径注记；V1 页面原本就没写具体日期，V1 账本的"7-17"从未上页，疑点就此消解为精度升级）+ 巴特勒自述原句引语卡（"I was shot with a bullet…"，R23 双源核验）+ 七月节第一手锚点行（卷·16/卷·10/卷·11）；②quotes.html 馆后记增姊妹馆行（与卷·09/卷·10 互为表里，三馆合计=语言全档），4,170 字；③about.html：照片计数 **17→24 张**修正+V2 新增摄影者致谢段（Gotfryd/Christopherpeterson/Mahaux/国务院/Schultz/Jackson）+ 参考来源补 V2 五条管线（Federal Register API/APP/trumpstruth.org/白宫 transcript/Archive.org），1,443 字；版本三页 v2.0.0-dev-R37。
+- **自测**：smoke comeback/quotes/about 三页 PASS（console 零 error、版本一致、照片全载、零断链）；截图 tools/shots/R37/。
+- **坑**：①R33 批量脚本已把全站统一盖到 R33——增厚轮的版本戳替换源必须先 grep 现文（quotes 还当它是 R26 就撞 0 命中，assertion 拦截）；②comeback 2,726 字 > V1 的 2500 线即达标（2800 线是 R35/R36 对 empire/stage/whitehouse/downfall 的专属要求，不适用于本页）。
+- **遗留**：①comeback 万斯"美国的希特勒"私信一段沿用 V1 口径（媒体披露来源）——R41 可核原报道；②about 参考来源未列 CourtListener（法庭文书走主流媒体存档）——R41 补记。
+- 下一轮：R38 QA 一——qa-links/typo-scan/audit-a11y 全站 20 页复跑，新组件纳入审计。
 
 ### R36（自动化轮 automation-49a8738f，2026-10-04 04:15-04:28）✅
 - **产出**：whitehouse.html **2,611→2,808 字** + downfall.html **2,576→2,801 字**（双双跨过 2800 线）——whitehouse「内阁·旋转门」节扩充：四大要职 14 任人次明细+布鲁金斯 92%（卷·15 互链）+211 项行政令（卷·11 互链）+两任期总统文件 1,778 份（R23 验货数据）+支持率节点（卷·18 互链），一条节把三条数据线收拢；downfall「传票的季节」增四案后续收束段（机密文件案 2024-07-15 驳回/两联邦案胜选后撤诉/史密斯终局报告 2025-01-07"证据足以支撑定罪"/佐治亚搁置——R24 已核）+量刑日节增第一手锚点行（三段判词原文交叉卷·12、推帖原声交叉卷·09）；版本双页 v2.0.0-dev-R36。
