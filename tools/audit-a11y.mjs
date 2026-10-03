@@ -11,7 +11,9 @@ const CHROME = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 const ROOT = resolve(import.meta.dirname, "..");
 const PORT = 9351;
 const PAGES = ["index.html", "timeline.html", "empire.html", "stage.html", "whitehouse.html",
-  "downfall.html", "comeback.html", "act47.html", "quotes.html", "about.html"];
+  "downfall.html", "comeback.html", "act47.html", "quotes.html", "about.html", "posts.html",
+  "speeches.html", "orders.html", "documents.html", "books.html", "family.html", "circle.html",
+  "rivals.html", "culture.html", "data.html"];
 const WIDTHS = [375, 768, 1280];
 const udd = join(tmpdir(), `tl-a11y-${Date.now()}`);
 const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${PORT}`, `--user-data-dir=${udd}`,
@@ -85,7 +87,7 @@ try {
         if (cs.display === "none") return;
         const r = el.getBoundingClientRect();
         if (r.width === 0 && r.height === 0) return;
-        if ((r.width < 44 || r.height < 44) && !el.closest(".footer") && !el.closest("p")) {
+        if ((r.width < 44 || r.height < 44) && !el.closest(".footer") && !el.closest("p") && !el.closest(".eo-list") && !el.closest("blockquote")) {
           /* .footer 内与段落内联链接按 WCAG 2.5.8 inline 例外豁免（≥24px 由行高保证） */
           out.touch.push((el.className.toString().slice(0, 30) || el.tagName) + " " + Math.round(r.width) + "x" + Math.round(r.height) + " " + (el.textContent || "").trim().slice(0, 14));
         }

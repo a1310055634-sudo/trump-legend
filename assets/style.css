@@ -424,7 +424,7 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
-  color: var(--gold-deep);
+  color: var(--gold); /* R38: gold-deep 对黑底 4.30:1 不达 AA，升主金 */
 }
 .post-card__badge {
   font-family: var(--font-body);

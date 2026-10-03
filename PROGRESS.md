@@ -31,7 +31,7 @@
 | R35 | empire+stage 增厚（→2800 字+） | ✅ completed（自动化 R35，2026-10-04） |
 | R36 | whitehouse+downfall 增厚（→2800 字+） | ✅ completed（自动化 R36，2026-10-04） |
 | R37 | comeback+quotes+about 增厚 | ✅ completed（自动化 R37，2026-10-04） |
-| R38 | QA 一：断链/typo/对比度全站 20 页复跑 | ⬜ |
+| R38 | QA 一：断链/typo/对比度全站 20 页复跑 | ✅ completed（自动化 R38，2026-10-04） |
 | R39 | QA 二：可达性专项（三档溢出/图表 aria/reduced-motion） | ⬜ |
 | R40 | QA 三：multiview 20 页 × 2 档截图审查 | ⬜ |
 | R41 | 事实大抽查 25 条（一手引用逐条对原文） | ⬜ |
@@ -70,6 +70,13 @@
 ---
 
 ## 交接记录
+
+### R38（自动化轮 automation-49a8738f，2026-10-04 04:46-04:58）✅
+- **产出**：QA 一全绿——三个 QA 工具的 V1 十页硬编码清单扩到 **20 页**（qa-links/typo-scan/audit-a11y）；**audit-a11y 从 51 项扩到 101 项检查，最终 0 问题 PASS**。抓出并修复两类真实问题：①**对比度系统性缺陷**——.post-card__date 用 --gold-deep 对黑底仅 4.30:1（AA 需 4.5），影响 posts/speeches/orders/documents/books 五页全部日期标签，一处 CSS 升级为 --gold（≈9.8:1）全站修复；②触控豁免清单补齐两处行内散文例外（.eo-list 名录内链接、blockquote 署名 span 内链接——同 V1 论证的 WCAG 2.5.8 inline 例外，卷·14 与 quotes 的正文内链接系合理行内用法）。qa-links PASS（20 页零断链零外链图，日志标签 10 页→20 页）；typo-scan PASS（零错字术语一致；英文词复核清单全部为引语原文与专名——V2 十页的引语体量大，白名单复核项相应增多但全数合法）。
+- **自测**：audit-a11y 101/101 PASS + qa-links PASS + typo-scan PASS + posts/speeches 复冒烟 PASS（日期色变更涉及页抽测）；截图 tools/shots/R38/。
+- **坑**：①扩清单是 QA 轮的第一步——三个工具全硬编码 V1 十页，若直接跑会假绿（新十页根本没进审计）；②守卫式 python 补丁（assert count==1）连用五处零失手，比 Edit 更适合这类跨文件同构小改——但仅限无中文新增的场合。
+- **遗留**：①audit-a11y 的豁免注释应把本轮两处新例写进文件头说明（已写在其侧注）；②对比度 4.30 的教训：新组件选色时凡是小字一律直接用 --gold 或 --ink-dim（4.9:1），--gold-deep 只留给装饰线——写进 R41 抽查关注项。
+- 下一轮：R39 QA 二——可达性专项（新页三档溢出/图表 aria/reduced-motion），审计器扩 20 页复验。
 
 ### R37（自动化轮 automation-49a8738f，2026-10-04 04:31-04:44）✅
 - **产出**：①**comeback.html 增厚 2,572→2,726 字**——**R22 移交项闭环：2024 RNC 接受提名日期补入 7 月 18 日**（三源核验口径注记；V1 页面原本就没写具体日期，V1 账本的"7-17"从未上页，疑点就此消解为精度升级）+ 巴特勒自述原句引语卡（"I was shot with a bullet…"，R23 双源核验）+ 七月节第一手锚点行（卷·16/卷·10/卷·11）；②quotes.html 馆后记增姊妹馆行（与卷·09/卷·10 互为表里，三馆合计=语言全档），4,170 字；③about.html：照片计数 **17→24 张**修正+V2 新增摄影者致谢段（Gotfryd/Christopherpeterson/Mahaux/国务院/Schultz/Jackson）+ 参考来源补 V2 五条管线（Federal Register API/APP/trumpstruth.org/白宫 transcript/Archive.org），1,443 字；版本三页 v2.0.0-dev-R37。

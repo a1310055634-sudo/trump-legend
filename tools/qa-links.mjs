@@ -5,7 +5,9 @@ import { join, dirname, resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const PAGES = ["index.html", "timeline.html", "empire.html", "stage.html", "whitehouse.html",
-  "downfall.html", "comeback.html", "act47.html", "quotes.html", "about.html"];
+  "downfall.html", "comeback.html", "act47.html", "quotes.html", "about.html", "posts.html",
+  "speeches.html", "orders.html", "documents.html", "books.html", "family.html", "circle.html",
+  "rivals.html", "culture.html", "data.html"];
 const problems = [];
 
 for (const page of PAGES) {
@@ -27,6 +29,6 @@ for (const page of PAGES) {
   ext.forEach(m => problems.push(`${page} 外链图片: ${m[1]}`));
 }
 
-console.log(`== 断链审计：10 页 href/src 全量，外链图片 ${externalImg} ==`);
+console.log(`== 断链审计：20 页 href/src 全量，外链图片 ${externalImg} ==`);
 console.log(problems.length ? problems.map(p => "  " + p).join("\n") + "\nFAIL" : "PASS（零断链、零外链图片）");
 process.exitCode = problems.length ? 1 : 0;

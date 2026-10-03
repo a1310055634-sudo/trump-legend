@@ -5,7 +5,9 @@ import { resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const PAGES = ["index.html", "timeline.html", "empire.html", "stage.html", "whitehouse.html",
-  "downfall.html", "comeback.html", "act47.html", "quotes.html", "about.html"];
+  "downfall.html", "comeback.html", "act47.html", "quotes.html", "about.html", "posts.html",
+  "speeches.html", "orders.html", "documents.html", "books.html", "family.html", "circle.html",
+  "rivals.html", "culture.html", "data.html"];
 
 // 术语一致性：只允许一种写法（正文语境）
 const TERMS = [
