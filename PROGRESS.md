@@ -2,8 +2,8 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v3 双轨版**——V1 金黑特辑已收官，**V2 第一手档案 24 轮进行中**，V2 细则见文末「五、V2 部分」，冲突时以 V2 部分为准）
-- 当前状态：**V3 进行中（2026-10-04 立项，R45–R74 共 30 轮，目标 v3.0.0）——进度 2/30；V1+V2 共 45 轮已全数 completed 存档在案**
-- 下一轮：**R47 讲台馆 +4 篇精读**（speeches.html：2025-03-04 国会演说/2026-02-24 SOTU/2019-09-24 UN"笑声段"/2024-11-06 胜选演说，whitehouse.gov 与 APP 转录直连）
+- 当前状态：**V3 进行中（2026-10-04 立项，R45–R74 共 30 轮，目标 v3.0.0）——进度 3/30；V1+V2 共 45 轮已全数 completed 存档在案**
+- 下一轮：**R48 白纸黑字原文级升级**（documents.html：Merchan 量刑陈述逐字、Smith 终局报告原句摘录，清偿 V2 双遗留；doc-card 增 2–3 张）
 - 当前版本：`v2.0.0`（V3 起轮戳 v3.0.0-dev-Rxx；R73=v3.0.0-rc、R74=v3.0.0）
 - 驱动方式：定时任务每 15 分钟一轮（**automation-8383f7ae-525d-4514-b3f0-4df85e76b4bc**，2026-10-04 注册，提示词正本=仓库根 `AUTOMATION_PROMPT-V3.md`：流程六节+轮次地图+七类轮型 DoD+验收线+高频坑速查，零传主细节一切从文件现读；旧 automation-49a8738f（V2）已删除；automation-79a585bc 暂停留档勿启用）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、任务书=v4（「六、V3 部分」为 V3 唯一细则源，活人边界加严为最高条款）
@@ -16,7 +16,7 @@
 |---|---|---|
 | R45 | 社媒馆深翻（posts.html，TS 翻页 18→45 帖） | ✅ completed（自动化 R45，2026-10-05：实达 46 帖+顺修全站版本戳） |
 | R46 | 语录馆扩容 40→80 条（quotes.html） | ✅ completed（自动化 R46，2026-10-05：80 块实数，八展室） |
-| R47 | 讲台馆 +4 篇精读（SOTU2025/UN2019/胜选2024/国会2017） | ⬜ |
+| R47 | 讲台馆 +4 篇精读（SOTU2025/UN2019/胜选2024/国会2017） | ✅ completed（自动化 R47，2026-10-05：实为 2018/2019 联大+胜选+国会+SOTU，30 段） |
 | R48 | 白纸黑字原文级升级（documents.html，清偿 Merchan/Smith 遗留） | ⬜ |
 | R49 | 数字卷图表 3→8 幅（data.html） | ⬜ |
 | R50 | 家族谱二代与孙辈（family.html →3000 字+） | ⬜ |
@@ -128,6 +128,15 @@
 ---
 
 ## 交接记录
+
+### R47（自动化轮 automation-8383f7ae，2026-10-05 01:40-02:00）✅
+- **产出**：speeches.html 四讲台→**八讲台，16→30 段**（新增 14 段，每篇 3-4 段符合任务书 3-5 段规格）——第五讲台·联大两年（2018-09-25 政绩宣言+笑声回应"didn't expect that reaction"双写+2019-09-24"未来属于爱国者"片段，全部经 trumpwhitehouse.archives.gov 官方存档与 Politico/NBC 多源核验）/ 第六讲台·2024 胜选演说（magnificent victory/greatest political movement/help our country heal，NBC/Roll Call/Rev 转录多源）/ 第七讲台·2025-03-04 国会联席演说（America is back/边境战报/关税对等十一音节/golden age just begun 收束，**Miller Center 存档 transcript 直连逐段核对**；按语含 Al Green 被移席双写与约 100 分钟口径）/ 第八讲台·2026-02-24 国情咨文（开场定调/一年转型/伊朗战报 obliterated 五 B 收束，Miller Center 直连；按语含 1h47m 生涯最长口径）。**新管线发现：Miller Center 的规律化 URL（millercenter.org/the-presidency/presidential-speeches/月-日-年-slug）可 WebFetch 直取转录——本机 WebFetch 全文源从此多了两条腿（白宫存档+Miller Center）。**
+- **任务书笔误发现并修正（如实记录）**：任务书 R47 规格写"2019-09-24 联合国大会（'笑声段'）"——复核确认**笑声发生在 2018-09-25 第 73 届联大**（"accomplished more"句后），2019-09-24 第 74 届的名场面是"未来属于爱国者"；本轮以"联大双年"一讲合并覆盖（2025 BBC 回顾标题《七年前他的听众笑了他》亦证 2018 口径），账本即此修正记录，下版任务书修订时更正该行。
+- **同源不同件口径**：四篇演说与 R46 台词馆展室四/八的 11 条讲台金句同源不同件（馆收金句、讲台收段落精读），无重复维护；"obliterated"与"golden age"两处在两页间加了互指按语。
+- **自测**：30 段实数断言 PASS（serif 卡配平、八讲台标头）；写完即读抓两处：馆后记"31 段"笔误→30、英文残留"Satellite 评估"→"卫星图像评估"；smoke speeches.html PASS（console 零 error、2 照片全载、版本=v3.0.0-dev-R47 两处一致、零断链、42 panels）；CJK 5,065（+1,964）。
+- **坑**：①首次 WebSearch 组合查询 60s 超时——拆单查即恢复；②Miller Center UN 2018 页 404（slug 略异），改走官方白宫存档+搜索转录双源，未硬凑。
+- **遗留**：①2024 胜选演说"promises made, promises kept"一句只到片段级（多转录源措辞略有差异），未独立成段；②讲台时长曲线（14 分钟就职→100 分钟→1h47m）已入馆后记，逐年曲线归 R49 数字卷评估。
+- 下一轮：R48 白纸黑字原文级升级（documents.html，清偿 Merchan/Smith 双遗留）。
 
 ### R46（自动化轮 automation-8383f7ae，2026-10-05 01:05-01:35）✅
 - **产出**：quotes.html 扩容 **40→80 块 blockquote（实数断言 80）**，七个展室→**八个**（新增第八展室·第二任期·纸上与屏上 2025-，收 Truth Social 金句 9 块）。净增 40 条四档分层：①**实源 22 条**（10 次 WebSearch 多源核验——2025-03-04 国会演说"America is back"清偿 R26/R32 双移交项[APP/CNN/NPR 转录]、2026-02-24 SOTU[史上最长 1h47m，BBC 记述]"golden age/roaring"两句、2015-16 五句[ American dream is dead/best words/punch/Second Amendment 双写/American dream… ]、2020 疫情两句[disappear/authority]、LIBERATE 三连、He who saves 拿破仑帖、Kirk 追思会"I hate them"双写[埃里卡宽恕同台对比]、UN2025 三句[con job/paper tiger/going to hell]、obliterated 双写[卫星评估修正并陈]、transgender 辩论句[ABC 转录+PBS 核查]、magnificent victory、standing in the way）；②**社媒存档直取 10 条**（R45 采集管线复用，其中 3 条=与卷·09 新交叉，恰触"新增≤3"上限[TOO BIG TO RIG/哈梅内伊帖/ANY RETALIATION]）；③**姊妹页已核 2 条**（drill baby drill/I am your voice=R22 白宫 transcript 口径）；④降级"极广泛公开记载"6 条。logline/馆后记/三条指纹/meta description 全站口径同步为"八十条·八展室"（meta 里 V1 陈旧的"十七条"一并修正）；TBC 更新为 R47 预告。
