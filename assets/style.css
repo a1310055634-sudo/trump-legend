@@ -682,3 +682,26 @@ a.chapter-card:hover .chapter-card__photo img { transform: scale(1.045); filter:
 #search-results strong { color: var(--gold-bright); }
 .search-snippet { color: var(--ink-dim); font-size: .9rem; }
 .search-empty { color: var(--ink-faint); padding: var(--sp-4); text-align: center; }
+
+/* ============================================================
+   R69 · 脚注引用体系（.ref 上标 + .ref-list 来源清单）
+   ============================================================ */
+.ref {
+  font-size: .75rem;
+  color: var(--gold-bright);
+  vertical-align: super;
+  line-height: 0;
+  text-decoration: none;
+  cursor: help;
+}
+.ref-list {
+  margin: var(--sp-5) 0 0;
+  padding: var(--sp-4);
+  border-top: 1px solid var(--gold-deep);
+  font-size: .85rem;
+  color: var(--ink-dim);
+}
+.ref-list .caption { margin-bottom: var(--sp-2); }
+.ref-list ol { margin: 0; padding-left: 1.4em; }
+.ref-list li { margin-bottom: .3em; }
+.ref-list a { color: var(--gold-bright); }
