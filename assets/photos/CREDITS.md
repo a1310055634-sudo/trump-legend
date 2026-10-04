@@ -45,6 +45,8 @@
 | `gallery-2020s-2nd-inauguration.jpg` | [Donald Trump 2nd Inauguration.jpg](https://commons.wikimedia.org/wiki/File:Donald_Trump_2nd_Inauguration.jpg) | 众议院 creative services（House Creative Services） | Public domain（美国政府作品） | 二次就职，gallery.html 卷·26 用 |
 | `gallery-2020s-signs-post-inaugural.jpg` | [President Trump signs post-inaugural documents (January 20, 2025).jpg](https://commons.wikimedia.org/wiki/File:President_Trump_signs_post-inaugural_documents_(January_20,_2025).jpg) | 众议院 creative services | Public domain（美国政府作品） | 2025-01-20 签署就任后文件，gallery.html 卷·26 用 |
 | `gallery-2020s-takaichi-yokosuka.jpg` | [Sanae Takaichi and Donald Trump at Yokosuka Naval Base in 2025 (10).jpg](https://commons.wikimedia.org/wiki/File:Sanae_Takaichi_and_Donald_Trump_at_Yokosuka_Naval_Base_in_2025_(10).jpg) | 内阁官房（Cabinet Secretariat） | CC BY 4.0 | 2025 横须贺与高市早苗，gallery.html 卷·26 用；须署名 |
+| `gallery-2010s-hurricane-bill.jpg` | [President Trump signing Hurricane Harvey bill (cropped).jpg](https://commons.wikimedia.org/wiki/File:President_Trump_signing_Hurricane_Harvey_bill_(cropped).jpg) | Andrea Hanks（白宫官方照） | Public domain（美国政府作品） | 2017 签署哈维飓风法案，gallery.html 卷·26 用 |
+| `gallery-2010s-sotu-2018.jpg` | [Donald Trump State of the Union 2018 (26133528958).jpg](https://commons.wikimedia.org/wiki/File:Donald_Trump_State_of_the_Union_2018_(26133528958).jpg) | 白宫（The White House） | Public domain（美国政府作品） | 2018 国情咨文演说，gallery.html 卷·26 用 |
 
 ## 使用规则（后续轮次遵守）
 
