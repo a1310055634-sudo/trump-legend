@@ -2,8 +2,8 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v3 双轨版**——V1 金黑特辑已收官，**V2 第一手档案 24 轮进行中**，V2 细则见文末「五、V2 部分」，冲突时以 V2 部分为准）
-- 当前状态：**V3 进行中（2026-10-04 立项，R45–R74 共 30 轮，目标 v3.0.0）——进度 3/30；V1+V2 共 45 轮已全数 completed 存档在案**
-- 下一轮：**R48 白纸黑字原文级升级**（documents.html：Merchan 量刑陈述逐字、Smith 终局报告原句摘录，清偿 V2 双遗留；doc-card 增 2–3 张）
+- 当前状态：**V3 进行中（2026-10-04 立项，R45–R74 共 30 轮，目标 v3.0.0）——进度 4/30；V1+V2 共 45 轮已全数 completed 存档在案**
+- 下一轮：**R49 数字卷图表 3→8**（data.html：支持率全曲线/关税时间线/DJT 股价节点/内阁更替率/摇摆州胜负差，零库 SVG 坐标脚本现算）
 - 当前版本：`v2.0.0`（V3 起轮戳 v3.0.0-dev-Rxx；R73=v3.0.0-rc、R74=v3.0.0）
 - 驱动方式：定时任务每 15 分钟一轮（**automation-8383f7ae-525d-4514-b3f0-4df85e76b4bc**，2026-10-04 注册，提示词正本=仓库根 `AUTOMATION_PROMPT-V3.md`：流程六节+轮次地图+七类轮型 DoD+验收线+高频坑速查，零传主细节一切从文件现读；旧 automation-49a8738f（V2）已删除；automation-79a585bc 暂停留档勿启用）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、任务书=v4（「六、V3 部分」为 V3 唯一细则源，活人边界加严为最高条款）
@@ -17,7 +17,7 @@
 | R45 | 社媒馆深翻（posts.html，TS 翻页 18→45 帖） | ✅ completed（自动化 R45，2026-10-05：实达 46 帖+顺修全站版本戳） |
 | R46 | 语录馆扩容 40→80 条（quotes.html） | ✅ completed（自动化 R46，2026-10-05：80 块实数，八展室） |
 | R47 | 讲台馆 +4 篇精读（SOTU2025/UN2019/胜选2024/国会2017） | ✅ completed（自动化 R47，2026-10-05：实为 2018/2019 联大+胜选+国会+SOTU，30 段） |
-| R48 | 白纸黑字原文级升级（documents.html，清偿 Merchan/Smith 遗留） | ⬜ |
+| R48 | 白纸黑字原文级升级（documents.html，清偿 Merchan/Smith 遗留） | ✅ completed（自动化 R48，2026-10-05：7 卡，双清偿闭环） |
 | R49 | 数字卷图表 3→8 幅（data.html） | ⬜ |
 | R50 | 家族谱二代与孙辈（family.html →3000 字+） | ⬜ |
 | R51 | 卷·07 时事快照①（act47.html，易变线全量复核） | ⬜ |
@@ -128,6 +128,14 @@
 ---
 
 ## 交接记录
+
+### R48（自动化轮 automation-8383f7ae，2026-10-05 02:05-02:25）✅
+- **产出**：documents.html 原文级升级，doc-card **5→7 卡**——①**Merchan 卡半句升级为量刑陈述逐字**（"Never before has this court been presented with such a unique and remarkable set of circumstances"+"悖论"句：庭内是普通刑案、庭外是当选被告；Roll Call 全场转录/NYT/CNN 多源）；②**新增 Smith 终局报告卡**（justice.gov 官方 PDF 原句"the admissible evidence was sufficient to obtain and sustain a conviction at trial"+撤案"若非他当选"转述；第二卷未公开已在卡内注明）；③**新增 Cannon 驳回令卡**（"The Superseding Indictment is DISMISSED because Special Counsel Smith's appointment violates the Appointments Clause"，NPR/Courthouse News；"首位采纳+此前八位驳回+上诉撤回无实体结论"三口径并陈）——R24 登记的"驳回理由"降级项闭环；④**Kaplan 卡深摘**（补前句"The jury's finding of sexual abuse therefore necessarily implies that it found that Mr. Trump forcibly penetrated her."，FindLaw/华盛顿邮报）——R36 移交项闭环；⑤顺手修正旧按语错误："九个多月后"实为**七个多月**（2024-05-30 定罪→2025-01-10 量刑）。
+- **核验险情**：Merchan 名句坊间常引作"unique and unprecedented"——搜索证伪，实为"unique and **remarkable**"（NYT/CNN 引文一致）；先搜后写再次拦住一次以讹传讹。
+- **自测**：7 卡实数断言 PASS + 标签配平 + smoke documents.html PASS（console 零 error、2 照片全载、版本=v3.0.0-dev-R48 两处一致、零断链）；CJK 2,572（+519）；馆后记计数同步（5 段判词与报告+2 封健康文书）、TBC 更新为 R49 预告。
+- **坑**：无——两轮搜索全部命中；"unprecedented→remarkable"与"九个→七个月"两处修正再次验证"先搜后写+写完即读"。
+- **遗留**：①books.html 两著作页码级深读仍降级（不在本轮任务范围，保留在案）；②Smith 报告第二卷（机密文件案）未对公众公开——卡内已注明只有国会送达本。
+- 下一轮：R49 数字卷图表 3→8（data.html，零库 SVG，坐标脚本现算）。
 
 ### R47（自动化轮 automation-8383f7ae，2026-10-05 01:40-02:00）✅
 - **产出**：speeches.html 四讲台→**八讲台，16→30 段**（新增 14 段，每篇 3-4 段符合任务书 3-5 段规格）——第五讲台·联大两年（2018-09-25 政绩宣言+笑声回应"didn't expect that reaction"双写+2019-09-24"未来属于爱国者"片段，全部经 trumpwhitehouse.archives.gov 官方存档与 Politico/NBC 多源核验）/ 第六讲台·2024 胜选演说（magnificent victory/greatest political movement/help our country heal，NBC/Roll Call/Rev 转录多源）/ 第七讲台·2025-03-04 国会联席演说（America is back/边境战报/关税对等十一音节/golden age just begun 收束，**Miller Center 存档 transcript 直连逐段核对**；按语含 Al Green 被移席双写与约 100 分钟口径）/ 第八讲台·2026-02-24 国情咨文（开场定调/一年转型/伊朗战报 obliterated 五 B 收束，Miller Center 直连；按语含 1h47m 生涯最长口径）。**新管线发现：Miller Center 的规律化 URL（millercenter.org/the-presidency/presidential-speeches/月-日-年-slug）可 WebFetch 直取转录——本机 WebFetch 全文源从此多了两条腿（白宫存档+Miller Center）。**
