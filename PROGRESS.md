@@ -2,8 +2,8 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v3 双轨版**——V1 金黑特辑已收官，**V2 第一手档案 24 轮进行中**，V2 细则见文末「五、V2 部分」，冲突时以 V2 部分为准）
-- 当前状态：**V3 进行中（2026-10-04 立项，R45–R74 共 30 轮，目标 v3.0.0）——进度 4/30；V1+V2 共 45 轮已全数 completed 存档在案**
-- 下一轮：**R49 数字卷图表 3→8**（data.html：支持率全曲线/关税时间线/DJT 股价节点/内阁更替率/摇摆州胜负差，零库 SVG 坐标脚本现算）
+- 当前状态：**V3 进行中（2026-10-04 立项，R45–R74 共 30 轮，目标 v3.0.0）——进度 5/30；V1+V2 共 45 轮已全数 completed 存档在案**
+- 下一轮：**R50 家族谱二代与孙辈**（family.html：五子女各家小节+孙辈逐人点名与生卒多源核验，→3000 字线）
 - 当前版本：`v2.0.0`（V3 起轮戳 v3.0.0-dev-Rxx；R73=v3.0.0-rc、R74=v3.0.0）
 - 驱动方式：定时任务每 15 分钟一轮（**automation-8383f7ae-525d-4514-b3f0-4df85e76b4bc**，2026-10-04 注册，提示词正本=仓库根 `AUTOMATION_PROMPT-V3.md`：流程六节+轮次地图+七类轮型 DoD+验收线+高频坑速查，零传主细节一切从文件现读；旧 automation-49a8738f（V2）已删除；automation-79a585bc 暂停留档勿启用）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、任务书=v4（「六、V3 部分」为 V3 唯一细则源，活人边界加严为最高条款）
@@ -18,7 +18,7 @@
 | R46 | 语录馆扩容 40→80 条（quotes.html） | ✅ completed（自动化 R46，2026-10-05：80 块实数，八展室） |
 | R47 | 讲台馆 +4 篇精读（SOTU2025/UN2019/胜选2024/国会2017） | ✅ completed（自动化 R47，2026-10-05：实为 2018/2019 联大+胜选+国会+SOTU，30 段） |
 | R48 | 白纸黑字原文级升级（documents.html，清偿 Merchan/Smith 遗留） | ✅ completed（自动化 R48，2026-10-05：7 卡，双清偿闭环） |
-| R49 | 数字卷图表 3→8 幅（data.html） | ⬜ |
+| R49 | 数字卷图表 3→8 幅（data.html） | ✅ completed（自动化 R49，2026-10-05：8 幅达标，支持率图升级+五新图） |
 | R50 | 家族谱二代与孙辈（family.html →3000 字+） | ⬜ |
 | R51 | 卷·07 时事快照①（act47.html，易变线全量复核） | ⬜ |
 | R52 | 建法庭全记馆 court.html（卷·19，六线台账+司法官群像） | ⬜ |
@@ -128,6 +128,15 @@
 ---
 
 ## 交接记录
+
+### R49（自动化轮 automation-8383f7ae，2026-10-05 02:30-02:55）✅
+- **产出**：data.html 图表 **3→8 幅达标**——①**支持率图原位升级为七节点两任期全曲线**（新增 2025-01 47%/2025-02 45%/2025-10 36%，Gallup 官方历史页+R41 复核；旧"约45/约49/约34"标签升级为实值，约值遗留清零）；②新增**第五节·关税时间线**（解放日 04-02 对华一度 145% → 日内瓦 05-12 145→30[Reuters 补核] → SCOTUS 2026-02-20 6:3，卷·07 底座）；③新增**第六节·DJT 股价五节点折线**（上市盘中峰值 $79.38 → 2024-09-03 破 $18 → 解禁日 $13.55 → 2025-11 $10.85 → 2026-06-25 $7.52 创新低，Reuters/CNBC/AP/Yahoo 逐点核验，距峰值跌逾九成）；④**第四节文字面板升级为四大职系任人次柱状**（4/2/4/4，R28 数据复用+92% Brookings 标注入图）；⑤新增**第七节·2024 七摇摆州认证差距横条**（+0.9/+1.4/+1.7/+2.2/+3.0/+3.1/+5.9，蓝墙三州合计 229,726 票即可翻转[CFR]，与卷·20 选举解剖互通）；⑥**补第八节·三届普选票率柱状**（46.1:48.2 / 46.8:51.3 / 49.8:48.3，三届连续爬升+2024 首赢普选——与第三节选举人票构成"制度双写"对图）。
+- **工程纪律**：全部坐标经 `tools/coords-r49.mjs` 脚本现算（y=524−8.8v / 260−2.75v 等公式入脚本可复跑）；每图 role=img+aria-label+chart-caption 三件套；SVG 表现属性零 var()（令牌走 style 内联）。
+- **计数小插曲**：任务书"3→8"口径下，"支持率全曲线"按原位升级只占一格，总数 7 幅差 1——补第八节普选票率图化解，8 幅达标（任务书逐项计数以"最终总数"对齐）。
+- **自测**：8 chart-figure 实数断言+8 svg 配平+8 caption+约值标签清零+smoke data.html PASS（console 零 error、1 照片全载、版本=v3.0.0-dev-R49 两处一致、零断链）；CJK 2,442；TBC 更新为 R50 预告。
+- **坑**：无新增——四批搜索全部命中；计数口径差按上述化解。
+- **遗留**：①Gallup 2025-02 的 45% 为时间线摘值（APP 记 02/03 与 02/14 两个 dat point），页内按月级口径；②DJT 2024-09 解禁日 $13.55 的逐日日期（9-19/9-20）未核，节点保持月级口径；③92% 的逐年展开需深翻 Brookings 数据，归 R52+ 评估。
+- 下一轮：R50 家族谱二代与孙辈（family.html →3000 字线，生卒零容忍核验）。
 
 ### R48（自动化轮 automation-8383f7ae，2026-10-05 02:05-02:25）✅
 - **产出**：documents.html 原文级升级，doc-card **5→7 卡**——①**Merchan 卡半句升级为量刑陈述逐字**（"Never before has this court been presented with such a unique and remarkable set of circumstances"+"悖论"句：庭内是普通刑案、庭外是当选被告；Roll Call 全场转录/NYT/CNN 多源）；②**新增 Smith 终局报告卡**（justice.gov 官方 PDF 原句"the admissible evidence was sufficient to obtain and sustain a conviction at trial"+撤案"若非他当选"转述；第二卷未公开已在卡内注明）；③**新增 Cannon 驳回令卡**（"The Superseding Indictment is DISMISSED because Special Counsel Smith's appointment violates the Appointments Clause"，NPR/Courthouse News；"首位采纳+此前八位驳回+上诉撤回无实体结论"三口径并陈）——R24 登记的"驳回理由"降级项闭环；④**Kaplan 卡深摘**（补前句"The jury's finding of sexual abuse therefore necessarily implies that it found that Mr. Trump forcibly penetrated her."，FindLaw/华盛顿邮报）——R36 移交项闭环；⑤顺手修正旧按语错误："九个多月后"实为**七个多月**（2024-05-30 定罪→2025-01-10 量刑）。

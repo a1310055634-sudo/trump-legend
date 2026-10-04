@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="site-version" content="v2.0.0">
+<meta name="site-version" content="v3.0.0-dev-R49">
 <meta name="description" content="川流不息 · 卷·18 数字卷——零库自绘 SVG 图表：两任期支持率节点、三届选举人票对比、行政令逐年柱状与幕僚更替率，每图附数据源与数据表。非官方致敬向同人站。">
 <title>卷·18 数字卷 · 用图表读他 — 川流不息 · THE TRUMP LEGEND</title>
 <link rel="stylesheet" href="assets/style.css">
@@ -81,30 +81,35 @@
   </section>
 
   <figure class="chart-figure panel-reveal">
-    <svg viewBox="0 0 640 300" role="img" aria-label="两任期支持率关键节点折线：2017 年就职初值约百分之四十五，2020 年 3 月升到约百分之四十九，2021 年 1 月卸任时降到约百分之三十四；第二任期 2025 年 9 月为百分之三十六，2026 年 8 月百分之三十四——总体从高位一路走低" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 640 300" role="img" aria-label="两任期支持率七节点折线：2017 年 2 月百分之四十五，2020 年 3 月百分之四十九，2021 年 1 月卸任百分之三十四；第二任期 2025 年 1 月开局百分之四十七，2 月百分之四十五，10 月降到百分之三十六，2026 年 8 月皮尤百分之三十四——两任期都从开局高位一路走低" xmlns="http://www.w3.org/2000/svg">
       <line x1="70" y1="260" x2="610" y2="260" style="stroke:var(--line);stroke-width:1"/>
-      <line x1="340" y1="40" x2="340" y2="260" style="stroke:var(--line);stroke-width:1;stroke-dasharray:4 4"/>
-      <polyline points="70,128 205,92.8 340,224.8" style="fill:none;stroke:var(--gold);stroke-width:2.5"/>
-      <polyline points="475,207.2 610,224.8" style="fill:none;stroke:var(--gold);stroke-width:2.5"/>
-      <line x1="340" y1="224.8" x2="475" y2="207.2" style="stroke:var(--gold-deep);stroke-width:1.5;stroke-dasharray:3 5"/>
+      <polyline points="70,128 160,92.8 250,224.8" style="fill:none;stroke:var(--gold);stroke-width:2.5"/>
+      <polyline points="340,110.4 430,128 520,207.2 610,224.8" style="fill:none;stroke:var(--gold-bright);stroke-width:2.5"/>
+      <line x1="250" y1="224.8" x2="340" y2="110.4" style="stroke:var(--gold-deep);stroke-width:1.5;stroke-dasharray:3 5"/>
       <circle cx="70" cy="128" r="4" style="fill:var(--gold)"/>
-      <circle cx="205" cy="92.8" r="4" style="fill:var(--gold)"/>
-      <circle cx="340" cy="224.8" r="4" style="fill:var(--gold)"/>
-      <circle cx="475" cy="207.2" r="4" style="fill:var(--gold-bright)"/>
+      <circle cx="160" cy="92.8" r="4" style="fill:var(--gold)"/>
+      <circle cx="250" cy="224.8" r="4" style="fill:var(--gold)"/>
+      <circle cx="340" cy="110.4" r="4" style="fill:var(--gold-bright)"/>
+      <circle cx="430" cy="128" r="4" style="fill:var(--gold-bright)"/>
+      <circle cx="520" cy="207.2" r="4" style="fill:var(--gold-bright)"/>
       <circle cx="610" cy="224.8" r="4" style="fill:var(--gold-bright)"/>
-      <text x="70" y="112" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">约45%</text>
-      <text x="205" y="77" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">约49%</text>
-      <text x="340" y="209" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">约34%</text>
-      <text x="475" y="191" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">36%</text>
+      <text x="70" y="112" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">45%</text>
+      <text x="160" y="77" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">49%</text>
+      <text x="250" y="209" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">34%</text>
+      <text x="340" y="94" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">47%</text>
+      <text x="430" y="112" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">45%</text>
+      <text x="520" y="191" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">36%</text>
       <text x="610" y="209" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">34%</text>
-      <text x="70" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2017就任</text>
-      <text x="205" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2020-03</text>
-      <text x="340" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2021-01卸任</text>
-      <text x="475" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2025</text>
+      <text x="70" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2017-02</text>
+      <text x="160" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2020-03</text>
+      <text x="250" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2021-01卸任</text>
+      <text x="340" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2025-01</text>
+      <text x="430" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2025-02</text>
+      <text x="520" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2025-10</text>
       <text x="610" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2026-08</text>
-      <text x="340" y="30" text-anchor="middle" style="fill:var(--ink-faint);font:11px var(--font-body)">虚线＝两任期之间的四年空窗</text>
+      <text x="295" y="160" text-anchor="middle" style="fill:var(--ink-faint);font:11px var(--font-body)">虚线＝四年空窗</text>
     </svg>
-    <figcaption class="chart-caption">数据表：约45%（2017-02，Gallup 就任初值，约值）· 约49%（2020-03，Gallup 疫情高点，约值）· 约34%（2021-01，Gallup 卸任，约值）· 36%（2025，Gallup 首年低点，1977 年以来最低——卷·07 已核）· 34%（2026-08，皮尤——卷·07 已核）。三处"约"值节点归终验轮逐点复核。</figcaption>
+    <figcaption class="chart-caption">数据表：45%（2017-02，Gallup）· 49%（2020-03，Gallup 疫情高点，官方历史页确认）· 34%（2021-01，Gallup 卸任，官方历史页确认）——前三点经 R41 实源复核；47%（2025-01，Gallup 第二任期开局）· 45%（2025-02，Gallup）· 36%（2025-10，Gallup，首年低点带——卷·07 已核）· 34%（2026-08，皮尤——卷·07 已核）。末点为皮尤，其余均为 Gallup。两任期开局的高位与卸任位的对称下行，是这张图唯一的修辞。</figcaption>
   </figure>
 
   <!-- ================= 第二节 · 行政令 ================= -->
@@ -169,26 +174,163 @@
     <figcaption class="chart-caption">数据表（卷·04/卷·06 已核底座）：2016 · 304:227（普选落后约 287 万）· 2020 · 232:306 · 2024 · 312:226（普选 49.8:48.3）。金色＝特朗普，蓝色＝对手——蓝金仅作图表填充，正文文字不使用。三届普选与选举人的"制度双写"见卷·04。</figcaption>
   </figure>
 
-  <!-- ================= 第四节 · 更替率 ================= -->
+  <!-- ================= 第四节 · 幕僚更替 ================= -->
   <section class="page-head" style="margin:var(--sp-8) 0 var(--sp-5)">
-    <span class="volume">第四节 · 幕僚更替率 · 一个数字的说明</span>
+    <span class="volume">第四节 · 幕僚更替 · 一个数字与四根柱子</span>
   </section>
 
+  <figure class="chart-figure panel-reveal">
+    <svg viewBox="0 0 640 300" role="img" aria-label="第一任期四大职系任人次柱状图：幕僚长四任，国务卿两任，国防部长四任含两任代理，国家安全顾问四任——合计十四任人次，布鲁金斯学会统计的 A 队更替率百分之九十二为 1980 年以来最高" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="260" x2="620" y2="260" style="stroke:var(--line);stroke-width:1"/>
+      <rect x="110" y="60" width="70" height="200" style="fill:var(--gold)"/>
+      <rect x="230" y="160" width="70" height="100" style="fill:var(--gold)"/>
+      <rect x="350" y="60" width="70" height="200" style="fill:var(--gold)"/>
+      <rect x="470" y="60" width="70" height="200" style="fill:var(--gold)"/>
+      <text x="145" y="52" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">4 任</text>
+      <text x="265" y="152" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">2 任</text>
+      <text x="385" y="52" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">4 任*</text>
+      <text x="505" y="52" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">4 任</text>
+      <text x="145" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">幕僚长</text>
+      <text x="265" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">国务卿</text>
+      <text x="385" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">国防部长</text>
+      <text x="505" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">国家安全顾问</text>
+      <text x="320" y="36" text-anchor="middle" style="fill:var(--ink-faint);font:11px var(--font-body)">* 含 2 任代理 · 合计 14 任人次 · A 队更替率 92%（Brookings 口径，1980 年以来最高）</text>
+    </svg>
+    <figcaption class="chart-caption">数据表（卷·15 台账同源）：幕僚长 4（Priebus/Kelly/马尔瓦尼代理/梅多斯）· 国务卿 2（蒂勒森/蓬佩奥）· 国防部长 4（马蒂斯/沙纳汉代理/埃斯珀/米勒代理）· 国家安全顾问 4（弗林/麦克马斯特/博尔顿/奥布莱恩）。数据源：卷·15 多源核验台账（R28）+ Brookings 更替率（R28 实源双确认）。</figcaption>
+  </figure>
+
   <section class="panel panel-reveal">
-    <p><strong>92%</strong>——布鲁金斯学会对第一任期"A 队"（核心幕僚）四年更替率的统计，1980 年有追踪以来的最高值（完整台账与 14 任人次名单见<a href="circle.html">卷·15</a>）。该机构 2026 年 1 月的续评认为：第二任期人事更稳，主因是幕僚长怀尔斯的集权管理，但相较历届总统仍属高位。更替率的年度逐项展开归本馆增补计划——一个数字先钉在墙上，曲线后补。</p>
+    <p><strong>92%</strong>——布鲁金斯学会对第一任期"A 队"（核心幕僚）四年更替率的统计，1980 年有追踪以来的最高值（完整台账与 14 任人次名单见<a href="circle.html">卷·15</a>）。该机构 2026 年 1 月的续评认为：第二任期人事更稳，主因是幕僚长怀尔斯的集权管理，但相较历届总统仍属高位。曲线已补在上方——一个数字与四根柱子，从此互为注脚。</p>
   </section>
+
+  <!-- ================= 第五节 · 关税时间线 ================= -->
+  <section class="page-head" style="margin:var(--sp-8) 0 var(--sp-5)">
+    <span class="volume">第五节 · 关税时间线（2025-04 至 2026-02）</span>
+  </section>
+
+  <figure class="chart-figure panel-reveal">
+    <svg viewBox="0 0 640 300" role="img" aria-label="关税政策时间线：2025 年 4 月 2 日解放日对等关税落地，对华税率一度达百分之百四十五；2025 年 5 月 12 日日内瓦联合声明，对华税率降至百分之三十；2026 年 2 月 20 日最高法院六比三裁定 IEEPA 关税违宪" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="150" x2="620" y2="150" style="stroke:var(--line);stroke-width:1.5"/>
+      <circle cx="120" cy="150" r="6" style="fill:var(--gold)"/>
+      <circle cx="340" cy="150" r="6" style="fill:var(--gold)"/>
+      <circle cx="560" cy="150" r="6" style="fill:var(--gold-bright)"/>
+      <line x1="120" y1="150" x2="120" y2="95" style="stroke:var(--gold-deep);stroke-width:1"/>
+      <line x1="340" y1="150" x2="340" y2="95" style="stroke:var(--gold-deep);stroke-width:1"/>
+      <line x1="560" y1="150" x2="560" y2="95" style="stroke:var(--gold-deep);stroke-width:1"/>
+      <text x="120" y="80" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">解放日 · 对华一度 145%</text>
+      <text x="340" y="80" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">日内瓦 · 对华 145→30</text>
+      <text x="560" y="80" text-anchor="middle" style="fill:var(--gold-bright);font:bold 12px var(--font-body)">最高法院 · 6:3 违宪</text>
+      <text x="120" y="178" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2025-04-02</text>
+      <text x="340" y="178" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2025-05-12</text>
+      <text x="560" y="178" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2026-02-20</text>
+      <text x="120" y="196" text-anchor="middle" style="fill:var(--ink-faint);font:10px var(--font-body)">对等关税落地</text>
+      <text x="340" y="196" text-anchor="middle" style="fill:var(--ink-faint);font:10px var(--font-body)">联合声明 · 90 天缓冲</text>
+      <text x="560" y="196" text-anchor="middle" style="fill:var(--ink-faint);font:10px var(--font-body)">IEEPA 关税越权部分被裁定无效</text>
+      <text x="60" y="230" style="fill:var(--ink-faint);font:11px var(--font-body)">节奏：从落地到降温 40 天，从降温到违宪裁定 284 天。</text>
+    </svg>
+    <figcaption class="chart-caption">数据表（卷·07 已核底座+路透社补充核验）：2025-04-02 解放日（对华一度 145%）→ 2025-05-12 日内瓦联合声明（对华 145→30、中方 125→10、首批 90 天缓冲）→ 2026-02-20 最高法院 6:3 裁定 IEEPA 关税违宪。数据源：卷·07 关税大戏幕台账（R09 五轮核验）+ 路透社日内瓦联合声明报道（R49 补核）。</figcaption>
+  </figure>
+
+  <!-- ================= 第六节 · DJT 股价 ================= -->
+  <section class="page-head" style="margin:var(--sp-8) 0 var(--sp-5)">
+    <span class="volume">第六节 · DJT 股价关键节点（2024-03 至 2026-06）</span>
+  </section>
+
+  <figure class="chart-figure panel-reveal">
+    <svg viewBox="0 0 640 300" role="img" aria-label="特朗普媒体科技集团 DJT 股价关键节点折线：2024 年 3 月 26 日上市盘中峰值 79.38 美元，2024 年 9 月 3 日跌破 18 美元，9 月解禁日收 13.55 美元，2025 年 11 月收 10.85 美元，2026 年 6 月 25 日收 7.52 美元创上市以来最低——距峰值跌去逾九成" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="260" x2="620" y2="260" style="stroke:var(--line);stroke-width:1"/>
+      <polyline points="70,41.7 205,210.8 340,222.7 475,230.2 610,239.3" style="fill:none;stroke:var(--gold);stroke-width:2.5"/>
+      <circle cx="70" cy="41.7" r="4" style="fill:var(--gold-bright)"/>
+      <circle cx="205" cy="210.8" r="4" style="fill:var(--gold)"/>
+      <circle cx="340" cy="222.7" r="4" style="fill:var(--gold)"/>
+      <circle cx="475" cy="230.2" r="4" style="fill:var(--gold)"/>
+      <circle cx="610" cy="239.3" r="4" style="fill:var(--gold)"/>
+      <text x="70" y="30" text-anchor="middle" style="fill:var(--gold-bright);font:bold 12px var(--font-body)">$79.38</text>
+      <text x="205" y="196" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">$17.89</text>
+      <text x="340" y="209" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">$13.55</text>
+      <text x="475" y="216" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">$10.85</text>
+      <text x="610" y="225" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">$7.52</text>
+      <text x="70" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2024-03 上市</text>
+      <text x="205" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2024-09-03</text>
+      <text x="340" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2024-09 解禁日</text>
+      <text x="475" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2025-11</text>
+      <text x="610" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2026-06-25</text>
+      <text x="320" y="26" text-anchor="middle" style="fill:var(--ink-faint);font:11px var(--font-body)">盘中峰值（Reuters）· 收盘价此后五个节点全部下行</text>
+    </svg>
+    <figcaption class="chart-caption">数据表：2024-03-26 纳斯达克上市（借壳 DWAC），盘中峰值 $79.38、首日收 $57.99、市值近 80 亿（Reuters）· 2024-09-03 盘中 $17.89，较峰值跌约 77%（CNBC）· 2024-09 解禁首日收 $13.55、市值跌破 30 亿（AP）· 2025-11 收 $10.85（当时最低收盘）· 2026-06-25 收 $7.52 创上市以来最低（Yahoo Finance/Futurism），距峰值跌逾九成。数据源：Reuters/CNBC/AP/Yahoo Finance，R49 逐点核验。</figcaption>
+  </figure>
+
+  <!-- ================= 第七节 · 摇摆州胜负差 ================= -->
+  <section class="page-head" style="margin:var(--sp-8) 0 var(--sp-5)">
+    <span class="volume">第七节 · 2024 七摇摆州认证差距（百分点）</span>
+  </section>
+
+  <figure class="chart-figure panel-reveal">
+    <svg viewBox="0 0 640 300" role="img" aria-label="2024 年大选七个摇摆州认证胜负差横向条形图：威斯康星加零点九个百分点，密歇根加一点四，宾夕法尼亚加一点七，佐治亚加二点二，北卡罗来纳加三，内华达加三点一，亚利桑那加五点九——全部为特朗普领先，蓝墙三州合计仅两万三千余票之差即可翻转" xmlns="http://www.w3.org/2000/svg">
+      <line x1="130" y1="50" x2="130" y2="252" style="stroke:var(--line);stroke-width:1"/>
+      <text x="120" y="74" text-anchor="end" style="fill:var(--ink-dim);font:11px var(--font-body)">威斯康星</text>
+      <rect x="130" y="60" width="69" height="18" style="fill:var(--gold)"/>
+      <text x="207" y="74" style="fill:var(--ink);font:12px var(--font-body)">+0.9</text>
+      <text x="120" y="104" text-anchor="end" style="fill:var(--ink-dim);font:11px var(--font-body)">密歇根</text>
+      <rect x="130" y="90" width="107.3" height="18" style="fill:var(--gold)"/>
+      <text x="245" y="104" style="fill:var(--ink);font:12px var(--font-body)">+1.4</text>
+      <text x="120" y="134" text-anchor="end" style="fill:var(--ink-dim);font:11px var(--font-body)">宾夕法尼亚</text>
+      <rect x="130" y="120" width="130.3" height="18" style="fill:var(--gold)"/>
+      <text x="268" y="134" style="fill:var(--ink);font:12px var(--font-body)">+1.7</text>
+      <text x="120" y="164" text-anchor="end" style="fill:var(--ink-dim);font:11px var(--font-body)">佐治亚</text>
+      <rect x="130" y="150" width="168.7" height="18" style="fill:var(--gold)"/>
+      <text x="307" y="164" style="fill:var(--ink);font:12px var(--font-body)">+2.2</text>
+      <text x="120" y="194" text-anchor="end" style="fill:var(--ink-dim);font:11px var(--font-body)">北卡罗来纳</text>
+      <rect x="130" y="180" width="230" height="18" style="fill:var(--gold)"/>
+      <text x="368" y="194" style="fill:var(--ink);font:12px var(--font-body)">+3.0</text>
+      <text x="120" y="224" text-anchor="end" style="fill:var(--ink-dim);font:11px var(--font-body)">内华达</text>
+      <rect x="130" y="210" width="237.7" height="18" style="fill:var(--gold)"/>
+      <text x="376" y="224" style="fill:var(--ink);font:12px var(--font-body)">+3.1</text>
+      <text x="120" y="254" text-anchor="end" style="fill:var(--ink-dim);font:11px var(--font-body)">亚利桑那</text>
+      <rect x="130" y="240" width="452.3" height="18" style="fill:var(--gold-bright)"/>
+      <text x="590" y="254" style="fill:var(--ink);font:12px var(--font-body)">+5.9</text>
+    </svg>
+    <figcaption class="chart-caption">数据表（2024 官方认证口径，CFR/Wikipedia 核录）：威斯康星 +0.9（29,397 票）· 密歇根 +1.4（80,103 票）· 宾州 +1.7（120,266 票，关键转折州）· 佐治亚 +2.2（约 12.5 万票）· 北卡 +3.0（约 18 万票）· 内华达 +3.1（约 4.6 万票）· 亚利桑那 +5.9（约 18.7 万票）。蓝墙三州合计 229,726 票——换边即可翻盘（CFR）。数据源：各州官方认证+CFR 选举数据页，R49 核验；本图将与卷·20《选举解剖》（筹建）互通。</figcaption>
+  </figure>
+
+  <!-- ================= 第八节 · 三届普选票率 ================= -->
+  <section class="page-head" style="margin:var(--sp-8) 0 var(--sp-5)">
+    <span class="volume">第八节 · 三届普选得票率对比（2016-2024）</span>
+  </section>
+
+  <figure class="chart-figure panel-reveal">
+    <svg viewBox="0 0 640 300" role="img" aria-label="三届大选普选得票率对比柱状图：2016 年特朗普百分之四十六点一对希拉里百分之四十八点二；2020 年特朗普百分之四十六点八对拜登百分之五十一点三；2024 年特朗普百分之四十九点八对哈里斯百分之四十八点三——特朗普的普选率三届连续爬升，2024 年首次赢得普选" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="260" x2="620" y2="260" style="stroke:var(--line);stroke-width:1"/>
+      <rect x="86" y="75.6" width="60" height="184.4" style="fill:var(--gold)"/>
+      <rect x="154" y="67.2" width="60" height="192.8" style="fill:var(--flag-blue)"/>
+      <rect x="256" y="72.8" width="60" height="187.2" style="fill:var(--gold)"/>
+      <rect x="324" y="54.8" width="60" height="205.2" style="fill:var(--flag-blue)"/>
+      <rect x="426" y="60.8" width="60" height="199.2" style="fill:var(--gold)"/>
+      <rect x="494" y="66.8" width="60" height="193.2" style="fill:var(--flag-blue)"/>
+      <text x="116" y="68" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">46.1</text>
+      <text x="184" y="59" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">48.2</text>
+      <text x="286" y="65" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">46.8</text>
+      <text x="354" y="47" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">51.3</text>
+      <text x="456" y="53" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">49.8</text>
+      <text x="524" y="59" text-anchor="middle" style="fill:var(--ink);font:12px var(--font-body)">48.3</text>
+      <text x="150" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2016（希拉里）</text>
+      <text x="320" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2020（拜登）</text>
+      <text x="490" y="278" text-anchor="middle" style="fill:var(--ink-dim);font:11px var(--font-body)">2024（哈里斯）</text>
+    </svg>
+    <figcaption class="chart-caption">数据表：2016 · 46.1:48.2（62,984,828 对 65,853,514 票）· 2020 · 46.8:51.3（74,222,958 对约 8,120 万票）· 2024 · 49.8:48.3（77,302,580 对 75,017,613 票）。三届普选率连续爬升、2024 年首次拿下普选——与第三节选举人票图对读，即是"制度双写"的完整形状。数据源：Wikipedia/CFR/美利坚总统项目认证结果，R49 核验。</figcaption>
+  </figure>
 
   <!-- ================= 馆后记 ================= -->
   <section class="panel panel-reveal">
     <span class="caption">馆后记 · 数字也有修辞</span>
-    <p>把四组图并排放着：支持率一路下行，行政令一路上行，选举人票两胜一负，幕僚来了又走——四条线讲的是同一个故事的不同侧面：他用更快的行政节奏，弥补更低的民意水位。本馆不做加总，只做陈列——就像卷·07 说的，这是同一份任期报表。</p>
-    <p>本页 <strong>3 幅 SVG 图表 + 4 张速览卡</strong>，全部零库手绘；每个数字都可回查到对应卷的原始台账。图表不是真相，是真相的坐标——坐标在此，解读随君。</p>
+    <p>把八幅图并排放着：支持率两任期对称下行，行政令一路上行，选举人票两胜一负，普选票三届爬升，幕僚来了又走，关税冲高后折返，股价一路向南，摇摆州只差一步之遥——八条线讲的是同一个故事的不同侧面：他用更快的行政节奏，弥补更低的民意水位。本馆不做加总，只做陈列——就像卷·07 说的，这是同一份任期报表。</p>
+    <p>本页 <strong>8 幅 SVG 图表 + 4 张速览卡</strong>，全部零库手绘；每个数字都可回查到对应卷的原始台账。图表不是真相，是真相的坐标——坐标在此，解读随君。</p>
   </section>
 
   <!-- ================= 未完待续 ================= -->
   <div class="tbc">
     <div class="tbc__mark gold-text">TO BE CONTINUED…</div>
-    <p class="tbc__next">下期预告 · 卷·07《第二任期》增补轮：每一幕补上第一手原帖与官方声明——活卷继续连载，核验基准日随轮滚动。</p>
+    <p class="tbc__next">下期预告 · 第一手档案馆·卷·14《家族谱》二代增补：五子女各家小节与孙辈逐人点名——生卒年月，零容忍核验。</p>
   </div>
 
 </main>
@@ -204,7 +346,7 @@
     <p class="footer__disclaim">
       站内照片均取自维基共享资源的自由许可素材（公有领域 / CC0 / CC BY / CC BY-SA），全部本地引用；作者与许可逐张登记于 <a href="assets/photos/CREDITS.md">assets/photos/CREDITS.md</a>。
     </p>
-    <p class="footer__meta">© 2026 川流不息编辑部 · ISSUE #45+47 · 版本 <span id="site-version">v2.0.0</span> · 2026-10-04</p>
+    <p class="footer__meta">© 2026 川流不息编辑部 · ISSUE #45+47 · 版本 <span id="site-version">v3.0.0-dev-R49</span> · 2026-10-05</p>
   </div>
 </footer>
 
