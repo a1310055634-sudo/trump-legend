@@ -29,6 +29,7 @@
 | `hillary-clinton.jpg` | [Hillary Clinton official Secretary of State portrait crop.jpg](https://commons.wikimedia.org/wiki/File:Hillary_Clinton_official_Secretary_of_State_portrait_crop.jpg) | 美国国务院 | Public domain（美国政府作品） | 希拉里官方肖像（国务卿任内），rivals.html 卷·16 用 |
 | `joe-biden.jpg` | [Joe Biden presidential portrait.jpg](https://commons.wikimedia.org/wiki/File:Joe_Biden_presidential_portrait.jpg) | Adam Schultz（白宫官方照） | Public domain（美国政府作品） | 拜登官方肖像（2021-03-03 白宫书房），rivals.html 卷·16 用 |
 | `kamala-harris.jpg` | [Kamala Harris Vice Presidential Portrait.jpg](https://commons.wikimedia.org/wiki/File:Kamala_Harris_Vice_Presidential_Portrait.jpg) | Lawrence Jackson（白宫官方照） | Public domain（美国政府作品） | 哈里斯官方副总统肖像（2021-03-04），rivals.html 卷·16 用 |
+| `kai-rydercup-2025.jpg` | [Kai Trump and Grandpa head to the Ryder Cup - 02 (cropped).jpg](https://commons.wikimedia.org/wiki/File:Kai_Trump_and_Grandpa_head_to_the_Ryder_Cup_-_02_(cropped).jpg) | 白宫（The White House） | Public domain（美国政府作品） | 2025 莱德杯祖孙同行照（白宫官方裁剪版），family.html 卷·14 二代增补用 |
 
 ## 使用规则（后续轮次遵守）
 
