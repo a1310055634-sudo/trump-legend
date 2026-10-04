@@ -2,8 +2,8 @@
 
 - 项目根：`D:\vibe coding\trump-legend`
 - 任务书：`PROMPT.md`（每轮开工前必读；**v3 双轨版**——V1 金黑特辑已收官，**V2 第一手档案 24 轮进行中**，V2 细则见文末「五、V2 部分」，冲突时以 V2 部分为准）
-- 当前状态：**V3 进行中（2026-10-04 立项，R45–R74 共 30 轮，目标 v3.0.0）——进度 14/30；V1+V2 共 45 轮已全数 completed 存档在案**
-- 下一轮：**R59 语汇词典增厚**（lexicon.html：词条扩至 35+、词典与学界收录史一节，→2600 字）
+- 当前状态：**V3 进行中（2026-10-04 立项，R45–R74 共 30 轮，目标 v3.0.0）——进度 15/30；V1+V2 共 45 轮已全数 completed 存档在案**
+- 下一轮：**R60 建盟友群像馆 allies.html**（卷·23，分组卡+活人边界最高条款，人物志型 ≥2200 字——阶段三开篇）
 - 当前版本：`v2.0.0`（V3 起轮戳 v3.0.0-dev-Rxx；R73=v3.0.0-rc、R74=v3.0.0）
 - 驱动方式：定时任务每 15 分钟一轮（**automation-8383f7ae-525d-4514-b3f0-4df85e76b4bc**，2026-10-04 注册，提示词正本=仓库根 `AUTOMATION_PROMPT-V3.md`：流程六节+轮次地图+七类轮型 DoD+验收线+高频坑速查，零传主细节一切从文件现读；旧 automation-49a8738f（V2）已删除；automation-79a585bc 暂停留档勿启用）；并发保护 `.round-lock`（mtime < 45 分钟视为施工中，直接结束）
 - 纪律：每轮 commit、禁 push/remote、中文一律 Write/Edit 写入、任务书=v4（「六、V3 部分」为 V3 唯一细则源，活人边界加严为最高条款）
@@ -28,7 +28,7 @@
 | R56 | 建资产版图馆 assets.html（卷·21，高尔夫逐座+冠名楼+授权） | ✅ completed（自动化 R56，2026-10-05：2,200 字台账，站点 23 页/档案十三馆） |
 | R57 | 资产版图增厚（→2800 字+，OGE/估值之争） | ✅ completed（自动化 R57，2026-10-05：2,690 字，OGE/信托/估值之争三块落地） |
 | R58 | 建语汇词典馆 lexicon.html（卷·22，语汇≥25 条+绰号图鉴） | ✅ completed（自动化 R58，2026-10-05：26 条，站点 24 页/档案十四馆） |
-| R59 | 语汇词典增厚（→2600 字+，词条 35+） | ⬜ |
+| R59 | 语汇词典增厚（→2600 字+，词条 35+） | ✅ completed（自动化 R59，2026-10-05：35 条+收录史一节） |
 | R60 | 建盟友群像 allies.html（卷·23，分组卡+活人边界最高条款） | ⬜ |
 | R61 | 盟友群像增厚（→2800 字+，决裂者对写） | ⬜ |
 | R62 | 建外交全景 diplomacy.html（卷·24，朝鲜/中东/北约/关税） | ⬜ |
@@ -128,6 +128,14 @@
 ---
 
 ## 交接记录
+
+### R59（自动化轮 automation-8383f7ae，2026-10-05 05:35-05:55）✅
+- **产出**：lexicon.html 增厚 **2,053→2,736 字**（跨 2,600 线）——①**语汇条目 18→24**：新增 many such cases[2014-03-28 疫苗帖原点，Know Your Meme/维基词典收词/NYT"美国第一位梗总统"]、Sad![2015-2016 单字收尾签名，BBC/Vox，入主白宫后骤降]、You're fired![2004-2015 学徒台词→2025-01 首日解职帖，卷·09 互链]、No collusion[降级]、Many people are saying[无源引语框架，降级]、LameStream Media[2019-09-27 连发 discribing/Liddle' 双重拼写事故，韦氏官方吐槽]；②**绰号图鉴 8→11**：Horseface[2018-10 对丹尼尔斯，标准记载]、Miss Piggy[2006-12 对奥唐纳旧称，"只有罗茜"的十年前伏笔]、dumb as a rock[2018-12-07 对蒂勒森"蠢得像块石头懒得很"+2017-10 IQ 测试战书，雅虎转录]；③**新增第三节·词典与学界收录史**（柯林斯 2017 年度词/韦氏 bigly 古英语考证/Language Log 声学分析/NYT Upshot 词汇史专文/韦氏 Liddle' 吐槽/KYM 收词/NYT"第一位梗总统"总评；双写=收录≠背书 vs 民间语言被收编）；④馆后计数更新（24 语汇+11 绰号=35 条；日期分级：到日 17/到月年 4/标准记载或降级 14）。
+- **事实核验**：一批 WebSearch 四连命中（many such cases 2014-03-28 原帖[KYM/维基词典]、Sad! 竞选期口头禅[BBC/Vox]、LameStream 2019-09-27 连发[The Week]、Tillerson 2018-12-07"蠢得像块石头"原帖[雅虎]）；R58 遗留①（many such cases 未收）就此闭环。
+- **自测**：smoke lexicon.html PASS（console 零 error、1 照片全载、版本=v3.0.0-dev-R59 两处一致、零断链）；CJK 2,736 断言；eo-list 35 条实数断言；拉丁/西里尔区段扫描清零；第三节重编号无冲突（收录史插在图鉴与参见之间）。
+- **坑**：无新增——锚点全部 grep 现文预取（上轮两连失配后形成的新纪律：先 grep 后 Edit）。
+- **遗留**：①词条"扩散影响"深挖（alternative facts 的政策语用学等）——篇幅取舍归 R70+；②词典收录史可扩牛津短名单等——素材已足、暂不再扩；③绰号图鉴续补（禽龙 Kevin? 未核不收）。
+- 下一轮：R60 建盟友群像馆 allies.html（卷·23，阶段三开篇，活人边界最高条款）。
 
 ### R58（自动化轮 automation-8383f7ae，2026-10-05 05:15-05:35）✅
 - **产出**：**新建 lexicon.html（卷·22 语汇词典，词典型 2,053 字 ≥2000 线，站点 23→24 页，档案十三馆→十四馆）**——**第一节·语汇条目 18 则**（covfefe/bigly 拼法之争双写[AP 转录 big league+竞选发言人否认+韦氏古英语考证，BBC]/yuge 降级/fake news 柯林斯年度词[卷·17 实源]/witch hunt[卷·09 原帖]/priming the pump["我几天前想出来的"经济学人 2017-05 转录+NYT Upshot 专文]/BELIEVE ME 降级/alternative facts[康威 2017-01-22，明确标注出自幕僚]/America First/MAGA[2012 注册商标+里根 1980 先例]/drain the swamp/enemy of the people/very stable genius/TDS[2025-04-02 白宫账号收编，卷·09 存档直取]/TOO BIG TO RIG[卷·09]/LIBERATE[卷·08]/Bank the Vote[NPR，卷·20 互链]/Golden Age 时态演进注）+**第二节·绰号图鉴 8 则**（Low-Energy Jeb[降级]/Lyin' Ted[2016-02~04，nymag 引语]/Little Marco[2016-02-25 辩论]/Crooked Hillary[2016-04]/Pocahontas[2017-11]/Sleepy Joe[2019-04-16/17 首用，Roll Call 追踪]/Crazy Bernie[2019-04-17 Politico]/Fake News CNN[标准记载]）——共 **26 条 ≥25 达标**，日期分级标注（实源到日 11/到月年 6/标准记载或降级 9）。
