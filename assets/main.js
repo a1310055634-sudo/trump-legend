@@ -111,6 +111,71 @@
     });
   }
 
+  // 全站检索（R68）：Ctrl+K 呼出，零依赖索引过滤
+  function initSearch() {
+    var sc = document.createElement("script");
+    sc.src = "assets/search-index.js";
+    sc.onload = function () { setupSearchUI(); };
+    document.head.appendChild(sc);
+  }
+
+  function setupSearchUI() {
+    var idx = window.TRUMP_SEARCH_INDEX || [];
+    if (!idx.length) return;
+    var overlay = document.createElement("div");
+    overlay.id = "search-overlay";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "全站检索");
+    overlay.innerHTML =
+      '<div class="search-box">' +
+      '<input type="text" id="search-input" placeholder="输入关键词…" aria-label="检索关键词" autocomplete="off"/>' +
+      '<button type="button" id="search-close" aria-label="关闭检索">×</button>' +
+      '</div><ul id="search-results" role="listbox"></ul>';
+    document.body.appendChild(overlay);
+
+    var input = overlay.querySelector("#search-input");
+    var results = overlay.querySelector("#search-results");
+
+    function esc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+    function doSearch(q) {
+      if (q.length < 2) { results.innerHTML = ""; return; }
+      var re = new RegExp(esc(q), "gi");
+      var hits = [];
+      for (var i = 0; i < idx.length && hits.length < 12; i++) {
+        var p = idx[i];
+        var tHit = re.test(p.title) || re.test(p.h1);
+        var bHit = re.test(p.body);
+        if (tHit || bHit) {
+          var snippet = "";
+          var pos = p.body.search(re);
+          if (pos >= 0) {
+            var st = Math.max(0, pos - 40);
+            snippet = "…" + p.body.slice(st, st + 100) + "…";
+          } else snippet = p.h1 || p.title;
+          hits.push('<li role="option"><a href="' + p.file + '.html"><strong>' + p.title + '</strong><br/><span class="search-snippet">' + snippet + '</span></a></li>');
+        }
+      }
+      results.innerHTML = hits.length ? hits.join("") : '<li class="search-empty">无匹配结果</li>';
+    }
+    input.addEventListener("input", function () { doSearch(input.value); });
+    overlay.querySelector("#search-close").addEventListener("click", close);
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+
+    function open() {
+      overlay.classList.add("is-open");
+      input.value = ""; results.innerHTML = ""; input.focus();
+    }
+    function close() { overlay.classList.remove("is-open"); }
+
+    document.addEventListener("keydown", function (e) {
+      var tag = (e.target.tagName || "").toLowerCase();
+      var inField = tag === "input" || tag === "textarea" || tag === "select";
+      if ((e.ctrlKey || e.metaKey) && e.key === "k" && !inField) { e.preventDefault(); open(); }
+      if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
+    });
+  }
+
   function init() {
     stampVersion();
     observeReveals();
@@ -118,6 +183,7 @@
     initRailSpy();
     initBackTop();
     bindNav();
+    initSearch();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
