@@ -32,6 +32,8 @@
 | `kai-rydercup-2025.jpg` | [Kai Trump and Grandpa head to the Ryder Cup - 02 (cropped).jpg](https://commons.wikimedia.org/wiki/File:Kai_Trump_and_Grandpa_head_to_the_Ryder_Cup_-_02_(cropped).jpg) | 白宫（The White House） | Public domain（美国政府作品） | 2025 莱德杯祖孙同行照（白宫官方裁剪版），family.html 卷·14 二代增补用 |
 | `courthouse-100centre-1942.jpg` | [Criminal Courts Building, 100 Center St., New York City. LOC gsc.5a08406.jpg](https://commons.wikimedia.org/wiki/File:Criminal_Courts_Building,_100_Center_St.,_New_York_City._LOC_gsc.5a08406.jpg) | Gottscho-Schleisner Collection（国会图书馆藏） | Public domain | 曼哈顿刑事法院大楼（1942），court.html 卷·19 横幅用 |
 | `courthouse-100centre-2013.jpg` | [100 Centre Street Criminal Courts Building.jpg](https://commons.wikimedia.org/wiki/File:100_Centre_Street_Criminal_Courts_Building.jpg) | Beyond My Ken | CC BY-SA 4.0 | 曼哈顿刑事法院大楼（2013，width=900 压宽），court.html 卷·19 内嵌用；须署名+注明裁剪 |
+| `giuliani-portrait.jpg` | [Rudy Giuliani by Gage Skidmore (cropped).jpg](https://commons.wikimedia.org/wiki/File:Rudy_Giuliani_by_Gage_Skidmore_(cropped).jpg) | Gage Skidmore | CC BY-SA 3.0 | 朱利安尼像（width=900 压宽），allies.html 卷·23 用；须署名 |
+| `bannon-portrait.jpg` | [Steve Bannon 2023 by Gage Skidmore.jpg](https://commons.wikimedia.org/wiki/File:Steve_Bannon_2023_by_Gage_Skidmore.jpg) | Gage Skidmore | CC BY-SA 2.0 | 班农像（2023，width=900 压宽），allies.html 卷·23 用；须署名 |
 
 ## 使用规则（后续轮次遵守）
 
