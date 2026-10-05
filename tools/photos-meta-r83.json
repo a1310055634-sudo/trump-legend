@@ -1,0 +1,35 @@
+[
+  {
+    "slot": "wh-north-portico",
+    "title": "White House North Lawn 3-2007.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Nminow",
+    "page": "https://commons.wikimedia.org/wiki/File:White_House_North_Lawn_3-2007.jpg",
+    "width": 2592,
+    "height": 1952,
+    "mime": "image/jpeg",
+    "bytes": 374658
+  },
+  {
+    "slot": "wh-rose-garden",
+    "title": "An event celebrating the 2023 National Teacher of the Year on April 24, 2023, in the Rose Garden of the White House - F20230424CS-1059.jpg",
+    "license": "Public domain",
+    "artist": "The White House",
+    "page": "https://commons.wikimedia.org/wiki/File:An_event_celebrating_the_2023_National_Teacher_of_the_Year_on_April_24%2C_2023%2C_in_the_Rose_Garden_of_the_White_House_-_F20230424CS-1059.jpg",
+    "width": 2800,
+    "height": 1867,
+    "mime": "image/jpeg",
+    "bytes": 114398
+  },
+  {
+    "slot": "wh-east-wing",
+    "title": "White House East Wing.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Harrison Keely",
+    "page": "https://commons.wikimedia.org/wiki/File:White_House_East_Wing.jpg",
+    "width": 4032,
+    "height": 3024,
+    "mime": "image/jpeg",
+    "bytes": 316861
+  }
+]

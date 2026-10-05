@@ -47,6 +47,9 @@
 | `gallery-2020s-takaichi-yokosuka.jpg` | [Sanae Takaichi and Donald Trump at Yokosuka Naval Base in 2025 (10).jpg](https://commons.wikimedia.org/wiki/File:Sanae_Takaichi_and_Donald_Trump_at_Yokosuka_Naval_Base_in_2025_(10).jpg) | 内阁官房（Cabinet Secretariat） | CC BY 4.0 | 2025 横须贺与高市早苗，gallery.html 卷·26 用；须署名 |
 | `gallery-2010s-hurricane-bill.jpg` | [President Trump signing Hurricane Harvey bill (cropped).jpg](https://commons.wikimedia.org/wiki/File:President_Trump_signing_Hurricane_Harvey_bill_(cropped).jpg) | Andrea Hanks（白宫官方照） | Public domain（美国政府作品） | 2017 签署哈维飓风法案，gallery.html 卷·26 用 |
 | `gallery-2010s-sotu-2018.jpg` | [Donald Trump State of the Union 2018 (26133528958).jpg](https://commons.wikimedia.org/wiki/File:Donald_Trump_State_of_the_Union_2018_(26133528958).jpg) | 白宫（The White House） | Public domain（美国政府作品） | 2018 国情咨文演说，gallery.html 卷·26 用 |
+| `wh-north-portico.jpg` | [White House North Lawn 3-2007.jpg](https://commons.wikimedia.org/wiki/File:White_House_North_Lawn_3-2007.jpg) | Nminow | CC BY-SA 3.0 | 白宫北草坪与北门廊横构图，renovation.html 卷·31 横幅用；须署名 |
+| `wh-rose-garden.jpg` | [An event celebrating the 2023 National Teacher of the Year on April 24, 2023, in the Rose Garden of the White House - F20230424CS-1059.jpg](https://commons.wikimedia.org/wiki/File:An_event_celebrating_the_2023_National_Teacher_of_the_Year_on_April_24,_2023,_in_the_Rose_Garden_of_the_White_House_-_F20230424CS-1059.jpg) | 白宫（The White House） | Public domain（美国政府作品） | 玫瑰园草坪时代官方活动照（石板化前的档案），renovation.html 卷·31 用 |
+| `wh-east-wing.jpg` | [White House East Wing.jpg](https://commons.wikimedia.org/wiki/File:White_House_East_Wing.jpg) | Harrison Keely | CC BY 4.0 | 东翼外观档案照（2025-10 拆除前形态），renovation.html 卷·31 用；须署名 |
 
 ## 使用规则（后续轮次遵守）
 
