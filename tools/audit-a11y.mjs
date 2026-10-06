@@ -15,7 +15,7 @@ const PAGES = ["index.html", "timeline.html", "empire.html", "stage.html", "whit
   "speeches.html", "orders.html", "documents.html", "books.html", "family.html", "circle.html",
   "rivals.html", "culture.html", "data.html",
   "court.html", "elections.html", "assets.html", "lexicon.html", "allies.html",
-  "gallery.html", "cabinet.html", "pardons.html", "crypto.html", "media.html", "renovation.html", "immigration.html"];
+  "diplomacy.html", "promises.html", "gallery.html", "cabinet.html", "pardons.html", "crypto.html", "media.html", "renovation.html", "immigration.html"];
 const WIDTHS = [375, 768, 1280];
 const udd = join(tmpdir(), `tl-a11y-${Date.now()}`);
 const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${PORT}`, `--user-data-dir=${udd}`,

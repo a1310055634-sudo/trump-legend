@@ -9,7 +9,7 @@ const PAGES = ["index.html", "timeline.html", "empire.html", "stage.html", "whit
   "speeches.html", "orders.html", "documents.html", "books.html", "family.html", "circle.html",
   "rivals.html", "culture.html", "data.html",
   "court.html", "elections.html", "assets.html", "lexicon.html", "allies.html",
-  "gallery.html", "cabinet.html", "pardons.html", "crypto.html", "media.html", "renovation.html", "immigration.html"];
+  "diplomacy.html", "promises.html", "gallery.html", "cabinet.html", "pardons.html", "crypto.html", "media.html", "renovation.html", "immigration.html"];
 
 // 术语一致性：只允许一种写法（正文语境）
 const TERMS = [

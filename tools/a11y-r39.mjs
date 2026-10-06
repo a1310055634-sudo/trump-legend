@@ -12,7 +12,7 @@ const PAGES = ["index.html", "timeline.html", "empire.html", "stage.html", "whit
   "speeches.html", "orders.html", "documents.html", "books.html", "family.html", "circle.html",
   "rivals.html", "culture.html", "data.html",
   "court.html", "elections.html", "assets.html", "lexicon.html", "allies.html",
-  "diplomacy.html", "promises.html", "gallery.html"];
+  "diplomacy.html", "promises.html", "gallery.html", "cabinet.html", "pardons.html", "crypto.html", "media.html", "renovation.html", "immigration.html"];
 const WIDTHS = [375, 768, 1280];
 const udd = join(tmpdir(), `tl-r39-${Date.now()}`);
 const chrome = spawn(CHROME, [
