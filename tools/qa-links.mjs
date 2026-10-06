@@ -9,7 +9,7 @@ const PAGES = ["index.html", "timeline.html", "empire.html", "stage.html", "whit
   "speeches.html", "orders.html", "documents.html", "books.html", "family.html", "circle.html",
   "rivals.html", "culture.html", "data.html",
   "court.html", "elections.html", "assets.html", "lexicon.html", "allies.html",
-  "diplomacy.html", "promises.html", "gallery.html"];
+  "gallery.html", "cabinet.html", "pardons.html", "crypto.html", "media.html", "renovation.html", "immigration.html"];
 const problems = [];
 
 for (const page of PAGES) {
@@ -31,6 +31,6 @@ for (const page of PAGES) {
   ext.forEach(m => problems.push(`${page} 外链图片: ${m[1]}`));
 }
 
-console.log(`== 断链审计：20 页 href/src 全量，外链图片 ${externalImg} ==`);
+console.log(`== 断链审计：34 页 href/src 全量，外链图片 ${externalImg} ==`);
 console.log(problems.length ? problems.map(p => "  " + p).join("\n") + "\nFAIL" : "PASS（零断链、零外链图片）");
 process.exitCode = problems.length ? 1 : 0;

@@ -58,6 +58,8 @@
 | `gallery-2026-sharm.jpg` | [Sharm El Sheikh Summit for Peace, 13 October 2025 (Roman Ismayilov) 04.jpg](https://commons.wikimedia.org/wiki/File:Sharm_El_Sheikh_Summit_for_Peace,_13_October_2025_(Roman_Ismayilov)_04.jpg) | Roman Ismayilov（埃及官方摄影） | CC BY 4.0 | 沙姆沙伊赫峰会第二帧（与 sharm-2025.jpg 04/05 同系列不同帧），gallery.html 卷·26 2020s 节用；须署名 |
 | `gallery-2026-kirk.jpg` | [Trump attends the Memorial Service for Charlie Kirk (P20250921DT-0393).jpg](https://commons.wikimedia.org/wiki/File:President_Donald_Trump_attends_the_Memorial_Service_for_Charlie_Kirk_at_State_Farm_Stadium_in_Glendale,_Arizona,_Sunday,_September_21,_2025_(P20250921DT-0393).jpg) | 白宫（The White House） | Public domain（美国政府作品） | 2025-09-21 柯克纪念仪式，gallery.html 卷·26 2020s 节用 |
 
+> 库存注记（R91 盘点）：gallery-1990s-Trump-International-Hotel-and-Tower-Chicago-Illi.jpg / gallery-1990s-Trump-Tower-Vancouver-August-2016.jpg / gallery-2000s-Donald-Trump-previews-the-2006-Cadillac-XLR-V-86.jpg / gallery-2020s-trump-campaign.jpg 四帧为 R66 时期采集库存、尚未上图（页位待后续轮补图或归档），不计入站内引用口径。
+
 ## 使用规则（后续轮次遵守）
 
 1. **新增照片**：只收上表四类自由许可；官方政府照片（白宫、国会、总统图书馆）优先。
