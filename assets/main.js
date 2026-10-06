@@ -2,6 +2,9 @@
 (function () {
   "use strict";
 
+  // v4.0.1：标记 JS 可用——CSS 据此隐藏导航默认态（无 JS 时回退平铺形态，功能不丢）
+  document.documentElement.classList.add("js");
+
   var REDUCE = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // 版本戳：页脚读 <meta name="site-version">
@@ -105,9 +108,28 @@
     var btn = document.querySelector(".nav-toggle");
     var nav = document.querySelector(".nav");
     if (!btn || !nav) return;
+    function closeNav() {
+      nav.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+    }
     btn.addEventListener("click", function () {
       var open = nav.classList.toggle("is-open");
       btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    // v4.0.1：Escape / 点击面板外 / 选中链接后收起面板
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) {
+        closeNav();
+        btn.focus();
+      }
+    });
+    document.addEventListener("click", function (e) {
+      if (!nav.classList.contains("is-open")) return;
+      if (nav.contains(e.target) || btn.contains(e.target)) return;
+      closeNav();
+    });
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) closeNav();
     });
   }
 
