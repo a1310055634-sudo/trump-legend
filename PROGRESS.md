@@ -195,6 +195,12 @@
 
 ## 交接记录
 
+### 瘦身复查（用户要求细查，2026-10-07）✅
+- **复查发现**：①tools/shots 删除确认彻底（93→2，仅剩 R94/rc）✓；②**揪出真漏网：tools/.chrome-r45（R45 轮 headless Chrome 残留配置 8MB/333 文件）曾被误提交并推到 GitHub**（.gitignore 当时未覆盖 tools/.chrome-*，历轮 status 检查未报因其属 tracked）——已三连清：本地删除＋git rm 仓库移除＋.gitignore 加 tools/.chrome-* 防复发，远端 404 验证 ✓（commit 916067a）；③_navtest/_diag 临时文件与 $TEMP chrome 实例残留均已确认清零 ✓。
+- **保留判断**：git 历史中仍有该 8MB 副本（重写历史需强推全库，不值得——体积小且无敏感内容，浏览器缓存配置而已），如在意可日后用 filter-repo。
+- **终态**：本地 631MB = shots 留存 599MB＋.git 19MB＋assets 12MB＋页面文档；远端与本地同步。
+- **遗留**：无。
+
 ### 本地瘦身（用户拍板，2026-10-07）✅
 - **动作**：tools/shots 取证截图 93 目录 4.5GB → 留 R94＋rc 两个发布态目录（599MB），删 91 目录释放约 **3.9GB**（工作区 4.5GB→639MB）。shots 一直 gitignore 未上 GitHub，删除不影响站点/线上版/git 历史；QA 结论均已文字入账本。
 - **留档原则**（用户选项）：发布态取证（R94 发布轮＋rc 全站候选态）保留备对照，其余过程截图清除——同雪夜城市项目先例。
